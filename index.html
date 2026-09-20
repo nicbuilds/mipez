@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="MIPEZ — manejo y control de cuerpos de agua artificiales en Mérida y Yucatán. Diagnóstico, circulación, filtración, desinfección, monitoreo y mantenimiento preventivo." />
   <title>MIPEZ | Manejo y control de cuerpos de agua artificiales</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,27 +145,51 @@
     .footer-copy{font-size:.82rem;max-width:690px;color:#bfcce5}
     .footer-copy a{color:#d9fff6}
 
+
+    /* Menú móvil original: Frutiger Aero glossy, sin JavaScript */
+    #menu-toggle{display:none}
+    .hamburger{display:none;width:42px;height:38px;flex:0 0 42px;border-radius:14px;border:1px solid rgba(255,255,255,.92);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(214,248,255,.82));box-shadow:inset 0 1px 0 #fff,inset 0 -2px 6px rgba(38,154,197,.12),0 6px 15px rgba(32,112,151,.16);cursor:pointer;position:relative;align-items:center;justify-content:center;flex-direction:column;gap:4px;-webkit-tap-highlight-color:transparent}
+    .hamburger:before{content:"";position:absolute;left:6px;right:6px;top:4px;height:12px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,0));pointer-events:none}
+    .hamburger span{position:relative;z-index:1;width:19px;height:2px;border-radius:99px;background:linear-gradient(90deg,var(--navy),var(--blue));box-shadow:0 1px 1px rgba(255,255,255,.85);transition:transform .25s ease,opacity .2s ease}
+    .mobile-nav{display:none}
+
     @media(max-width:920px){
-      .nav-links a:not(.btn){display:none}
-      .hero-grid,.product,.context-grid,.cta-band{grid-template-columns:1fr}
+      html,body{width:100%;max-width:100%;overflow-x:hidden}
+      .wrap{width:min(1160px,calc(100% - 28px));max-width:100%}
+      .nav{gap:12px;min-width:0}
+      .logo{min-width:0;flex:0 1 auto}
+      .logo img{max-width:100%;height:auto}
+      .nav-links{display:none}
+      .hamburger{display:flex}
+      .mobile-nav{display:grid;grid-template-rows:0fr;position:absolute;left:0;right:0;top:100%;padding:0 14px;overflow:hidden;opacity:0;pointer-events:none;transition:grid-template-rows .28s ease,opacity .2s ease,padding .28s ease}
+      .mobile-nav-inner{min-height:0;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(222,250,255,.92));border:1px solid rgba(255,255,255,.95);border-radius:0 0 24px 24px;box-shadow:inset 0 1px 0 #fff,0 18px 34px rgba(30,105,140,.18);backdrop-filter:blur(18px) saturate(145%);padding:0 12px}
+      .mobile-nav a{display:block;text-decoration:none;font-weight:750;color:#234b5a;padding:13px 12px;border-bottom:1px solid rgba(31,112,151,.09)}
+      .mobile-nav a:last-child{border-bottom:0;margin:8px 0 12px;text-align:center;color:#fff;background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:999px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 18px rgba(32,32,111,.18)}
+      #menu-toggle:checked ~ .mobile-nav{grid-template-rows:1fr;opacity:1;pointer-events:auto;padding-bottom:12px}
+      #menu-toggle:checked + .hamburger span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+      #menu-toggle:checked + .hamburger span:nth-child(2){opacity:0}
+      #menu-toggle:checked + .hamburger span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+      .hero-grid,.product,.context-grid,.cta-band{grid-template-columns:minmax(0,1fr)}
+      .hero-grid>*,.product>*,.context-grid>*,.cta-band>*{min-width:0;max-width:100%}
       .gallery-grid{grid-template-columns:1fr 1fr}
       .feature-grid{grid-template-columns:1fr 1fr}
       .cta-band .hero-actions{justify-content:flex-start}
       .product-visual{min-height:380px}
     }
     @media(max-width:620px){
+      .wrap{width:calc(100% - 24px)}
       .site-header{padding:4px 0}
       .logo img{width:72px}
-      .nav-links{gap:10px}
-      .nav-links .btn{padding:10px 13px;font-size:.8rem}
       .hero{padding-top:54px}
+      h1{font-size:clamp(2.65rem,13.2vw,4.25rem);overflow-wrap:normal;word-break:normal}
+      .lead,.micro,.section-copy,p{overflow-wrap:break-word}
       .hero-actions{flex-direction:column}
-      .btn{width:100%}
-      .gallery-grid,.feature-grid,.metrics{grid-template-columns:1fr}
+      .hero-actions .btn{width:100%;max-width:100%}
+      .gallery-grid,.feature-grid,.metrics{grid-template-columns:minmax(0,1fr)}
       .gallery-card,.gallery-card img{min-height:250px}
       section{padding:58px 0}
-      .product-copy{padding:28px}
-      .cta-band{padding:27px}
+      .product-copy{padding:28px 22px}
+      .cta-band{padding:27px 22px}
       .footer-grid{align-items:flex-start;flex-direction:column}
     }
   </style>
@@ -181,6 +205,18 @@
         <a href="#control">Control</a>
         <a href="#merida">Contexto Mérida</a>
         <a class="btn btn-primary" href="#diagnostico">Solicitar diagnóstico</a>
+      </nav>
+      <input type="checkbox" id="menu-toggle" aria-hidden="true">
+      <label class="hamburger" for="menu-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="mobile-nav" aria-label="Navegación móvil">
+        <div class="mobile-nav-inner">
+          <a href="#servicios">Servicios</a>
+          <a href="#control">Control</a>
+          <a href="#merida">Contexto Mérida</a>
+          <a href="#diagnostico">Solicitar diagnóstico</a>
+        </div>
       </nav>
     </div>
   </header>
