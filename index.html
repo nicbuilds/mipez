@@ -3,58 +3,1314 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="MIPEZ, Laboratorio del Agua. Diagnóstico, operación y control de cuerpos de agua artificiales en Mérida y Yucatán.">
+<meta name="description" content="MIPEZ, Laboratorio del Agua. Ingeniería RAS, hidrodinámica y viabilidad financiera para cultivo intensivo de perla mabé en Mérida y Yucatán.">
 <meta name="theme-color" content="#20206f">
-<title>MIPEZ | Ciencia aplicada al cuidado del agua</title>
+<title>MIPEZ | Cultivo Intensivo de Perla Mabé en Ingeniería RAS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#20206f;--blue:#1d72b8;--cyan:#35c0e6;--aqua:#7ee6df;--mint:#dffcf5;--sky:#dff4ff;--ink:#12303b;--muted:#56717a;--line:rgba(29,114,184,.16)}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;background:#f6fcfd;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit}button{cursor:pointer}img{display:block;max-width:100%}svg{display:block}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.skip{position:fixed;top:-100px;left:16px;z-index:100;background:white;padding:12px}.skip:focus{top:12px}
-header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.9);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px}.brand img{width:82px;height:82px;object-fit:contain}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{text-decoration:none;font-size:12px;font-weight:600}.nav-links a:hover{color:var(--blue)}.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted)}.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
-.hero{padding:68px 0 62px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff)}.hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef}h1{font-size:clamp(42px,4.8vw,65px);line-height:1.07;letter-spacing:-.055em;font-weight:600;margin:27px 0 24px}h1 span{color:var(--blue)}.intro{font-size:16px;max-width:400px;color:var(--muted)}.btn{display:inline-flex;align-items:center;gap:22px;text-decoration:none;padding:14px 20px;border-radius:30px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;border:1px solid transparent}.btn:hover{box-shadow:0 12px 28px #1d72b845}.hero .btn{margin-top:16px}.hero-note{font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:30px}.figure{margin:0;min-width:0}.figure-head{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:11px;font-size:10px;letter-spacing:.08em;color:var(--muted)}
-.orbit{position:relative;width:100%;aspect-ratio:1.18;background-image:linear-gradient(#1d72b809 1px,transparent 1px),linear-gradient(90deg,#1d72b809 1px,transparent 1px);background-size:25px 25px;border-radius:30px;margin-top:12px;isolation:isolate}.orbit:before{content:'';position:absolute;inset:15% 19%;border:1px dashed #1d72b833;border-radius:50%}.orbit:after{content:'';position:absolute;inset:25% 28%;border:1px solid #1d72b81a;border-radius:50%;z-index:-1}.connectors{position:absolute;inset:0;width:100%;height:100%;color:#1d72b84d;pointer-events:none}.connectors path{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:4 6}.organism{position:absolute;left:50%;top:48%;width:39%;transform:translate(-50%,-50%)}.organism svg{width:100%;height:auto;filter:drop-shadow(0 16px 13px #1d72b822);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease}.specimen-label{position:absolute;left:25%;right:25%;top:70%;text-align:center;font-size:11px;color:var(--navy)}.specimen-label small{display:block;font:9px ui-monospace,monospace;color:var(--muted);margin-top:3px}.node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;width:132px;min-height:92px;padding:12px 9px;border:1px solid #fff;border-radius:23px;background:linear-gradient(145deg,#ffffffeb,#dff4ffc9);color:var(--navy);box-shadow:8px 9px 20px #1d72b813,-5px -5px 14px #ffffffd9,inset 0 2px 0 #fff;transition:transform .2s,box-shadow .2s,border-color .2s;font-size:11px;font-weight:600}.node svg{width:32px;height:27px;stroke:var(--blue);fill:#7ee6df66;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.node:hover{transform:translateY(-4px);box-shadow:5px 13px 24px #1d72b827}.node[aria-pressed=true]{border-color:var(--blue);background:linear-gradient(145deg,#fff,#d4f6f0);box-shadow:0 0 0 3px #35c0e615,6px 10px 24px #1d72b822}.node:nth-of-type(1){left:3%;top:12%}.node:nth-of-type(2){right:3%;top:12%}.node:nth-of-type(3){left:2%;bottom:9%}.node:nth-of-type(4){right:2%;bottom:9%}.detail{padding:18px 22px;border:1px solid #fff;border-radius:22px;background:linear-gradient(120deg,#ffffffed,#e9faf9);box-shadow:0 8px 24px #1d72b80b;min-height:126px}.detail-heading{display:flex;gap:12px;align-items:center}.detail-heading span{color:var(--blue);font:10px ui-monospace,monospace}.detail h3{font-size:14px;margin:0}.detail p{font-size:12px;color:var(--muted);margin:7px 0 0}.figure figcaption{font-size:9px;color:var(--muted);margin:12px 6px 0}.figure figcaption span{display:block;margin-top:3px}
-.section{padding:80px 0}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:35px}.section-num{font:10px ui-monospace,monospace;color:var(--blue);letter-spacing:.13em}h2{font-size:clamp(29px,3.2vw,43px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin:13px 0 0}.section-top p{font-size:14px;color:var(--muted);max-width:440px;margin:0}.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#fff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}.step-no{font:11px ui-monospace,monospace;color:var(--blue);padding:9px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 white;display:inline-block}.step h3{font-size:18px;font-weight:500;letter-spacing:-.025em;margin:24px 0 10px}.step p{font-size:12px;color:var(--muted);margin:0}.step-foot{font:9px ui-monospace,monospace;letter-spacing:.07em;color:var(--blue);border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.news{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:white;position:relative}.news-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.news .section-num{color:var(--aqua)}.news h2{max-width:340px}.news-copy p{font-size:14px;color:#d6e7ed;margin:0 0 18px}.news-copy .fact{font-size:12px;padding:17px 20px;border-radius:18px;background:#ffffff0c;border:1px solid #ffffff20}.citation{color:var(--aqua);text-decoration:none;font-size:10px;vertical-align:super}.sources{margin-top:32px;border-top:1px solid #ffffff2b}.sources a{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #ffffff20;text-decoration:none;font-size:11px;color:#e0eff6}.sources a:hover{color:var(--aqua)}.sources b{font:10px ui-monospace,monospace;color:var(--aqua);margin-right:8px}.source-label{font:9px ui-monospace,monospace;color:#aac7d6;letter-spacing:.12em;margin-top:27px}.prepare{padding:48px 0}.prepare-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.prepare h2{font-size:27px}.prepare p{font-size:12px;color:var(--muted)}details{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px 22px}summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy)}details ul{padding-left:20px;font-size:12px;color:var(--muted)}details li{margin:9px 0}footer{background:#171b58;color:#bfcce5;padding:24px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}.footer-inner img{width:100px;height:100px;object-fit:contain}.footer-inner p{font-size:10px;max-width:490px}.footer-inner .mono{font-size:9px;color:var(--aqua)}.reveal{opacity:1;transform:none}.motion .reveal.pending{opacity:0;transform:translateY(22px)}.motion .reveal{transition:opacity .65s ease,transform .65s ease}.protocol .step:nth-child(2){transition-delay:.1s}.protocol .step:nth-child(3){transition-delay:.2s}
-@media(min-width:1500px){.hero{padding:90px 0}}@media(max-width:1000px){.hero-grid{gap:26px;grid-template-columns:.8fr 1.2fr}.node{width:113px;font-size:10px;min-height:80px}.nav-tag{display:none}.news-grid{gap:35px}.detail{min-height:143px}}
-@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:80px}.brand img{width:70px;height:70px}.nav-links{gap:18px}.nav-links a{font-size:10px}.hero{padding:36px 0 42px}.hero-grid{grid-template-columns:1fr;gap:36px}h1{font-size:48px;max-width:550px;margin:20px 0}.intro{max-width:460px;font-size:14px}.hero-note{margin-top:20px}.hero .btn{margin-top:8px}.figure{max-width:560px;width:100%;justify-self:center}.node{width:125px;min-height:91px;font-size:11px}.detail{min-height:120px}.section{padding:52px 0}.section-top,.news-grid,.prepare-inner{grid-template-columns:1fr;gap:22px}.section-top{margin-bottom:26px}.protocol{grid-template-columns:1fr}.step{padding:24px;display:grid;grid-template-columns:45px 1fr;gap:5px 18px}.step-no{grid-column:1;grid-row:1/4;align-self:start;padding:11px}.step h3{margin:0 0 8px}.step p,.step-foot{grid-column:2}.step-foot{margin-top:14px;padding-top:12px}.news h2{max-width:500px}.news-copy p{font-size:13px}.sources{margin-top:16px}.prepare{padding:38px 0}.footer-inner{gap:25px}.footer-inner img{width:85px;height:85px}.footer-inner p{font-size:9px}}
-@media(max-width:400px){.wrap{width:calc(100% - 28px)}h1{font-size:41px}.nav-links{gap:12px}.node{width:98px;min-height:77px;padding:8px 4px;font-size:9px;border-radius:18px}.node svg{width:27px;height:23px}.specimen-label{font-size:9px;top:68%}.specimen-label small{font-size:7px}.figure-head{font-size:8px}.orbit{aspect-ratio:1.03}.detail{padding:16px;min-height:137px}.figure figcaption{font-size:8px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;background:#f6fcfd;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit}button{cursor:pointer}img{display:block;max-width:100%}svg{display:block}button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:5px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.skip{position:fixed;top:-100px;left:16px;z-index:100;background:white;padding:12px}.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.9);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px}.brand{display:flex;align-items:center;gap:14px;text-decoration:none}.brand img{width:82px;height:82px;object-fit:contain}.nav-links{display:flex;gap:24px;align-items:center;flex-wrap:wrap}.nav-links a{text-decoration:none;font-size:12px;font-weight:600}.nav-links a:hover{color:var(--blue)}.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted)}.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+.hero{padding:68px 0 62px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff)}.hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center}.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef}h1{font-size:clamp(40px,4.5vw,62px);line-height:1.07;letter-spacing:-.055em;font-weight:600;margin:27px 0 24px}h1 span{color:var(--blue)}.intro{font-size:15px;max-width:440px;color:var(--muted)}.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}.btn{display:inline-flex;align-items:center;gap:16px;text-decoration:none;padding:14px 20px;border-radius:30px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;border:1px solid transparent;transition:box-shadow .2s,transform .2s}.btn:hover{box-shadow:0 12px 28px #1d72b845;transform:translateY(-1px)}.btn-ghost{background:linear-gradient(145deg,#ffffffeb,#dff4ffc9);color:var(--navy);border:1px solid #fff;box-shadow:6px 8px 18px #1d72b812}.hero-note{font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:26px}.figure{margin:0;min-width:0}.figure-head{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:11px;font-size:10px;letter-spacing:.08em;color:var(--muted)}
+.orbit{position:relative;width:100%;aspect-ratio:1.18;background-image:linear-gradient(#1d72b809 1px,transparent 1px),linear-gradient(90deg,#1d72b809 1px,transparent 1px);background-size:25px 25px;border-radius:30px;margin-top:12px;isolation:isolate}.orbit:before{content:'';position:absolute;inset:15% 19%;border:1px dashed #1d72b833;border-radius:50%}.orbit:after{content:'';position:absolute;inset:25% 28%;border:1px solid #1d72b81a;border-radius:50%;z-index:-1}.connectors{position:absolute;inset:0;width:100%;height:100%;color:#1d72b84d;pointer-events:none}.connectors path{fill:none;stroke:currentColor;stroke-width:1.2;stroke-dasharray:4 6}.organism{position:absolute;left:50%;top:46%;width:40%;transform:translate(-50%,-50%)}.organism svg{width:100%;height:auto;filter:drop-shadow(0 16px 13px #1d72b822);transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease}.specimen-label{position:absolute;left:20%;right:20%;top:71%;text-align:center;font-size:11px;color:var(--navy)}.specimen-label small{display:block;font:9px ui-monospace,monospace;color:var(--muted);margin-top:3px}.node{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;width:142px;min-height:92px;padding:12px 9px;border:1px solid #fff;border-radius:23px;background:linear-gradient(145deg,#ffffffeb,#dff4ffc9);color:var(--navy);box-shadow:8px 9px 20px #1d72b813,-5px -5px 14px #ffffffd9,inset 0 2px 0 #fff;transition:transform .2s,box-shadow .2s,border-color .2s;font-size:11px;font-weight:600;text-align:center}.node svg{width:32px;height:27px;stroke:var(--blue);fill:#7ee6df66;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.node:hover{transform:translateY(-4px);box-shadow:5px 13px 24px #1d72b827}.node[aria-pressed=true]{border-color:var(--blue);background:linear-gradient(145deg,#fff,#d4f6f0);box-shadow:0 0 0 3px #35c0e615,6px 10px 24px #1d72b822}.node:nth-of-type(1){left:3%;top:10%}.node:nth-of-type(2){right:3%;top:10%}.node:nth-of-type(3){left:2%;bottom:8%}.node:nth-of-type(4){right:2%;bottom:8%}.detail{padding:18px 22px;border:1px solid #fff;border-radius:22px;background:linear-gradient(120deg,#ffffffed,#e9faf9);box-shadow:0 8px 24px #1d72b80b;min-height:126px}.detail-heading{display:flex;gap:12px;align-items:center}.detail-heading span{color:var(--blue);font:10px ui-monospace,monospace}.detail h3{font-size:14px;margin:0;color:var(--navy)}.detail p{font-size:12px;color:var(--muted);margin:7px 0 0}.figure figcaption{font-size:9px;color:var(--muted);margin:12px 6px 0}.figure figcaption span{display:block;margin-top:3px}
+.section{padding:80px 0}.section-alt{background:radial-gradient(ellipse at 20% 20%,#dffcf5 0,transparent 55%),linear-gradient(180deg,#f0fafc,#f6fcfd)}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:35px}.section-num{font:10px ui-monospace,monospace;color:var(--blue);letter-spacing:.13em;text-transform:uppercase}h2{font-size:clamp(28px,3.2vw,42px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin:13px 0 0;color:var(--navy)}.section-top p{font-size:14px;color:var(--muted);max-width:480px;margin:0}
+.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.protocol-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:32px}.step{border:1px solid #fff;border-radius:26px;padding:26px;background:linear-gradient(145deg,#fff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}.step-no{font:11px ui-monospace,monospace;color:var(--blue);padding:9px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 white;display:inline-block}.step h3{font-size:18px;font-weight:600;letter-spacing:-.025em;margin:20px 0 8px;color:var(--navy)}.step .kpi-val{font-size:clamp(24px,2.5vw,32px);font-weight:600;color:var(--navy);letter-spacing:-.04em;margin:14px 0 4px}.step p{font-size:12px;color:var(--muted);margin:0}.step-foot{font:9px ui-monospace,monospace;letter-spacing:.07em;color:var(--blue);border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
+/* Paneles técnicos interactivos con estética MIPEZ */
+.tech-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}.panel-card{border:1px solid #fff;border-radius:28px;padding:28px;background:linear-gradient(145deg,#ffffff,#e9f6fb);box-shadow:10px 12px 30px #1d72b812,inset 0 2px 0 #fff}.pill-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}.pill-btn{padding:9px 14px;border-radius:18px;border:1px solid var(--line);background:linear-gradient(145deg,#ffffff,#eef9fd);color:var(--navy);font-size:11px;font-weight:600;transition:all .2s;box-shadow:4px 4px 12px #1d72b80d}.pill-btn:hover{border-color:var(--blue);transform:translateY(-1px)}.pill-btn[aria-selected=true]{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-color:transparent;box-shadow:0 6px 16px #1d72b833}
+.svg-canvas{background:linear-gradient(160deg,#f9feff,#e3f4fb);border:1px solid var(--line);border-radius:22px;padding:18px;position:relative;overflow:hidden}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:10px}.data-table th{text-align:left;font:10px ui-monospace,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);padding:10px 8px;border-bottom:1px solid var(--line)}.data-table td{padding:10px 8px;border-bottom:1px solid rgba(29,114,184,.08);color:var(--ink)}.data-table td.num,.data-table th.num{text-align:right;font-variant-numeric:tabular-nums}.data-table tr.total-row td{font-weight:700;color:var(--navy);border-top:2px solid var(--blue);border-bottom:none;padding-top:13px;background:rgba(126,230,223,.12)}
+/* Animaciones de flujo en SVG */
+@keyframes dashFlow{to{stroke-dashoffset:-36}}
+.flow-anim{stroke-dasharray:7 5;animation:dashFlow 1.1s linear infinite}
+@keyframes pulseWave{0%,100%{opacity:.45;transform:scale(.97)}60%{opacity:1;transform:scale(1.03)}}
+.pulse-anim{transform-origin:center;animation:pulseWave 3s ease-in-out infinite}
+/* Sección oscura estilo .news de MIPEZ */
+.news{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:white;position:relative}.news-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:start}.news .section-num{color:var(--aqua)}.news h2{color:#fff;max-width:420px}.news-copy p{font-size:14px;color:#d6e7ed;margin:0 0 18px}.news-copy .fact{font-size:12px;padding:17px 20px;border-radius:18px;background:#ffffff0c;border:1px solid #ffffff20;color:#e6f6fa}.citation{color:var(--aqua);text-decoration:none;font-size:10px;vertical-align:super}.sources{margin-top:26px;border-top:1px solid #ffffff2b}.sources a,.sources .source-item{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff20;text-decoration:none;font-size:11px;color:#e0eff6}.sources b{font:10px ui-monospace,monospace;color:var(--aqua);margin-right:8px}.source-label{font:9px ui-monospace,monospace;color:#aac7d6;letter-spacing:.12em;margin-top:22px;text-transform:uppercase}
+.dark-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:24px;backdrop-filter:blur(12px)}
+.mode-switch{display:inline-flex;background:rgba(0,0,0,.28);padding:5px;border-radius:24px;border:1px solid rgba(255,255,255,.18);gap:6px;margin-bottom:18px;flex-wrap:wrap}.mode-btn{padding:9px 15px;border-radius:18px;border:none;background:transparent;color:#d6e7ed;font-size:11px;font-weight:600;transition:all .2s}.mode-btn[aria-pressed=true]{background:linear-gradient(135deg,var(--aqua),var(--cyan));color:var(--navy);box-shadow:0 4px 14px rgba(53,192,230,.35)}
+/* Simulador Financiero */
+.sim-box{border:1px solid #fff;border-radius:28px;padding:30px;background:linear-gradient(135deg,#ffffff,#e6f8f7);box-shadow:10px 14px 34px #1d72b814,inset 0 2px 0 #fff;margin-top:28px}.sim-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}.slider-group label{display:flex;justify-content:space-between;font-size:12px;font-weight:600;color:var(--navy);margin-bottom:8px}.slider-group label span{color:var(--blue);font-family:ui-monospace,monospace}.slider-group input[type=range]{width:100%;accent-color:var(--blue);cursor:pointer;height:6px;border-radius:8px}.slider-hint{font-size:10px;color:var(--muted);margin-top:6px}
+.sim-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}.sim-kpi{padding:18px;border-radius:20px;background:#ffffffd9;border:1px solid var(--line)}.sim-kpi.highlight{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border:none}.sim-kpi.highlight .mono,.sim-kpi.highlight small{color:var(--aqua)}.sim-kpi .mono{font-size:10px;color:var(--blue);text-transform:uppercase;letter-spacing:.08em}.sim-kpi strong{display:block;font-size:clamp(20px,2.2vw,26px);margin:6px 0 2px;letter-spacing:-.03em}.sim-kpi small{font-size:11px;color:var(--muted)}
+.prepare{padding:64px 0}.prepare-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.prepare h2{font-size:30px}.prepare p{font-size:13px;color:var(--muted)}.details-stack{display:flex;flex-direction:column;gap:14px}details{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px 22px;box-shadow:0 6px 18px #1d72b808}summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy)}details ul{padding-left:20px;font-size:12px;color:var(--muted);margin:12px 0 0}details li{margin:8px 0}
+footer{background:#171b58;color:#bfcce5;padding:28px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px;flex-wrap:wrap}.footer-inner img{width:100px;height:100px;object-fit:contain}.footer-inner p{font-size:10px;max-width:520px;margin:6px 0 0}.footer-inner .mono{font-size:9px;color:var(--aqua)}
+.reveal{opacity:1;transform:none}.motion .reveal.pending{opacity:0;transform:translateY(22px)}.motion .reveal{transition:opacity .65s ease,transform .65s ease}.protocol .step:nth-child(2){transition-delay:.1s}.protocol .step:nth-child(3){transition-delay:.2s}
+@media(min-width:1500px){.hero{padding:90px 0}}
+@media(max-width:1024px){.hero-grid,.tech-grid,.news-grid{gap:28px;grid-template-columns:1fr}.node{width:124px;font-size:10px;min-height:82px}.nav-tag{display:none}.protocol-4,.sim-kpis{grid-template-columns:repeat(2,1fr)}.sim-controls{grid-template-columns:1fr}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:80px}.brand img{width:70px;height:70px}.nav-links{gap:14px}.nav-links a{font-size:10px}.hero{padding:36px 0 42px}h1{font-size:42px;margin:18px 0}.intro{font-size:14px}.figure{max-width:560px;width:100%;justify-self:center}.node{width:118px;min-height:84px;font-size:10px}.section{padding:52px 0}.section-top,.prepare-inner{grid-template-columns:1fr;gap:22px}.protocol,.protocol-4,.sim-kpis{grid-template-columns:1fr}.step{padding:22px}.footer-inner{gap:20px}.footer-inner img{width:85px;height:85px}}
+@media(max-width:420px){.wrap{width:calc(100% - 28px)}h1{font-size:36px}.node{width:98px;min-height:74px;padding:8px 4px;font-size:9px;border-radius:18px}.node svg{width:25px;height:21px}.specimen-label{font-size:9px;top:69%}.orbit{aspect-ratio:1.03}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.motion .reveal.pending{opacity:1;transform:none}.organism svg{transform:none!important}}
+@media print{header,.no-print{display:none!important}body{background:#fff}.section,.hero{padding:28px 0}}
 </style>
 </head>
 <body>
 <a class="skip" href="#inicio">Saltar al contenido</a>
-<header><div class="wrap nav"><a class="brand" href="#inicio" aria-label="MIPEZ, inicio"><img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Laboratorio del Agua" width="82" height="82"></a><span class="nav-tag">DIAGNÓSTICO / OPERACIÓN / CONTROL</span><nav class="nav-links" aria-label="Navegación principal"><a href="#sistemas">Sistemas</a><a href="#control">Método</a><a href="#merida">Evidencia</a></nav></div><div class="progress" aria-hidden="true"></div></header>
+
+<!-- HEADER CON LOGO OFICIAL MIPEZ V1 -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="MIPEZ, inicio">
+      <img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Laboratorio del Agua" width="82" height="82" onerror="this.style.display='none'">
+    </a>
+    <span class="nav-tag">ACUACULTURA RAS / INGENIERÍA / PERLA MABÉ</span>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#arquitectura">Jaula 5 Niveles</a>
+      <a href="#hidrodinamica">Olas Gyre</a>
+      <a href="#filtracion">Sump &amp; Bypass</a>
+      <a href="#finanzas">Finanzas 5 Años</a>
+      <a href="#implementacion">Biología</a>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
 <main id="inicio">
-<section class="hero"><div class="wrap hero-grid"><div class="reveal"><div class="eyebrow">Ciencia aplicada · Yucatán</div><h1>El agua se cuida<br>con <span>evidencia.</span></h1><p class="intro">Diagnóstico, operación y monitoreo de cuerpos de agua artificiales. Transformamos el mantenimiento en un proceso medible.</p><a class="btn" href="#control">Explorar nuestro método <span aria-hidden="true">↘</span></a><p class="hero-note mono">MIPEZ / LABORATORIO DEL AGUA</p></div>
-<figure class="figure reveal" id="sistemas"><div class="figure-head mono"><span>FIG. 01 / SISTEMAS ACUÁTICOS</span><span>EXPLORACIÓN INTERACTIVA</span></div><div class="orbit" aria-label="Diagrama de cuerpos de agua y gestión preventiva">
-<svg class="connectors" viewBox="0 0 600 510" preserveAspectRatio="none" aria-hidden="true"><path d="M120 110L300 245L480 110M115 400L300 245L485 400"/></svg>
-<div class="organism"><svg viewBox="0 0 240 240" role="img" aria-labelledby="ameba-title ameba-desc"><title id="ameba-title">Representación conceptual de una ameba</title><desc id="ameba-desc">Forma celular irregular con núcleo y vacuolas, ilustrada con volumen suave. No es una microfotografía ni está a escala.</desc><defs><radialGradient id="cell" cx=".32" cy=".24" r=".8"><stop offset="0" stop-color="#e0fff8"/><stop offset=".32" stop-color="#7ee6df"/><stop offset=".7" stop-color="#35c0e6"/><stop offset="1" stop-color="#1d72b8"/></radialGradient><radialGradient id="nucleus" cx=".34" cy=".25" r=".8"><stop stop-color="#a0ecf5"/><stop offset=".45" stop-color="#1d72b8"/><stop offset="1" stop-color="#20206f"/></radialGradient><radialGradient id="vesicle" cx=".3" cy=".25"><stop stop-color="#efffff"/><stop offset="1" stop-color="#56c6d1"/></radialGradient><filter id="soft"><feGaussianBlur stdDeviation="3"/></filter></defs><path d="M76 29C92 19 111 43 128 35S156 10 169 28S162 61 177 70S214 57 220 80S195 110 201 127S228 150 212 170S175 161 163 183S160 218 136 218S113 191 95 190S61 211 46 195S58 164 42 148S13 146 16 121S50 101 48 83S28 57 44 45S62 53 76 29Z" fill="url(#cell)" stroke="#b4f3f0" stroke-width="2"/><path d="M62 74C73 46 102 60 124 55" fill="none" stroke="#ffffffad" stroke-width="11" stroke-linecap="round" filter="url(#soft)"/><ellipse cx="122" cy="125" rx="42" ry="38" fill="#1d72b827" transform="rotate(-18 122 125)"/><ellipse cx="117" cy="119" rx="34" ry="31" fill="url(#nucleus)"/><ellipse cx="109" cy="109" rx="12" ry="9" fill="#b0f4ef" opacity=".42"/><circle cx="70" cy="115" r="11" fill="url(#vesicle)"/><circle cx="163" cy="84" r="14" fill="url(#vesicle)"/><circle cx="163" cy="156" r="10" fill="url(#vesicle)"/><circle cx="89" cy="165" r="7" fill="url(#vesicle)"/><circle cx="135" cy="177" r="4" fill="#d4fff1" opacity=".7"/></svg></div>
-<div class="specimen-label"><i>Naegleria fowleri</i><small>AMEBA DE VIDA LIBRE</small></div>
-<button class="node" type="button" data-system="lagos" aria-pressed="true" aria-controls="system-detail"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M4 22Q12 15 20 20T36 22Q31 30 19 28T4 22Z"/><path d="M9 19V7m0 5L5 8m4 7 5-6M25 14q3-7 6 0" fill="none"/></svg><span>Lagos artificiales</span></button>
-<button class="node" type="button" data-system="fuentes" aria-pressed="false" aria-controls="system-detail"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M5 21h30q-3 9-15 9T5 21Z"/><path d="M20 20V5m0 8Q12 1 7 10m13 3Q28 1 33 10m-13 9q-7-9-12-4m12 4q7-9 12-4" fill="none"/></svg><span>Fuentes</span></button>
-<button class="node" type="button" data-system="estanques" aria-pressed="false" aria-controls="system-detail"><svg viewBox="0 0 40 32" aria-hidden="true"><ellipse cx="20" cy="23" rx="16" ry="6"/><path d="M20 22V11m0 6q-12 0-10-11 10 0 10 11m0-4q0-10 10-10 2 10-10 10"/></svg><span>Estanques</span></button>
-<button class="node" type="button" data-system="albercas" aria-pressed="false" aria-controls="system-detail"><svg viewBox="0 0 40 32" aria-hidden="true"><path d="M4 23q4-4 8 0t8 0 8 0 8 0M4 29q4-4 8 0t8 0 8 0 8 0M13 19V6q0-5 5-3m5 16V6q0-5 5-3M13 10h10m-10 6h10" fill="none"/></svg><span>Albercas</span></button>
-</div><div class="detail" id="system-detail" aria-live="polite" aria-atomic="true"><div class="detail-heading"><span id="system-number" class="mono">01 /</span><h3 id="system-title">Lagos artificiales</h3></div><p id="system-copy">Revisión de circulación, sedimentos y zonas de baja movilidad. El plan de control se adapta al uso y al diseño del lago.</p></div><figcaption>Toca un sistema para explorar su enfoque de manejo.<span>Ilustración conceptual, sin escala. El diagrama no indica presencia de la ameba en cada sistema.</span></figcaption></figure>
-</div></section>
-<section class="section" id="control"><div class="wrap"><div class="section-top reveal"><div><span class="section-num">01 / MÉTODO MIPEZ</span><h2>Observar. Intervenir.<br>Verificar.</h2></div><p>Un protocolo adaptado a cada instalación, con parámetros, responsables y registros.</p></div><div class="protocol" id="servicios"><article class="step reveal"><span class="step-no">01</span><h3>Diagnóstico</h3><p>Evaluamos el sistema hidráulico, el uso del agua y los puntos críticos de mantenimiento.</p><div class="step-foot">ENTREGABLE / EVALUACIÓN INICIAL</div></article><article class="step reveal"><span class="step-no">02</span><h3>Operación</h3><p>Organizamos circulación, filtración, limpieza y desinfección según las necesidades del sistema.</p><div class="step-foot">ENTREGABLE / PLAN OPERATIVO</div></article><article class="step reveal"><span class="step-no">03</span><h3>Verificación</h3><p>Registramos parámetros y acciones correctivas. Coordinamos análisis específicos cuando se requieren.</p><div class="step-foot">ENTREGABLE / BITÁCORA Y SEGUIMIENTO</div></article></div></div></section>
-<section class="section news" id="merida"><div class="wrap news-grid"><div class="reveal"><span class="section-num">02 / EVIDENCIA LOCAL</span><h2>Un caso que exige<br>rigor.</h2><p class="source-label">MÉRIDA, YUCATÁN · 14 SEP 2026</p></div><div class="news-copy reveal"><p>El Gobierno de Yucatán confirmó la detección de <i>Naegleria fowleri</i> en un lago artificial, tras un caso mortal asociado al sitio. El comunicado informó del cierre del lago y la investigación de su mantenimiento. <a class="citation" href="#fuente-1" aria-label="Ver fuente 1">[1]</a></p><p class="fact">La infección es muy rara y ocurre cuando agua contaminada entra por la nariz. No se adquiere al beber agua. <a class="citation" href="#fuente-1" aria-label="Ver fuente 1">[1]</a> Los CDC destacan la importancia del mantenimiento y la desinfección adecuados. <a class="citation" href="#fuente-2" aria-label="Ver fuente 2">[2]</a></p><p class="source-label">FUENTES Y MARCO DE REFERENCIA</p><div class="sources"><a id="fuente-1" href="https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=11799" target="_blank" rel="noopener"><span><b>01</b>Gobierno de Yucatán · Comunicado 26-1511</span><span aria-hidden="true">↗</span></a><a id="fuente-2" href="https://www.cdc.gov/naegleria/es/prevention/como-prevenir-la-infeccion-por-naegleria-fowleri-cuando-nade-o-se-meta-al-agua.html" target="_blank" rel="noopener"><span><b>02</b>CDC · Prevención de <i>Naegleria fowleri</i></span><span aria-hidden="true">↗</span></a><a id="fuente-3" href="https://platiica.economia.gob.mx/normalizacion/nom-245-ssa1-2010/" target="_blank" rel="noopener"><span><b>03</b>NOM-245-SSA1-2010 · Calidad del agua en albercas</span><span aria-hidden="true">↗</span></a></div></div></div></section>
-<section class="prepare" id="diagnostico"><div class="wrap prepare-inner reveal"><div><span class="section-num">03 / PRIMER PASO</span><h2>Conocer tu sistema.</h2><p>La evaluación empieza con información de tu instalación.</p></div><details><summary>¿Qué preparar para una evaluación?</summary><ul><li>Tipo de cuerpo de agua, ubicación y uso.</li><li>Volumen aproximado y equipos de circulación y filtración.</li><li>Rutinas de mantenimiento y resultados de análisis disponibles.</li></ul></details></div></section>
+
+  <!-- HERO CON DIAGRAMA ORBITAL INTERACTIVO DE OSTRA PERLERA MABÉ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">División Acuacultura Intensiva · Yucatán</div>
+        <h1>Cultivo celular de perla mabé con <span>ingeniería RAS.</span></h1>
+        <p class="intro">Arquitectura modular de alta densidad en tanque de geomembrana de <strong>3×3×1 m</strong> (~7,500 L operativos) capaz de alojar <strong>4,000 ostras perleras</strong> en 4 torres hidrodinámicas con pulsos de flujo transversal y retorno de inversión en el <strong>Mes 13</strong>.</p>
+        <div class="btn-row">
+          <a class="btn" href="#finanzas">Simular corrida a 5 años <span aria-hidden="true">↘</span></a>
+          <a class="btn btn-ghost" href="#arquitectura">Ver torre de 5 niveles</a>
+        </div>
+        <p class="hero-note mono">MIPEZ / LABORATORIO DEL AGUA · PROYECTO MABÉ-RAS</p>
+      </div>
+
+      <figure class="figure reveal" id="sistemas">
+        <div class="figure-head mono">
+          <span>FIG. 01 / BIORREACTOR 3×3×1 M (4,000 OSTRAS)</span>
+          <span>EXPLORACIÓN INTERACTIVA</span>
+        </div>
+        <div class="orbit" aria-label="Diagrama interactivo del sistema intensivo de cultivo de perla mabé">
+          <svg class="connectors" viewBox="0 0 600 510" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M120 110L300 245L480 110M115 400L300 245L485 400"/>
+          </svg>
+
+          <!-- Ilustración Central: Ostra Perlera (Pteria sterna / Pinctada) con 3 Domos de Perla Mabé -->
+          <div class="organism">
+            <svg viewBox="0 0 240 240" role="img" aria-labelledby="mabe-title mabe-desc">
+              <title id="mabe-title">Representación conceptual de Pinctada / Pteria sterna con domos de perla mabé</title>
+              <desc id="mabe-desc">Valva nacarada abierta mostrando tres núcleos hemisféricos recubiertos de nácar iridiscente.</desc>
+              <defs>
+                <radialGradient id="shellOuter" cx=".3" cy=".25" r=".85">
+                  <stop offset="0" stop-color="#e0fff8"/>
+                  <stop offset=".35" stop-color="#7ee6df"/>
+                  <stop offset=".72" stop-color="#35c0e6"/>
+                  <stop offset="1" stop-color="#1d72b8"/>
+                </radialGradient>
+                <radialGradient id="nacreInner" cx=".38" cy=".3" r=".75">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset=".45" stop-color="#dffcf5"/>
+                  <stop offset=".8" stop-color="#9be7f2"/>
+                  <stop offset="1" stop-color="#20206f"/>
+                </radialGradient>
+                <radialGradient id="mabePearl" cx=".32" cy=".28" r=".75">
+                  <stop offset="0" stop-color="#ffffff"/>
+                  <stop offset=".35" stop-color="#e6fffb"/>
+                  <stop offset=".7" stop-color="#7ee6df"/>
+                  <stop offset="1" stop-color="#1d72b8"/>
+                </radialGradient>
+                <filter id="glowSoft"><feGaussianBlur stdDeviation="2.5"/></filter>
+              </defs>
+              <!-- Valva exterior con aurículas de Pteria sterna -->
+              <path d="M40 54 C75 48, 165 48, 206 58 C192 85, 212 135, 190 176 C166 212, 92 220, 56 186 C32 155, 48 92, 40 54 Z" fill="url(#shellOuter)" stroke="#b4f3f0" stroke-width="2.5"/>
+              <!-- Cavidad interna de madreperla (nácar) -->
+              <path d="M62 72 C95 66, 158 68, 182 78 C176 112, 188 148, 170 172 C148 198, 96 200, 72 174 C54 148, 66 102, 62 72 Z" fill="url(#nacreInner)" stroke="#ffffff" stroke-width="1.5"/>
+              <!-- Brillo iridiscente del manto -->
+              <path d="M76 92 C98 76, 142 78, 162 94" fill="none" stroke="#ffffffcc" stroke-width="8" stroke-linecap="round" filter="url(#glowSoft)"/>
+              <!-- 3 Domos Hemisféricos de Perla Mabé (Estándar Óptimo: 3 núcleos/ostra) -->
+              <circle cx="102" cy="118" r="20" fill="url(#mabePearl)" stroke="#ffffff" stroke-width="1.5"/>
+              <ellipse cx="96" cy="111" rx="7" ry="4.5" fill="#ffffff" opacity=".85"/>
+              <circle cx="146" cy="122" r="18" fill="url(#mabePearl)" stroke="#ffffff" stroke-width="1.5"/>
+              <ellipse cx="141" cy="116" rx="6" ry="4" fill="#ffffff" opacity=".85"/>
+              <circle cx="120" cy="160" r="19" fill="url(#mabePearl)" stroke="#ffffff" stroke-width="1.5"/>
+              <ellipse cx="114" cy="153" rx="6.5" ry="4" fill="#ffffff" opacity=".85"/>
+            </svg>
+          </div>
+
+          <div class="specimen-label">
+            <i>Pteria sterna / Pinctada imbricata</i>
+            <small>3 NÚCLEOS HEMISFÉRICOS · NÁCAR &gt; 1.2 MM</small>
+          </div>
+
+          <!-- 4 Nodos Interactivos de las Esquinas del Sistema -->
+          <button class="node" type="button" data-system="torres" aria-pressed="true" aria-controls="system-detail">
+            <svg viewBox="0 0 40 32" aria-hidden="true">
+              <rect x="6" y="4" width="28" height="24" rx="3" fill="none"/>
+              <path d="M6 10h28M6 16h28M6 22h28" fill="none"/>
+            </svg>
+            <span>4 Torres 1×1×1 m</span>
+          </button>
+
+          <button class="node" type="button" data-system="carrusel" aria-pressed="false" aria-controls="system-detail">
+            <svg viewBox="0 0 40 32" aria-hidden="true">
+              <path d="M6 12q8-6 16 0t12 0M6 20q8-6 16 0t12 0" fill="none"/>
+              <circle cx="12" cy="16" r="4"/>
+            </svg>
+            <span>Olas Gyre (Opción A)</span>
+          </button>
+
+          <button class="node" type="button" data-system="ras" aria-pressed="false" aria-controls="system-detail">
+            <svg viewBox="0 0 40 32" aria-hidden="true">
+              <polygon points="10,6 30,6 23,20 17,20"/>
+              <path d="M20 20v8M14 28h12" fill="none"/>
+            </svg>
+            <span>Drenaje &amp; Sump RAS</span>
+          </button>
+
+          <button class="node" type="button" data-system="retorno" aria-pressed="false" aria-controls="system-detail">
+            <svg viewBox="0 0 40 32" aria-hidden="true">
+              <circle cx="20" cy="16" r="10"/>
+              <path d="M16 16l3 3 6-6" fill="none"/>
+            </svg>
+            <span>Retorno Mes 13</span>
+          </button>
+        </div>
+
+        <div class="detail" id="system-detail" aria-live="polite" aria-atomic="true">
+          <div class="detail-heading">
+            <span id="system-number" class="mono">01 /</span>
+            <h3 id="system-title">4 Torres Modulares de 5 Niveles (4,000 Ostras)</h3>
+          </div>
+          <p id="system-copy">Cada esquina del tanque de 3×3×1 m aloja un chasis cúbico de PVC de 1 m³ con 5 charolas extraíbles de Egg Crate (200 ostras por charola en peine a 45°) y deflectores en "Z" de Coroplast a 10° que evitan que los pisos superiores ensucien a los inferiores.</p>
+        </div>
+        <figcaption>
+          Toca cada componente del sistema para explorar su ingeniería operativa.
+          <span>Capacidad por tanque: 4,000 ostras · Producción anual: 6,240 perlas mabé comerciales (Grado A–AAA) + 3,360 de subproducto.</span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- RESUMEN EJECUTIVO DE MÉTRICAS CLAVE -->
+  <section class="section" style="padding-top:40px;padding-bottom:20px">
+    <div class="wrap">
+      <div class="protocol-4 reveal">
+        <article class="step">
+          <span class="step-no">CAPACIDAD</span>
+          <div class="kpi-val">4,000 Ostras</div>
+          <p>Distribuidas en 4 módulos cúbicos de 1×1×1 m (1,000 ostras por torre en 5 niveles deslizables).</p>
+          <div class="step-foot">TANQUE GEOMEMBRANA 3×3×1 M</div>
+        </article>
+        <article class="step">
+          <span class="step-no">PRODUCCIÓN / AÑO</span>
+          <div class="kpi-val">6,240 Mabés</div>
+          <p>Perlas comerciales Grado A a AAA por ciclo de 10 meses (de 9,600 domos brutos cosechados).</p>
+          <div class="step-foot">REGLA DEL 2.0 EFECTIVO</div>
+        </article>
+        <article class="step">
+          <span class="step-no">INVERSIÓN CAPEX</span>
+          <div class="kpi-val">$113,900 <small style="font-size:13px;font-weight:500">MXN</small></div>
+          <p>Sistema llave en mano ($28.47 MXN por ostra alojada). Costo por torre de 5 pisos: solo $3,600 MXN.</p>
+          <div class="step-foot">OPEX: ~$23,500 MXN / MES</div>
+        </article>
+        <article class="step">
+          <span class="step-no">RENTABILIDAD</span>
+          <div class="kpi-val">TIR &gt; 135%</div>
+          <p>Recuperación total (Payback) en el Mes 13 con la primera cosecha. VPN a 5 años: ~$11.84M MXN.</p>
+          <div class="step-foot">PUNTO EQUILIBRIO: 1,120 PERLAS</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 01: ARQUITECTURA DE LA JAULA (TORRE HIDRODINÁMICA DE 5 NIVELES) -->
+  <section class="section section-alt" id="arquitectura">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">01 / INGENIERÍA DE CONTENCIÓN VERTICAL</span>
+          <h2>Torre Hidrodinámica<br>de 5 Niveles (1 m³).</h2>
+        </div>
+        <p>Sistema <i>Baffled Raceway Stack</i> fabricado 100% con materiales plásticos de ferretería libres de corrosión. Permite apilar 5 pisos sin que las heces o pseudoheces del nivel superior caigan sobre las ostras inferiores.</p>
+      </div>
+
+      <div class="tech-grid reveal">
+        <!-- Esquema SVG Interactivo de la Jaula de 5 Niveles -->
+        <div class="panel-card">
+          <div class="figure-head mono" style="margin-bottom:14px">
+            <span>FIG. 02 / CORTE LATERAL DE TORRE 1×1×1 M</span>
+            <span>HAZ CLIC EN CADA COMPONENTE</span>
+          </div>
+
+          <div class="pill-bar" role="tablist" aria-label="Componentes de la Torre de 5 Niveles">
+            <button class="pill-btn" type="button" role="tab" aria-selected="true" data-tower="chasis">1. Chasis PVC 1" Céd. 40</button>
+            <button class="pill-btn" type="button" role="tab" aria-selected="false" data-tower="charola">2. 5 Charolas Egg Crate</button>
+            <button class="pill-btn" type="button" role="tab" aria-selected="false" data-tower="peine">3. Espiga 45° (Peine)</button>
+            <button class="pill-btn" type="button" role="tab" aria-selected="false" data-tower="deflector">4. Deflector 10° (Coroplast)</button>
+          </div>
+
+          <div class="svg-canvas">
+            <svg viewBox="0 0 640 350" aria-label="Corte esquemático de la torre de 5 niveles con flujo laminar y deflectores">
+              <defs>
+                <marker id="arrBlue" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="#1d72b8"/>
+                </marker>
+                <marker id="arrMint" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="#20206f"/>
+                </marker>
+              </defs>
+
+              <!-- Etiquetas frontales -->
+              <text x="14" y="28" fill="#1d72b8" font-size="10" font-weight="700" font-family="ui-monospace,monospace">FLUJO LAMINAR (3–8 CM/S)</text>
+              <text x="14" y="42" fill="#56717a" font-size="9" font-family="Poppins,sans-serif">Entrada frontal de microalgas</text>
+
+              <!-- Chasis PVC 1" (100x100cm) -->
+              <rect x="145" y="20" width="335" height="305" rx="8" fill="#ffffff99" stroke="#20206f" stroke-width="7"/>
+              <!-- Perforaciones de 5mm para hundimiento automático -->
+              <circle cx="145" cy="70" r="2.5" fill="#35c0e6"/><circle cx="145" cy="170" r="2.5" fill="#35c0e6"/><circle cx="145" cy="270" r="2.5" fill="#35c0e6"/>
+              <circle cx="480" cy="70" r="2.5" fill="#35c0e6"/><circle cx="480" cy="170" r="2.5" fill="#35c0e6"/><circle cx="480" cy="270" r="2.5" fill="#35c0e6"/>
+
+              <!-- 5 Niveles separados cada 18 cm -->
+              <g id="svg-levels">
+                <!-- Nivel 5 -->
+                <g transform="translate(0,0)">
+                  <line x1="25" y1="52" x2="132" y2="52" stroke="#1d72b8" stroke-width="2.5" class="flow-anim" marker-end="url(#arrBlue)"/>
+                  <rect x="155" y="50" width="315" height="7" rx="2" fill="#1d72b8"/>
+                  <g stroke="#20206f" stroke-width="3" stroke-linecap="round">
+                    <line x1="172" y1="49" x2="184" y2="34"/><line x1="198" y1="49" x2="210" y2="34"/><line x1="224" y1="49" x2="236" y2="34"/><line x1="250" y1="49" x2="262" y2="34"/><line x1="276" y1="49" x2="288" y2="34"/><line x1="302" y1="49" x2="314" y2="34"/><line x1="328" y1="49" x2="340" y2="34"/><line x1="354" y1="49" x2="366" y2="34"/><line x1="380" y1="49" x2="392" y2="34"/><line x1="406" y1="49" x2="418" y2="34"/><line x1="432" y1="49" x2="444" y2="34"/>
+                  </g>
+                  <!-- Deflector Coroplast a 10° -->
+                  <line x1="155" y1="62" x2="472" y2="80" stroke="#35c0e6" stroke-width="4"/>
+                  <path d="M415,74 L518,84" stroke="#20206f" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrMint)"/>
+                </g>
+                <!-- Nivel 4 -->
+                <g transform="translate(0,58)">
+                  <line x1="25" y1="52" x2="132" y2="52" stroke="#1d72b8" stroke-width="2.5" class="flow-anim" marker-end="url(#arrBlue)"/>
+                  <rect x="155" y="50" width="315" height="7" rx="2" fill="#1d72b8"/>
+                  <g stroke="#20206f" stroke-width="3" stroke-linecap="round">
+                    <line x1="172" y1="49" x2="184" y2="34"/><line x1="198" y1="49" x2="210" y2="34"/><line x1="224" y1="49" x2="236" y2="34"/><line x1="250" y1="49" x2="262" y2="34"/><line x1="276" y1="49" x2="288" y2="34"/><line x1="302" y1="49" x2="314" y2="34"/><line x1="328" y1="49" x2="340" y2="34"/><line x1="354" y1="49" x2="366" y2="34"/><line x1="380" y1="49" x2="392" y2="34"/><line x1="406" y1="49" x2="418" y2="34"/><line x1="432" y1="49" x2="444" y2="34"/>
+                  </g>
+                  <line x1="155" y1="62" x2="472" y2="80" stroke="#35c0e6" stroke-width="4"/>
+                  <path d="M415,74 L518,84" stroke="#20206f" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrMint)"/>
+                </g>
+                <!-- Nivel 3 -->
+                <g transform="translate(0,116)">
+                  <line x1="25" y1="52" x2="132" y2="52" stroke="#1d72b8" stroke-width="2.5" class="flow-anim" marker-end="url(#arrBlue)"/>
+                  <rect x="155" y="50" width="315" height="7" rx="2" fill="#1d72b8"/>
+                  <g stroke="#20206f" stroke-width="3" stroke-linecap="round">
+                    <line x1="172" y1="49" x2="184" y2="34"/><line x1="198" y1="49" x2="210" y2="34"/><line x1="224" y1="49" x2="236" y2="34"/><line x1="250" y1="49" x2="262" y2="34"/><line x1="276" y1="49" x2="288" y2="34"/><line x1="302" y1="49" x2="314" y2="34"/><line x1="328" y1="49" x2="340" y2="34"/><line x1="354" y1="49" x2="366" y2="34"/><line x1="380" y1="49" x2="392" y2="34"/><line x1="406" y1="49" x2="418" y2="34"/><line x1="432" y1="49" x2="444" y2="34"/>
+                  </g>
+                  <line x1="155" y1="62" x2="472" y2="80" stroke="#35c0e6" stroke-width="4"/>
+                  <path d="M415,74 L518,84" stroke="#20206f" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrMint)"/>
+                </g>
+                <!-- Nivel 2 -->
+                <g transform="translate(0,174)">
+                  <line x1="25" y1="52" x2="132" y2="52" stroke="#1d72b8" stroke-width="2.5" class="flow-anim" marker-end="url(#arrBlue)"/>
+                  <rect x="155" y="50" width="315" height="7" rx="2" fill="#1d72b8"/>
+                  <g stroke="#20206f" stroke-width="3" stroke-linecap="round">
+                    <line x1="172" y1="49" x2="184" y2="34"/><line x1="198" y1="49" x2="210" y2="34"/><line x1="224" y1="49" x2="236" y2="34"/><line x1="250" y1="49" x2="262" y2="34"/><line x1="276" y1="49" x2="288" y2="34"/><line x1="302" y1="49" x2="314" y2="34"/><line x1="328" y1="49" x2="340" y2="34"/><line x1="354" y1="49" x2="366" y2="34"/><line x1="380" y1="49" x2="392" y2="34"/><line x1="406" y1="49" x2="418" y2="34"/><line x1="432" y1="49" x2="444" y2="34"/>
+                  </g>
+                  <line x1="155" y1="62" x2="472" y2="80" stroke="#35c0e6" stroke-width="4"/>
+                  <path d="M415,74 L518,84" stroke="#20206f" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrMint)"/>
+                </g>
+                <!-- Nivel 1 -->
+                <g transform="translate(0,232)">
+                  <line x1="25" y1="52" x2="132" y2="52" stroke="#1d72b8" stroke-width="2.5" class="flow-anim" marker-end="url(#arrBlue)"/>
+                  <rect x="155" y="50" width="315" height="7" rx="2" fill="#1d72b8"/>
+                  <g stroke="#20206f" stroke-width="3" stroke-linecap="round">
+                    <line x1="172" y1="49" x2="184" y2="34"/><line x1="198" y1="49" x2="210" y2="34"/><line x1="224" y1="49" x2="236" y2="34"/><line x1="250" y1="49" x2="262" y2="34"/><line x1="276" y1="49" x2="288" y2="34"/><line x1="302" y1="49" x2="314" y2="34"/><line x1="328" y1="49" x2="340" y2="34"/><line x1="354" y1="49" x2="366" y2="34"/><line x1="380" y1="49" x2="392" y2="34"/><line x1="406" y1="49" x2="418" y2="34"/><line x1="432" y1="49" x2="444" y2="34"/>
+                  </g>
+                  <line x1="155" y1="62" x2="472" y2="80" stroke="#35c0e6" stroke-width="4"/>
+                  <path d="M415,74 L518,84" stroke="#20206f" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#arrMint)"/>
+                </g>
+              </g>
+
+              <text x="500" y="30" fill="#20206f" font-size="10" font-weight="700" font-family="ui-monospace,monospace">DESCARGA TRASERA</text>
+              <text x="500" y="44" fill="#56717a" font-size="9">Pseudoheces resbalan a 10°</text>
+              <line x1="535" y1="60" x2="535" y2="312" stroke="#20206f" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrMint)"/>
+            </svg>
+          </div>
+
+          <div class="detail" style="margin-top:16px;min-height:110px" aria-live="polite">
+            <div class="detail-heading">
+              <span id="tower-num" class="mono">PARTE 01 /</span>
+              <h3 id="tower-title">Chasis Estructural (1×1×1 m en PVC Hidráulico de 1" Cédula 40)</h3>
+            </div>
+            <p id="tower-desc">Armazón cúbico unido con codos y "T" fijados con cinchos plásticos o pijas de acero inoxidable 316. Cuenta con perforaciones de 5 mm en los postes verticales para inundarse y hundirse sin flotar, y rieles horizontales cada 18 cm para deslizar las 5 charolas como cajones de horno.</p>
+          </div>
+        </div>
+
+        <!-- Tablas de Capacidad por Cubo y Lista de Materiales ($3,600 MXN) -->
+        <div style="display:flex;flex-direction:column;gap:22px">
+          <div class="panel-card">
+            <span class="section-num">CAPACIDAD REAL DE ALOJAMIENTO</span>
+            <h3 style="margin:6px 0 12px;color:var(--navy);font-size:18px">Distribución Física por Charola, Torre y Tanque</h3>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Parámetro</th>
+                  <th class="num">1 Charola</th>
+                  <th class="num">1 Torre (5 Pisos)</th>
+                  <th class="num">Tanque (4 Torres)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Hileras (separadas c/ 9.5 cm)</td>
+                  <td class="num">10 hileras</td>
+                  <td class="num">50 hileras</td>
+                  <td class="num">200 hileras</td>
+                </tr>
+                <tr>
+                  <td>Ostras/hilera (7–8 cm a 45°)</td>
+                  <td class="num">18 – 22</td>
+                  <td class="num">18 – 22</td>
+                  <td class="num">18 – 22</td>
+                </tr>
+                <tr>
+                  <td><strong>Capacidad Total Ostras</strong></td>
+                  <td class="num"><strong>180 – 220</strong></td>
+                  <td class="num"><strong>900 – 1,100</strong></td>
+                  <td class="num"><strong>3,600 – 4,400</strong></td>
+                </tr>
+                <tr>
+                  <td>Promedio Operativo Estándar</td>
+                  <td class="num">200 ostras</td>
+                  <td class="num">1,000 ostras</td>
+                  <td class="num"><strong>4,000 ostras</strong></td>
+                </tr>
+                <tr class="total-row">
+                  <td>Mabés Comerciales (Regla 2.0)</td>
+                  <td class="num">~400 pzas</td>
+                  <td class="num">~2,000 pzas</td>
+                  <td class="num">6,240 – 8,000 pzas</td>
+                </tr>
+              </tbody>
+            </table>
+            <p style="font-size:11px;color:var(--muted);margin:12px 0 0"><strong>Mantenimiento en 5 minutos:</strong> Cada charola con 200 ostras pesa solo 14–16 kg fuera del agua, permitiendo a una sola persona extraerla como un cajón para inspección o lavado rápido.</p>
+          </div>
+
+          <div class="panel-card">
+            <span class="section-num">LISTA DE MATERIALES (FERRETERÍA LOCAL)</span>
+            <h3 style="margin:6px 0 12px;color:var(--navy);font-size:18px">Costo de Construcción por Torre de 1,000 Ostras</h3>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Material</th>
+                  <th>Especificación</th>
+                  <th class="num">Costo (MXN)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PVC 1" Cédula 40</td>
+                  <td>8 tramos de 3 m + 8 codos + 20 "T"</td>
+                  <td class="num">$950</td>
+                </tr>
+                <tr>
+                  <td>Rejilla <i>Egg Crate</i></td>
+                  <td>10 paneles (60×120 cm) bases y peines</td>
+                  <td class="num">$1,600</td>
+                </tr>
+                <tr>
+                  <td>Malla Plástica HDPE</td>
+                  <td>5 m lineales (abertura romboidal 18 mm)</td>
+                  <td class="num">$450</td>
+                </tr>
+                <tr>
+                  <td>Láminas Coroplast</td>
+                  <td>3 láminas (1.22×2.44 m) deflectores 10°</td>
+                  <td class="num">$420</td>
+                </tr>
+                <tr>
+                  <td>Cinchos Plásticos UV</td>
+                  <td>Bolsa 500 pzas uso rudo (30 cm negros)</td>
+                  <td class="num">$180</td>
+                </tr>
+                <tr class="total-row">
+                  <td colspan="2">COSTO TOTAL POR TORRE ($3.60 MXN / OSTRA)</td>
+                  <td class="num">$3,600 MXN</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 02: HIDRODINÁMICA, CARRUSEL DE 4 ESQUINAS Y OPCIÓN A (GYRE) -->
+  <section class="section" id="hidrodinamica">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">02 / HIDRODINÁMICA Y GENERACIÓN DE OLAS</span>
+          <h2>El Carrusel de 4 Esquinas<br>y Pulsos Laminar Gyre.</h2>
+        </div>
+        <p>En un tanque cuadrado de 3×3×1 m (~7,500 L operativos), las 4 torres orientadas en sentido horario forman una cruz libre central de 1 m que impulsa un vórtice anular y concentra centrífugamente los desechos en el drenaje central.</p>
+      </div>
+
+      <div class="tech-grid reveal" style="margin-bottom:42px">
+        <!-- Vista en Planta del Tanque 3x3m con Carrusel Horario -->
+        <div class="panel-card">
+          <div class="figure-head mono" style="margin-bottom:14px">
+            <span>FIG. 03 / PLANTA DEL TANQUE GEOMEMBRANA 3×3 M</span>
+            <span>EFECTO TAZA DE TÉ (AUTOLIMPIEZA)</span>
+          </div>
+          <div class="svg-canvas">
+            <svg viewBox="0 0 420 340" aria-label="Vista superior del tanque de 3x3 metros con 4 torres en las esquinas y giro en carrusel">
+              <!-- Contorno Tanque 3x3m -->
+              <rect x="45" y="15" width="330" height="310" rx="18" fill="#ffffff" stroke="#1d72b8" stroke-width="5"/>
+              <!-- Pasillos centrales de 1 metro -->
+              <line x1="155" y1="15" x2="155" y2="325" stroke="#1d72b8" stroke-opacity=".18" stroke-dasharray="4 4"/>
+              <line x1="265" y1="15" x2="265" y2="325" stroke="#1d72b8" stroke-opacity=".18" stroke-dasharray="4 4"/>
+              <line x1="45" y1="120" x2="375" y2="120" stroke="#1d72b8" stroke-opacity=".18" stroke-dasharray="4 4"/>
+              <line x1="45" y1="220" x2="375" y2="220" stroke="#1d72b8" stroke-opacity=".18" stroke-dasharray="4 4"/>
+
+              <!-- Vórtice Anular Horario -->
+              <circle cx="210" cy="170" r="84" fill="none" stroke="#35c0e6" stroke-width="3" class="flow-anim"/>
+              <circle cx="210" cy="170" r="48" fill="none" stroke="#1d72b8" stroke-width="2" class="flow-anim" opacity=".65"/>
+
+              <!-- Módulo 1 (Sup Izq -> Mira a Módulo 2) -->
+              <rect x="56" y="26" width="94" height="88" rx="8" fill="#dff4ff" stroke="#20206f" stroke-width="2"/>
+              <rect x="145" y="45" width="9" height="50" rx="3" fill="#20206f" class="pulse-anim"/>
+              <text x="68" y="64" fill="#20206f" font-size="11" font-weight="700">TORRE 01</text>
+              <text x="68" y="80" fill="#1d72b8" font-size="9" font-family="ui-monospace,monospace">1,000 Ostras</text>
+              <path d="M72,98 L132,98" stroke="#1d72b8" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+              <!-- Módulo 2 (Sup Der -> Mira a Módulo 3) -->
+              <rect x="270" y="26" width="94" height="88" rx="8" fill="#dff4ff" stroke="#20206f" stroke-width="2"/>
+              <rect x="292" y="110" width="50" height="9" rx="3" fill="#20206f" class="pulse-anim"/>
+              <text x="282" y="64" fill="#20206f" font-size="11" font-weight="700">TORRE 02</text>
+              <text x="282" y="80" fill="#1d72b8" font-size="9" font-family="ui-monospace,monospace">1,000 Ostras</text>
+              <path d="M348,42 L348,98" stroke="#1d72b8" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+              <!-- Módulo 3 (Inf Der -> Mira a Módulo 4) -->
+              <rect x="270" y="226" width="94" height="88" rx="8" fill="#dff4ff" stroke="#20206f" stroke-width="2"/>
+              <rect x="266" y="245" width="9" height="50" rx="3" fill="#20206f" class="pulse-anim"/>
+              <text x="282" y="264" fill="#20206f" font-size="11" font-weight="700">TORRE 03</text>
+              <text x="282" y="280" fill="#1d72b8" font-size="9" font-family="ui-monospace,monospace">1,000 Ostras</text>
+              <path d="M346,300 L286,300" stroke="#1d72b8" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+              <!-- Módulo 4 (Inf Izq -> Mira a Módulo 1) -->
+              <rect x="56" y="226" width="94" height="88" rx="8" fill="#dff4ff" stroke="#20206f" stroke-width="2"/>
+              <rect x="78" y="221" width="50" height="9" rx="3" fill="#20206f" class="pulse-anim"/>
+              <text x="68" y="264" fill="#20206f" font-size="11" font-weight="700">TORRE 04</text>
+              <text x="68" y="280" fill="#1d72b8" font-size="9" font-family="ui-monospace,monospace">1,000 Ostras</text>
+              <path d="M72,298 L72,242" stroke="#1d72b8" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+              <!-- Drenaje Central de Fondo 4" -->
+              <circle cx="210" cy="170" r="26" fill="#20206f" stroke="#7ee6df" stroke-width="3"/>
+              <text x="210" y="167" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="700">DRENAJE 4"</text>
+              <text x="210" y="178" text-anchor="middle" fill="#7ee6df" font-size="7" font-family="ui-monospace,monospace">Bottom Drain</text>
+            </svg>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin:14px 0 0"><strong>Regla de Oro de Velocidad (3 a 8 cm/s):</strong> Una gota de trazador o microalgas frente a cada módulo debe tardar entre <strong>12 y 25 segundos</strong> en cruzar el metro completo de la charola (&lt;5 s cierra la valva por reflejo defensivo; &gt;35 s deja sin alimento ni oxígeno el fondo).</p>
+        </div>
+
+        <!-- Comparador Interactivo de las 3 Opciones de Equipamiento -->
+        <div class="panel-card">
+          <span class="section-num">COMPARATIVA DE EQUIPAMIENTO HIDRÁULICO</span>
+          <h3 style="margin:6px 0 14px;color:var(--navy);font-size:20px">3 Opciones para Generar el Flujo y el Pulso</h3>
+
+          <div class="pill-bar" role="tablist" aria-label="Opciones de generación de olas">
+            <button class="pill-btn" type="button" role="tab" aria-selected="true" data-wave="A">Opción A: Bombas Gyre (Elegida)</button>
+            <button class="pill-btn" type="button" role="tab" aria-selected="false" data-wave="B">Opción B: Flautas Spray Bars</button>
+            <button class="pill-btn" type="button" role="tab" aria-selected="false" data-wave="C">Opción C: Air-Lifts (Blower)</button>
+          </div>
+
+          <div id="wave-box" class="detail" style="min-height:215px">
+            <div class="detail-heading">
+              <span id="wave-tag" class="mono">OPCIÓN A · SELECCIONADA POR EFICIENCIA</span>
+              <h3 id="wave-title">Generadores de Flujo Transversal (Jebao SCP-180 / MCP-180)</h3>
+            </div>
+            <p id="wave-desc" style="font-size:12.5px;line-height:1.65;margin-top:10px">
+              4 bombas tipo <strong>Gyre de 20,000 a 36,000 L/h</strong> montadas <strong>verticalmente a 50 cm de profundidad</strong> en el poste de entrada de cada torre. Sus dos rotores direccionables lanzan una cortina plana laminar: un rotor cubre los pisos 1–3 y el otro los pisos 3–5. En <strong>Modo Pulso (4 s al 80% / 2 s al 30%)</strong> estimulan el bombeo branquial con un consumo total de apenas <strong>160 a 200 Watts</strong> entre las 4 bombas.
+            </p>
+            <div id="wave-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+              <div><small class="mono" style="font-size:9px;color:var(--blue)">CONSUMO TOTAL</small><div style="font-weight:700;font-size:13px;color:var(--navy)">160 – 200 W</div></div>
+              <div><small class="mono" style="font-size:9px;color:var(--blue)">PATRÓN DE OLA</small><div style="font-weight:700;font-size:13px;color:var(--navy)">Pulso 4s / 2s</div></div>
+              <div><small class="mono" style="font-size:9px;color:var(--blue)">CAPEX 4 BOMBAS + UPS</small><div style="font-weight:700;font-size:13px;color:var(--navy)">$16,800 MXN</div></div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;padding:14px 18px;border-radius:18px;background:#dffcf5;border:1px solid #7ee6df;font-size:11.5px;color:var(--ink)">
+            <strong>Ventaja operativa MIPEZ:</strong> La tecnología de onda sinusoidal en corriente directa (DC) permite sincronización inalámbrica <i>Master/Slave</i> y respaldo directo con batería No-Break (UPS) ante cortes eléctricos.
+          </div>
+        </div>
+      </div>
+
+      <!-- SECUENCIA DE 6 PASOS DE IMPLEMENTACIÓN DE LA OPCIÓN A (ESTILO .protocol / .step DE MIPEZ) -->
+      <div class="section-top reveal" style="margin-bottom:24px">
+        <div>
+          <span class="section-num">PROTOCOLO DE EJECUCIÓN · OPCIÓN A</span>
+          <h3 style="font-size:26px;font-weight:500;color:var(--navy);margin:8px 0 0">Implementación Paso a Paso de las Bombas Gyre.</h3>
+        </div>
+        <p>Desde el dimensionamiento electrónico hasta la calibración en vivo con trazador de microalgas.</p>
+      </div>
+
+      <div class="protocol reveal">
+        <article class="step">
+          <span class="step-no">01</span>
+          <h3>Cálculo y Adquisición</h3>
+          <p>Selección de 4 generadores de flujo transversal Jebao SCP-180 / MCP-180 (20,000–36,000 L/h c/u) con controlador electrónico y No-Break (UPS).</p>
+          <div class="step-foot">FASE 01 / DIMENSIONAMIENTO</div>
+        </article>
+        <article class="step">
+          <span class="step-no">02</span>
+          <h3>Montaje Vertical a 50 cm</h3>
+          <p>Fijación vertical al poste delantero de PVC de 1" de cada torre a 50 cm de profundidad con abrazaderas plásticas; un rotor barre pisos 1–3 y otro 4–5.</p>
+          <div class="step-foot">FASE 02 / ENSAMBLE EN JAULA</div>
+        </article>
+        <article class="step">
+          <span class="step-no">03</span>
+          <h3>Orientación en Carrusel</h3>
+          <p>Colocación de los 4 módulos en las esquinas en sentido de las manecillas del reloj (1→2→3→4) con rejillas inclinadas 5°–10° hacia las charolas.</p>
+          <div class="step-foot">FASE 03 / INTEGRACIÓN TANQUE</div>
+        </article>
+        <article class="step">
+          <span class="step-no">04</span>
+          <h3>Gabinete Eléctrico IP66</h3>
+          <p>Ruteo de cables por la estructura de PVC hacia un gabinete impermeable IP66 externo con sincronización inalámbrica Master/Slave.</p>
+          <div class="step-foot">FASE 04 / PROTECCIÓN ELÉCTRICA</div>
+        </article>
+        <article class="step">
+          <span class="step-no">05</span>
+          <h3>Programación de Pulsos</h3>
+          <p>Ajuste en <i>Wave/Pulse Mode</i>: 4 segundos de aceleración al 75–80% de potencia y 2 segundos de reposo al 30% para estimular el bombeo branquial.</p>
+          <div class="step-foot">FASE 05 / AUTOMATIZACIÓN</div>
+        </article>
+        <article class="step">
+          <span class="step-no">06</span>
+          <h3>Calibración con Trazador</h3>
+          <p>Prueba en vivo con microalgas verificando que el flujo cruce el metro de charola en 12 a 25 segundos (3–8 cm/s) y sedimente al centro.</p>
+          <div class="step-foot">FASE 06 / VERIFICACIÓN MIPEZ</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 03: TREN DE FILTRACIÓN RAS Y BYPASS DE ALIMENTACIÓN (ESTILO .news DE MIPEZ) -->
+  <section class="section news" id="filtracion">
+    <div class="wrap news-grid">
+      <div class="reveal">
+        <span class="section-num">03 / INGENIERÍA SANITARIA Y SOPORTE DE VIDA</span>
+        <h2>Drenaje central, hidrociclón y bucle de alimentación.</h2>
+        <p class="source-label">SISTEMA DE RECIRCULACIÓN ACUÍCOLA (RAS) · 7,500 L</p>
+        <div class="news-copy" style="margin-top:20px">
+          <p>Para mantener 4,000 ostras produciendo nácar de alto espesor sin intoxicación por amonio ni choques térmicos, el agua sale por el <strong>Bottom Drain central de 4"</strong> hacia un tren de separación centrífuga y biofiltración.</p>
+          <p class="fact"><strong>El Secreto del Bypass de Alimentación:</strong> Cuando se dosifica el fitoplancton, si el agua pasa por el <i>Protein Skimmer</i> y el UV-C, el equipo retira y esteriliza el alimento en minutos. Al conmutar las válvulas al <strong>Modo Bypass</strong> durante 60–90 min, el agua recircula en bucle corto directo del drenaje a las bombas de retorno, manteniendo el 100% de las microalgas en suspensión.</p>
+        </div>
+
+        <p class="source-label">ESPECIFICACIONES DEL TREN DE SOPORTE DE VIDA</p>
+        <div class="sources">
+          <div class="source-item"><span><b>01</b>Hidrociclón Sedimentador Cónico (Purga diaria de lodos pesados)</span><span class="mono">4" PVC</span></div>
+          <div class="source-item"><span><b>02</b>Protein Skimmer Comercial Alto Bioload (SRO-5000 / 6000)</span><span class="mono">Exportación</span></div>
+          <div class="source-item"><span><b>03</b>Biofiltro Móvil MBBR (100 L Biomedia K1 + 100 kg Aragonito Buffer)</span><span class="mono">Nitrificación</span></div>
+          <div class="source-item"><span><b>04</b>2× Bombas DC Jebao DCP-20000 + UV-C 75W + Chiller Titanio (26 °C)</span><span class="mono">Retorno 2"</span></div>
+        </div>
+      </div>
+
+      <!-- Diagrama Técnico Interactivo del Tren Hidráulico y Válvulas de Bypass -->
+      <div class="dark-card reveal">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap">
+          <span class="mono" style="font-size:10px;color:var(--aqua);letter-spacing:.1em">FIG. 04 / ESQUEMA HIDRÁULICO CONMUTABLE</span>
+          <span id="ras-badge" class="mono" style="font-size:10px;padding:4px 10px;border-radius:12px;background:rgba(126,230,223,.18);color:var(--aqua)">MODO FILTRACIÓN COMPLETA ACTIVO</span>
+        </div>
+
+        <div class="mode-switch" role="group" aria-label="Selector de modo hidráulico RAS">
+          <button type="button" class="mode-btn" id="btn-mode-ras" aria-pressed="true">Modo 1: Filtración RAS Completa (22 h/día)</button>
+          <button type="button" class="mode-btn" id="btn-mode-bypass" aria-pressed="false">Modo 2: Bypass de Alimentación (Bucle Corto)</button>
+        </div>
+
+        <div style="background:rgba(11,22,35,.65);border:1px solid rgba(126,230,223,.22);border-radius:20px;padding:16px">
+          <svg viewBox="0 0 620 330" aria-label="Diagrama técnico del drenaje de fondo de 4 pulgadas hacia el hidrociclón, sump y línea de bypass">
+            <!-- Tanque 3x3m arriba a la izquierda -->
+            <rect x="20" y="18" width="185" height="95" rx="12" fill="#123d67" stroke="#7ee6df" stroke-width="2.5"/>
+            <text x="34" y="42" fill="#ffffff" font-size="11" font-weight="700">TANQUE 3×3×1 M</text>
+            <text x="34" y="58" fill="#7ee6df" font-size="9" font-family="ui-monospace,monospace">4,000 Ostras · 7,500 L</text>
+            <!-- Bottom Drain 4" -->
+            <ellipse cx="112" cy="98" rx="26" ry="8" fill="#20206f" stroke="#35c0e6" stroke-width="2"/>
+            <text x="112" y="84" text-anchor="middle" fill="#dffcf5" font-size="8" font-family="ui-monospace,monospace">Bottom Drain 4"</text>
+
+            <!-- Línea Principal Drenaje 4" -->
+            <path d="M112,106 L112,205 L185,205" fill="none" stroke="#35c0e6" stroke-width="6"/>
+            <path d="M112,110 L112,205 L185,205" fill="none" stroke="#ffffff" stroke-width="2" class="flow-anim"/>
+
+            <!-- Válvula 1 (Hacia Hidrociclón) -->
+            <g id="svg-branch-ras">
+              <path d="M185,205 L245,205" fill="none" stroke="#35c0e6" stroke-width="5"/>
+              <circle id="v1-circle" cx="212" cy="205" r="10" fill="#7ee6df" stroke="#171b58" stroke-width="2"/>
+              <text x="212" y="228" text-anchor="middle" fill="#7ee6df" font-size="8" font-weight="700" font-family="ui-monospace,monospace">VÁLVULA 1</text>
+
+              <!-- Hidrociclón Sedimentador -->
+              <path d="M245,165 L305,165 L295,235 L275,275 L255,235 Z" fill="#1d72b8" stroke="#7ee6df" stroke-width="2"/>
+              <text x="275" y="195" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="700">HIDROCICLÓN</text>
+              <text x="275" y="208" text-anchor="middle" fill="#dffcf5" font-size="7.5">Swirl Separator</text>
+              <text x="275" y="295" text-anchor="middle" fill="#7ee6df" font-size="8" font-family="ui-monospace,monospace">↓ Purga Lodos</text>
+
+              <!-- Paso a Sump -->
+              <path d="M305,185 L350,185" fill="none" stroke="#35c0e6" stroke-width="4" class="flow-anim"/>
+            </g>
+
+            <!-- Sump de Filtración (Cámara Skimmer + MBBR + Bombas Retorno) -->
+            <rect x="350" y="150" width="248" height="135" rx="14" fill="#102a45" stroke="#7ee6df" stroke-width="2"/>
+            <line x1="432" y1="150" x2="432" y2="265" stroke="#7ee6df" stroke-width="1.5"/>
+            <line x1="515" y1="168" x2="515" y2="285" stroke="#7ee6df" stroke-width="1.5"/>
+
+            <!-- Cámara 1: Skimmer -->
+            <g id="svg-chamber-skimmer">
+              <rect x="372" y="165" width="38" height="95" rx="6" fill="#1d72b8" stroke="#ffffff" stroke-width="1.2"/>
+              <rect x="366" y="156" width="50" height="16" rx="4" fill="#7ee6df"/>
+              <text x="391" y="278" text-anchor="middle" fill="#dffcf5" font-size="8" font-weight="600">SKIMMER</text>
+            </g>
+
+            <!-- Cámara 2: Biofiltro MBBR K1 -->
+            <g id="svg-chamber-mbbr">
+              <circle cx="455" cy="195" r="5" fill="#7ee6df" opacity=".8"/><circle cx="475" cy="190" r="5" fill="#7ee6df" opacity=".8"/><circle cx="492" cy="202" r="5" fill="#7ee6df" opacity=".8"/>
+              <circle cx="462" cy="218" r="5" fill="#7ee6df" opacity=".8"/><circle cx="485" cy="222" r="5" fill="#7ee6df" opacity=".8"/><circle cx="470" cy="240" r="5" fill="#7ee6df" opacity=".8"/>
+              <text x="473" y="278" text-anchor="middle" fill="#dffcf5" font-size="8" font-weight="600">MBBR K1</text>
+            </g>
+
+            <!-- Cámara 3: Bombas de Retorno DC -->
+            <rect x="532" y="222" width="48" height="38" rx="6" fill="#20206f" stroke="#7ee6df" stroke-width="2"/>
+            <text x="556" y="244" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="700">2× DCP</text>
+            <text x="556" y="278" text-anchor="middle" fill="#7ee6df" font-size="8" font-weight="600">RETORNO</text>
+
+            <!-- Válvula 3 (Salida Normal del Sump) -->
+            <circle id="v3-circle" cx="500" cy="150" r="9" fill="#7ee6df" stroke="#171b58" stroke-width="2"/>
+            <text x="488" y="138" text-anchor="end" fill="#7ee6df" font-size="8" font-weight="700" font-family="ui-monospace,monospace">VÁLVULA 3</text>
+
+            <!-- Línea de Bypass de Alimentación (Válvula 2) -->
+            <g id="svg-branch-bypass" opacity="0.32">
+              <path d="M185,205 L185,112 L556,112 L556,222" fill="none" stroke="#7ee6df" stroke-width="4" stroke-dasharray="7 5"/>
+              <circle id="v2-circle" cx="345" cy="112" r="10" fill="#56717a" stroke="#171b58" stroke-width="2"/>
+              <text x="345" y="96" text-anchor="middle" fill="#7ee6df" font-size="8.5" font-weight="700" font-family="ui-monospace,monospace">VÁLVULA 2 (BYPASS ALIMENTACIÓN)</text>
+            </g>
+
+            <!-- Tubería de Retorno 2" hacia el Tanque -->
+            <path d="M570,222 L570,52 L205,52" fill="none" stroke="#7ee6df" stroke-width="4"/>
+            <path d="M570,222 L570,52 L205,52" fill="none" stroke="#ffffff" stroke-width="1.8" class="flow-anim"/>
+            <text x="385" y="42" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="600">Tubería de Retorno 2" (+ UV-C 75W &amp; Chiller 26 °C)</text>
+          </svg>
+        </div>
+
+        <div id="ras-status-text" style="margin-top:14px;font-size:12px;color:#d6e7ed">
+          <strong>Estado de Válvulas (Modo 1):</strong> Válvula 1 <b>ABIERTA</b> · Válvula 3 <b>ABIERTA</b> · Válvula 2 (Bypass) <b>CERRADA</b>. El 100% del agua atraviesa el hidrociclón, el Protein Skimmer y el biofiltro MBBR K1.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 04: PRESUPUESTO CAPEX, OPEX Y PROYECCIÓN FINANCIERA A 5 AÑOS -->
+  <section class="section" id="finanzas">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">04 / VIABILIDAD FINANCIERA Y ESCALAMIENTO</span>
+          <h2>Presupuesto Llave en Mano<br>y Proyección a 5 Años.</h2>
+        </div>
+        <p>Modelo financiero conservador basado en 1 cosecha anual por tanque (10 meses de recubrimiento nacarado + 2 meses de lapidaria y descanso sanitario), comprando organismo de 7 cm listo para implante a $25 MXN c/u.</p>
+      </div>
+
+      <!-- Tablas gemelas: CAPEX ($113,900 MXN) y OPEX ($424,000 MXN/año) -->
+      <div class="tech-grid reveal">
+        <div class="panel-card">
+          <span class="section-num">INVERSIÓN INICIAL POR TANQUE (CAPEX)</span>
+          <h3 style="margin:6px 0 12px;color:var(--navy);font-size:19px">Desglose de Infraestructura (Capacidad: 4,000 Ostras)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Partida / Equipamiento</th>
+                <th class="num">Costo (MXN)</th>
+                <th class="num">%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Sistema de Olas Opción A</strong><br><small style="color:var(--muted)">4× Bombas Gyre Jebao SCP-180 ($13,600) + Gabinete IP66 y No-Break UPS ($3,200)</small></td>
+                <td class="num">$16,800</td>
+                <td class="num">14.7%</td>
+              </tr>
+              <tr>
+                <td><strong>2. Tanque 3×3 m + 4 Torres Modulares</strong><br><small style="color:var(--muted)">Geomembrana HDPE 1 mm con estructura y drenaje 4" ($14,500) + 4 Torres de 5 pisos ($14,400)</small></td>
+                <td class="num">$28,900</td>
+                <td class="num">25.4%</td>
+              </tr>
+              <tr>
+                <td><strong>3. Sump, Hidrociclón y 2× Bombas DC</strong><br><small style="color:var(--muted)">Sump IBC 1,000 L + Ciclón ($6,500) + 2× Bombas Jebao DCP-20000 en paralelo ($11,900)</small></td>
+                <td class="num">$18,400</td>
+                <td class="num">16.2%</td>
+              </tr>
+              <tr>
+                <td><strong>4. Filtración Biológica, Skimmer y UV-C</strong><br><small style="color:var(--muted)">Skimmer SRO-5000 ($18,500) + MBBR 100 L K1 y Aragonito ($5,800) + UV-C 75W ($4,200)</small></td>
+                <td class="num">$28,500</td>
+                <td class="num">25.0%</td>
+              </tr>
+              <tr>
+                <td><strong>5. Climatización y Plomería de Bypass</strong><br><small style="color:var(--muted)">Chiller/Bomba de calor Titanio 1–1.5 HP a 26 °C ($16,500) + PVC Céd. 80 y válvulas ($4,800)</small></td>
+                <td class="num">$21,300</td>
+                <td class="num">18.7%</td>
+              </tr>
+              <tr class="total-row">
+                <td>TOTAL INFRAESTRUCTURA POR TANQUE ($28.47/OSTRA)</td>
+                <td class="num">$113,900 MXN</td>
+                <td class="num">100%</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="font-size:11px;color:var(--muted);margin:12px 0 0"><strong>Nota CAPEX Año 1 ($190,000 MXN):</strong> Incluye el Tanque 1 ($113,900) + Taller completo de lapidaria con sierras diamantadas ($38,000) + acondicionamiento de local y trámites ($38,100). Si se instala en costa con pozo playero, el CAPEX por tanque baja a <strong>$88,000–$92,000 MXN</strong>.</p>
+        </div>
+
+        <div class="panel-card">
+          <span class="section-num">COSTO OPERATIVO ANUAL POR TANQUE (OPEX)</span>
+          <h3 style="margin:6px 0 12px;color:var(--navy);font-size:19px">Operación Mensual y Biológicos (1 Ciclo = 12 Meses)</h3>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Concepto Operativo</th>
+                <th class="num">Mensual</th>
+                <th class="num">Anual (MXN)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Reposición Lote Biológico (4,000 ostras)</strong><br><small style="color:var(--muted)">Ejemplares de 7 cm listos para implante ($25 MXN c/u)</small></td>
+                <td class="num">—</td>
+                <td class="num">$100,000</td>
+              </tr>
+              <tr>
+                <td><strong>Insumos de Implante y Lapidaria</strong><br><small style="color:var(--muted)">12,000 núcleos, cianoacrilato médico, mentol, discos, epóxico</small></td>
+                <td class="num">—</td>
+                <td class="num">$42,000</td>
+              </tr>
+              <tr>
+                <td><strong>Energía Eléctrica Continua</strong><br><small style="color:var(--muted)">4 Gyre + 2 Retorno + Skimmer (~550 W) + arranques Chiller</small></td>
+                <td class="num">$2,500</td>
+                <td class="num">$30,000</td>
+              </tr>
+              <tr>
+                <td><strong>Nutrición (Microalgas) y Química</strong><br><small style="color:var(--muted)">Dieta tri-algal refrigerada + Calcio, KH, Estroncio y Sal</small></td>
+                <td class="num">$4,800</td>
+                <td class="num">$57,600</td>
+              </tr>
+              <tr>
+                <td><strong>Mano de Obra y Destajo Lapidaria</strong><br><small style="color:var(--muted)">1 técnico medio tiempo + corte y pulido en meses 11 y 12</small></td>
+                <td class="num">$15,000</td>
+                <td class="num">$180,000</td>
+              </tr>
+              <tr>
+                <td><strong>Mantenimiento y Consumibles</strong><br><small style="color:var(--muted)">Rotores de repuesto, lámpara UV anual y medios filtrantes</small></td>
+                <td class="num">$1,200</td>
+                <td class="num">$14,400</td>
+              </tr>
+              <tr class="total-row">
+                <td>TOTAL OPEX (COSTO/PERLA COMERCIAL: ~$67.95 MXN)</td>
+                <td class="num">~$23,500/m</td>
+                <td class="num">$424,000 MXN</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SIMULADOR INTERACTIVO DE RENTABILIDAD Y JOYERÍA EN PLATA .925 -->
+      <div class="sim-box reveal">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px">
+          <div>
+            <span class="section-num">SIMULADOR INTERACTIVO MIPEZ · TIEMPO REAL</span>
+            <h3 style="margin:4px 0 0;color:var(--navy);font-size:22px">Calculadora de Escalamiento y Multiplicador en Joyería (.925)</h3>
+          </div>
+          <button type="button" class="pill-btn no-print" id="btn-reset-sim">Restaurar Escenario Base (1 Tanque)</button>
+        </div>
+
+        <div class="sim-controls">
+          <div class="slider-group">
+            <label for="sim-tanks">Tanques 3×3 m Operando <span id="val-tanks">1 Tanque (4,000 ostras)</span></label>
+            <input type="range" id="sim-tanks" min="1" max="4" step="1" value="1">
+            <div class="slider-hint">Escalamiento orgánico del Año 1 (1 tanque) al Año 4–5 (4 tanques = 16,000 ostras).</div>
+          </div>
+
+          <div class="slider-group">
+            <label for="sim-survival">Supervivencia Post-Implante <span id="val-survival">80% (3,200 vivas/T)</span></label>
+            <input type="range" id="sim-survival" min="70" max="90" step="5" value="80">
+            <div class="slider-hint">3 núcleos por ostra: al 80% se cosechan 9,600 domos brutos (6,240 comerciales A–AAA).</div>
+          </div>
+
+          <div class="slider-group">
+            <label for="sim-jewelry">% Perlas AAA en Joyería Plata .925 <span id="val-jewelry">0% (Solo Gema Suelta)</span></label>
+            <input type="range" id="sim-jewelry" min="0" max="100" step="10" value="0">
+            <div class="slider-hint">Engastar en Plata .925 cuesta +$280 MXN, pero eleva el precio de $550 a $2,200 MXN c/u.</div>
+          </div>
+        </div>
+
+        <div class="sim-kpis">
+          <div class="sim-kpi">
+            <span class="mono">Cosecha Comercial (A–AAA)</span>
+            <strong id="kpi-pearls">6,240 pzas</strong>
+            <small id="kpi-pearls-sub">1,920 Grado AAA + 4,320 Grado A</small>
+          </div>
+          <div class="sim-kpi">
+            <span class="mono">Ingresos Brutos Anuales</span>
+            <strong id="kpi-rev">$2,072,000 MXN</strong>
+            <small id="kpi-rev-sub">Incluye subproducto y 45 kg de callo/T</small>
+          </div>
+          <div class="sim-kpi">
+            <span class="mono">OPEX + Platería + Mkt (8%)</span>
+            <strong id="kpi-cost">$589,760 MXN</strong>
+            <small id="kpi-cost-sub">Operación RAS, biológicos y ventas</small>
+          </div>
+          <div class="sim-kpi highlight">
+            <span class="mono">EBITDA / Utilidad Anual</span>
+            <strong id="kpi-ebitda">$1,482,240 MXN</strong>
+            <small id="kpi-margin">Margen Operativo: 71.5%</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLA DE PROYECCIÓN FINANCIERA A 5 AÑOS (ESCALAMIENTO ORGÁNICO DE 1 A 4 TANQUES) -->
+      <div class="panel-card reveal" style="margin-top:28px;overflow-x:auto">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px">
+          <div>
+            <span class="section-num">CORRIDA FINANCIERA CONSOLIDADA A 5 AÑOS</span>
+            <h3 style="margin:4px 0 0;color:var(--navy);font-size:20px">Crecimiento con Reinversión de Utilidades (1 a 4 Tanques)</h3>
+          </div>
+          <span class="mono" style="font-size:10px;color:var(--blue);background:var(--sky);padding:6px 12px;border-radius:14px">Capital Total Requerido Año 1: $614,000 MXN ($190k CAPEX + $424k OPEX)</span>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Indicador Financiero (MXN)</th>
+              <th class="num">Año 1 (1 Tanque*)</th>
+              <th class="num">Año 2 (2 Tanques)</th>
+              <th class="num">Año 3 (3 Tanques)</th>
+              <th class="num">Año 4 (4 Tanques)</th>
+              <th class="num">Año 5 (4 Tanques)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ostras Implantadas en Sistema</td>
+              <td class="num">4,000</td>
+              <td class="num">8,000</td>
+              <td class="num">12,000</td>
+              <td class="num">16,000</td>
+              <td class="num">16,000</td>
+            </tr>
+            <tr>
+              <td>Perlas Comerciales Vendidas (Grado AAA y A)</td>
+              <td class="num">4,680 pzas</td>
+              <td class="num">12,480 pzas</td>
+              <td class="num">18,720 pzas</td>
+              <td class="num">24,960 pzas</td>
+              <td class="num">24,960 pzas</td>
+            </tr>
+            <tr>
+              <td><strong>Ingresos Brutos por Ventas</strong></td>
+              <td class="num"><strong>$1,554,000</strong></td>
+              <td class="num"><strong>$4,144,000</strong></td>
+              <td class="num"><strong>$6,216,000</strong></td>
+              <td class="num"><strong>$8,288,000</strong></td>
+              <td class="num"><strong>$8,288,000</strong></td>
+            </tr>
+            <tr>
+              <td>(-) CAPEX (Tanques, Taller Lapidaria y Permisos)</td>
+              <td class="num">-$190,000</td>
+              <td class="num">-$114,000</td>
+              <td class="num">-$114,000</td>
+              <td class="num">-$114,000</td>
+              <td class="num">$0</td>
+            </tr>
+            <tr>
+              <td>(-) OPEX (Biológicos, Luz, Alimento, Insumos, Nómina)</td>
+              <td class="num">-$424,000</td>
+              <td class="num">-$780,000</td>
+              <td class="num">-$1,120,000</td>
+              <td class="num">-$1,450,000</td>
+              <td class="num">-$1,450,000</td>
+            </tr>
+            <tr>
+              <td>(-) Gastos de Venta, Empaque y Marketing (8%)</td>
+              <td class="num">-$124,320</td>
+              <td class="num">-$331,520</td>
+              <td class="num">-$497,280</td>
+              <td class="num">-$663,040</td>
+              <td class="num">-$663,040</td>
+            </tr>
+            <tr class="total-row">
+              <td>Flujo Operativo Antes de Impuestos (EBITDA Neto)</td>
+              <td class="num">$815,680</td>
+              <td class="num">$2,918,480</td>
+              <td class="num">$4,484,720</td>
+              <td class="num">$6,060,960</td>
+              <td class="num">$6,174,960</td>
+            </tr>
+            <tr>
+              <td>Margen Operativo Antes de Impuestos</td>
+              <td class="num">52.5%</td>
+              <td class="num">70.4%</td>
+              <td class="num">72.1%</td>
+              <td class="num">73.1%</td>
+              <td class="num"><strong>74.5%</strong></td>
+            </tr>
+            <tr class="total-row" style="background:rgba(53,192,230,.18)">
+              <td>FLUJO DE EFECTIVO ACUMULADO (5 AÑOS)</td>
+              <td class="num">$815,680</td>
+              <td class="num">$3,734,160</td>
+              <td class="num">$8,218,880</td>
+              <td class="num">$14,279,840</td>
+              <td class="num">$20,454,800</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="font-size:11px;color:var(--muted);margin:12px 0 0">*En el Año 1 se aplica un castigo conservador del 25% en ventas por curva de aprendizaje técnica y posicionamiento comercial. En los Años 2 a 5 el OPEX por tanque disminuye ~8% por economías de escala en mano de obra y compra de insumos por volumen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 05: BIOLOGÍA PRODUCTIVA Y PREPARACIÓN DEL PROYECTO -->
+  <section class="prepare section-alt" id="implementacion">
+    <div class="wrap prepare-inner reveal">
+      <div>
+        <span class="section-num">05 / BIOLOGÍA PRODUCTIVA Y EJECUCIÓN</span>
+        <h2>¿Cuántas perlas produce una ostra al año?</h2>
+        <p>En cultivo de perla mabé (media perla adherida a la cara interna de las valvas), una ostra produce <strong>de 2 a 4 perlas comerciales en una sola cosecha terminal de 10 meses</strong>. El punto dulce de rentabilidad es implantar <strong>3 núcleos hemisféricos de 10–12 mm</strong> (2 en la valva izquierda y 1 en la derecha).</p>
+
+        <table class="data-table" style="margin-top:18px;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px #1d72b80a">
+          <thead>
+            <tr>
+              <th style="padding-left:14px">Sistema de Cultivo</th>
+              <th>Rendimiento / Ciclo</th>
+              <th class="num" style="padding-right:14px">Éxito Comercial</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding-left:14px"><strong>Ostra Marina Mabé (RAS MIPEZ)</strong></td>
+              <td>2 a 3 perlas en 10 meses</td>
+              <td class="num" style="padding-right:14px"><strong>75% – 85%</strong></td>
+            </tr>
+            <tr>
+              <td style="padding-left:14px">Perla Redonda Libre (Cirugía gonadal)</td>
+              <td>1 perla en 18–24 meses (0.5/año)</td>
+              <td class="num" style="padding-right:14px">30% – 40%</td>
+            </tr>
+            <tr>
+              <td style="padding-left:14px">Mejillón Agua Dulce (<i>Hyriopsis</i>)</td>
+              <td>20–40 perlas de bajo valor ($20–$80)</td>
+              <td class="num" style="padding-right:14px">Baja densidad</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="btn-row no-print" style="margin-top:24px">
+          <button type="button" class="btn" onclick="window.print()">Imprimir / Exportar Dossier PDF <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+
+      <div class="details-stack">
+        <details open>
+          <summary>1. Regla práctica del "2.0 Efectivo" para dimensionar tanques</summary>
+          <ul>
+            <li>A cada ostra viva ingresada al tanque se le adhieren <strong>3 núcleos hemisféricos</strong> con cianoacrilato grado médico bajo relajación con mentol.</li>
+            <li>Descontando un <strong>20% de mortalidad anual</strong> y los domos con recubrimiento irregular, cada ostra ingresada entrega entre <strong>1.8 y 2.2 perlas comerciales listas para venta (Grado A a AAA)</strong>.</li>
+            <li><strong>1,000 ostras (1 Torre) = ~2,000 perlas mabé vendibles al año</strong> + ~600–800 piezas para marquetería o cosmética + ~11 kg de callo de ostra gourmet.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>2. ¿Qué preparar para instalar el primer módulo de 3×3 m?</summary>
+          <ul>
+            <li>Espacio techado o invernadero ventilado de mínimo <strong>25 m²</strong> con piso firme nivelado para soportar 8 toneladas de carga distribuida (888 kg/m²).</li>
+            <li>Acometida eléctrica bifásica con respaldo No-Break (UPS) para los 4 generadores Gyre y las 2 bombas de retorno DC.</li>
+            <li>Acceso a agua de mar filtrada (pipa/pozo playero) o reservorio para mezcla con sal sintética grado acuícola + dosificación Balling (Calcio, Carbonatos y Estroncio).</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>3. Estrategia fiscal y comercial recomendada en México</summary>
+          <ul>
+            <li><strong>Régimen Acuícola Primario (AGAPES / RESICO):</strong> El cultivo y engorda de bivalvos goza de exenciones preferenciales de ISR en actividades primarias.</li>
+            <li><strong>Doble canal de liquidez:</strong> Venta de gema suelta al mayoreo a talleres joyeros ($220 a $550 MXN) para recuperar el OPEX de inmediato, y montaje del 30% de las perlas Grado AAA en joyería de Plata .925 ($1,800 a $3,200 MXN al menudeo turístico/digital).</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
 </main>
-<footer><div class="wrap footer-inner"><a href="#inicio" aria-label="MIPEZ, volver al inicio"><img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Laboratorio del Agua" loading="lazy"></a><div><span class="mono">© 2026 MIPEZ · MÉRIDA, YUCATÁN</span><p>La presencia de microorganismos requiere análisis específicos. Los criterios de control y la normativa se determinan según el tipo y uso de la instalación.</p></div></div></footer>
+
+<!-- FOOTER CON LOGO OFICIAL MIPEZ V2 -->
+<footer>
+  <div class="wrap footer-inner">
+    <a href="#inicio" aria-label="MIPEZ, volver al inicio">
+      <img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Laboratorio del Agua" loading="lazy" onerror="this.style.display='none'">
+    </a>
+    <div>
+      <span class="mono">© 2026 MIPEZ · LABORATORIO DEL AGUA · MÉRIDA, YUCATÁN</span>
+      <p>Ingeniería de sistemas de recirculación acuícola (RAS), diagnóstico hidrodinámico y control de calidad del agua. Las proyecciones financieras consideran parámetros conservadores de supervivencia biológica (80%) y operación continua a 26 °C.</p>
+    </div>
+  </div>
+</footer>
+
 <script>
 (()=>{
 'use strict';
-const systems={lagos:['01','Lagos artificiales','Revisión de circulación, sedimentos y zonas de baja movilidad. El plan de control se adapta al uso y al diseño del lago.'],fuentes:['02','Fuentes y espejos de agua','Revisión de recirculación, filtros y limpieza de superficies. Definimos rutinas de mantenimiento para el sistema ornamental.'],estanques:['03','Estanques','Evaluación de materia orgánica, circulación y calidad del agua. El manejo considera la vegetación y la fauna presentes.'],albercas:['04','Albercas','Seguimiento de filtración, desinfección y parámetros operativos. La NOM-245-SSA1-2010 es una referencia para su calidad del agua.']};
+
+// 1. Nodos del Diagrama Orbital en Hero
+const systems={
+  torres:[
+    '01',
+    '4 Torres Modulares de 5 Niveles (4,000 Ostras)',
+    'Cada esquina del tanque de 3×3×1 m aloja un chasis cúbico de PVC de 1 m³ con 5 charolas extraíbles de Egg Crate (200 ostras por charola en peine a 45°) y deflectores en "Z" de Coroplast a 10° que evitan que los pisos superiores ensucien a los inferiores.'
+  ],
+  carrusel:[
+    '02',
+    'Olas por Flujo Transversal Gyre (Opción A)',
+    '4 bombas tipo Gyre (Jebao SCP-180) montadas en vertical a 50 cm de profundidad generan un carrusel horario continuo y pulsos de 4 s ON / 2 s OFF (3 a 8 cm/s) con apenas 160–200 W de consumo eléctrico total.'
+  ],
+  ras:[
+    '03',
+    'Drenaje Central de 4", Hidrociclón y Sump RAS',
+    'El giro en carrusel concentra heces y pseudoheces en el Bottom Drain central de 4" hacia el hidrociclón sedimentador, Protein Skimmer, biofiltro MBBR K1, UV-C y Chiller a 26 °C, integrando válvula de Bypass para retener el fitoplancton.'
+  ],
+  retorno:[
+    '04',
+    'Retorno en Mes 13 y Multiplicador Joyero',
+    'Con un CAPEX llave en mano de $113,900 MXN por tanque y una cosecha anual de 6,240 perlas comerciales Grado A–AAA, la inversión se recupera íntegramente en la primera cosecha (TIR > 135% anual).'
+  ]
+};
 const nodes=[...document.querySelectorAll('.node')];
-function select(node){const data=systems[node.dataset.system];nodes.forEach(n=>n.setAttribute('aria-pressed',String(n===node)));document.getElementById('system-number').textContent=data[0]+' /';document.getElementById('system-title').textContent=data[1];document.getElementById('system-copy').textContent=data[2];}
-nodes.forEach(node=>node.addEventListener('click',()=>select(node)));
+function selectNode(node){
+  const data=systems[node.dataset.system];
+  nodes.forEach(n=>n.setAttribute('aria-pressed',String(n===node)));
+  document.getElementById('system-number').textContent=data[0]+' /';
+  document.getElementById('system-title').textContent=data[1];
+  document.getElementById('system-copy').textContent=data[2];
+}
+nodes.forEach(node=>node.addEventListener('click',()=>selectNode(node)));
+
+// Efecto 3D sutil en el organismo del Hero (idéntico a MIPEZ)
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const orbit=document.querySelector('.orbit');
-orbit.addEventListener('pointermove',e=>{if(reduce.matches||e.pointerType!=='mouse')return;const r=orbit.getBoundingClientRect();orbit.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*20+'deg');orbit.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*16+'deg');});
-orbit.addEventListener('pointerleave',()=>{orbit.style.setProperty('--rx','0deg');orbit.style.setProperty('--ry','0deg');});
-if('IntersectionObserver' in window&&!reduce.matches){const reveal=[...document.querySelectorAll('.reveal')];const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target);}}),{threshold:.08});document.documentElement.classList.add('motion');reveal.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');observer.observe(el);}});reduce.addEventListener('change',()=>{if(reduce.matches){reveal.forEach(el=>el.classList.remove('pending'));observer.disconnect();}});}
-let queued=false;const bar=document.querySelector('.progress');function progress(){const total=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';queued=false;}addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});addEventListener('resize',progress);progress();
+orbit.addEventListener('pointermove',e=>{
+  if(reduce.matches||e.pointerType!=='mouse')return;
+  const r=orbit.getBoundingClientRect();
+  orbit.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*20+'deg');
+  orbit.style.setProperty('--rx',-((e.clientY-r.top)/r.height-.5)*16+'deg');
+});
+orbit.addEventListener('pointerleave',()=>{
+  orbit.style.setProperty('--rx','0deg');
+  orbit.style.setProperty('--ry','0deg');
+});
+
+// 2. Selector Interactivo de Partes de la Torre de 5 Niveles
+const towerData={
+  chasis:[
+    'PARTE 01 /',
+    'Chasis Estructural (1×1×1 m en PVC Hidráulico de 1" Cédula 40)',
+    'Armazón cúbico unido con codos y "T" fijados con cinchos plásticos o pijas de acero inoxidable 316. Cuenta con perforaciones de 5 mm en los postes verticales para inundarse y hundirse sin flotar, y rieles horizontales cada 18 cm para deslizar las 5 charolas como cajones de horno.'
+  ],
+  charola:[
+    'PARTE 02 /',
+    '5 Charolas Extraíbles de 95×95 cm (Rejilla Egg Crate + Malla HDPE)',
+    'Base rígida de rejilla difusora acrílica/poliestireno (cuadros de 1.5×1.5 cm) que permite el paso total del agua, con paredes laterales de 10 cm de malla plástica HDPE (abertura 18 mm) sujetas con cinchos resistentes a UV. Cada charola aloja 200 ostras y pesa ~15 kg fuera del agua.'
+  ],
+  peine:[
+    'PARTE 03 /',
+    'Acomodo en "Espiga Vertical" (Peine a 45°)',
+    'Tiras divisorias de Egg Crate separadas cada 9.5 cm mantienen a las ostras paradas de canto en ángulo de 45°, con el umbo (bisagra) hacia abajo y la abertura apuntando hacia la corriente frontal. Evita que el sedimento entre a la valva y aloja 1,000 ostras por metro cúbico.'
+  ],
+  deflector:[
+    'PARTE 04 /',
+    'Deflectores en "Z" (Lámina de Coroplast con Inclinación de 10°)',
+    'Debajo de cada charola se sujeta una lámina impermeable de plástico corrugado (Coroplast) o policarbonato celular de 4 mm inclinada 10° hacia la parte trasera. Toda la pseudoheces resbala hacia el fondo trasero sin tocar jamás a las ostras de los pisos inferiores.'
+  ]
+};
+const towerBtns=[...document.querySelectorAll('[data-tower]')];
+towerBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const d=towerData[btn.dataset.tower];
+    towerBtns.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
+    document.getElementById('tower-num').textContent=d[0];
+    document.getElementById('tower-title').textContent=d[1];
+    document.getElementById('tower-desc').textContent=d[2];
+  });
+});
+
+// 3. Comparador de las 3 Opciones de Flujo (Opción A, B y C)
+const waveData={
+  A:{
+    tag:'OPCIÓN A · SELECCIONADA POR EFICIENCIA',
+    title:'Generadores de Flujo Transversal (Jebao SCP-180 / MCP-180)',
+    desc:'4 bombas tipo Gyre de 20,000 a 36,000 L/h montadas verticalmente a 50 cm de profundidad en el poste de entrada de cada torre. Sus dos rotores direccionables lanzan una cortina plana laminar: un rotor cubre los pisos 1–3 y el otro los pisos 3–5. En Modo Pulso (4 s al 80% / 2 s al 30%) estimulan el bombeo branquial con un consumo total de apenas 160 a 200 Watts entre las 4 bombas.',
+    m1:['CONSUMO TOTAL','160 – 200 W'],
+    m2:['PATRÓN DE OLA','Pulso 4s / 2s'],
+    m3:['CAPEX 4 BOMBAS + UPS','$16,800 MXN']
+  },
+  B:{
+    tag:'OPCIÓN B · CERO CABLES DENTRO DEL AGUA',
+    title:'Flautas Verticales de PVC (Spray Bars) con Válvula Alternadora',
+    desc:'Utiliza una sola bomba centrífuga externa de 1 a 1.5 HP con impulsor plástico resistente a salmuera. La tubería de retorno de 2" baja por las 4 esquinas en flautas verticales de 90 cm perforadas con orificios de 6 mm cada 3 cm apuntando entre las charolas, alternando presión cada 30 segundos mediante una válvula rotativa motorizada.',
+    m1:['CONSUMO TOTAL','750 – 1,100 W'],
+    m2:['PATRÓN DE OLA','Alternado 30s'],
+    m3:['MANTENIMIENTO','Limpieza de orificios']
+  },
+  C:{
+    tag:'OPCIÓN C · NEUMÁTICA INDUSTRIAL E INDESTRUCTIBLE',
+    title:'Cortinas Air-Lift Lineales con Soplador Regenerativo (Blower)',
+    desc:'Emplea un Ring Blower externo de 0.5 a 1 HP que inyecta aire en manguera microperforada en la base de cada torre dentro de una campana ascendente de PVC de 6". Al subir masivamente el aire arrastra miles de litros de agua por segundo creando un rodillo hidráulico continuo y oxigenando al 100% de saturación.',
+    m1:['CONSUMO TOTAL','370 – 750 W'],
+    m2:['PATRÓN DE OLA','Rodillo continuo'],
+    m3:['VENTAJA CLAVE','Saturación O2 100%']
+  }
+};
+const waveBtns=[...document.querySelectorAll('[data-wave]')];
+waveBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const w=waveData[btn.dataset.wave];
+    waveBtns.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
+    document.getElementById('wave-tag').textContent=w.tag;
+    document.getElementById('wave-title').textContent=w.title;
+    document.getElementById('wave-desc').textContent=w.desc;
+    document.getElementById('wave-metrics').innerHTML=`
+      <div><small class="mono" style="font-size:9px;color:var(--blue)">${w.m1[0]}</small><div style="font-weight:700;font-size:13px;color:var(--navy)">${w.m1[1]}</div></div>
+      <div><small class="mono" style="font-size:9px;color:var(--blue)">${w.m2[0]}</small><div style="font-weight:700;font-size:13px;color:var(--navy)">${w.m2[1]}</div></div>
+      <div><small class="mono" style="font-size:9px;color:var(--blue)">${w.m3[0]}</small><div style="font-weight:700;font-size:13px;color:var(--navy)">${w.m3[1]}</div></div>
+    `;
+  });
+});
+
+// 4. Conmutador Hidráulico RAS Normal vs. Bypass de Alimentación
+const btnRas=document.getElementById('btn-mode-ras');
+const btnBypass=document.getElementById('btn-mode-bypass');
+const branchRas=document.getElementById('svg-branch-ras');
+const branchBypass=document.getElementById('svg-branch-bypass');
+const chSkimmer=document.getElementById('svg-chamber-skimmer');
+const chMbbr=document.getElementById('svg-chamber-mbbr');
+const v1Circle=document.getElementById('v1-circle');
+const v2Circle=document.getElementById('v2-circle');
+const v3Circle=document.getElementById('v3-circle');
+const rasBadge=document.getElementById('ras-badge');
+const rasStatus=document.getElementById('ras-status-text');
+
+function setHydraulicMode(mode){
+  const isNormal = mode==='normal';
+  btnRas.setAttribute('aria-pressed',String(isNormal));
+  btnBypass.setAttribute('aria-pressed',String(!isNormal));
+  if(isNormal){
+    branchRas.style.opacity='1';
+    chSkimmer.style.opacity='1';
+    chMbbr.style.opacity='1';
+    branchBypass.style.opacity='0.28';
+    v1Circle.setAttribute('fill','#7ee6df');
+    v3Circle.setAttribute('fill','#7ee6df');
+    v2Circle.setAttribute('fill','#56717a');
+    rasBadge.textContent='MODO FILTRACIÓN COMPLETA ACTIVO';
+    rasStatus.innerHTML='<strong>Estado de Válvulas (Modo 1):</strong> Válvula 1 <b>ABIERTA</b> · Válvula 3 <b>ABIERTA</b> · Válvula 2 (Bypass) <b>CERRADA</b>. El 100% del agua atraviesa el hidrociclón, el Protein Skimmer y el biofiltro MBBR K1.';
+  } else {
+    branchRas.style.opacity='0.25';
+    chSkimmer.style.opacity='0.25';
+    chMbbr.style.opacity='0.25';
+    branchBypass.style.opacity='1';
+    v1Circle.setAttribute('fill','#56717a');
+    v3Circle.setAttribute('fill','#56717a');
+    v2Circle.setAttribute('fill','#7ee6df');
+    rasBadge.textContent='MODO BYPASS DE ALIMENTACIÓN ACTIVO';
+    rasStatus.innerHTML='<strong>Estado de Válvulas (Modo 2 - Alimentación):</strong> Válvula 2 (Bypass) <b>ABIERTA</b> · Válvulas 1 y 3 <b>CERRADAS</b>. El agua con microalgas recircula en bucle corto directo a las bombas DCP-20000 para que el Skimmer no retire el alimento.';
+  }
+}
+btnRas.addEventListener('click',()=>setHydraulicMode('normal'));
+btnBypass.addEventListener('click',()=>setHydraulicMode('bypass'));
+
+// 5. Calculadora Financiera y Simulador de Joyería en Plata .925
+const sTanks=document.getElementById('sim-tanks');
+const sSurv=document.getElementById('sim-survival');
+const sJewel=document.getElementById('sim-jewelry');
+const fmtMXN=n=>'$'+Math.round(n).toLocaleString('es-MX')+' MXN';
+
+function updateFinancialSim(){
+  const tanks=parseInt(sTanks.value,10);
+  const surv=parseInt(sSurv.value,10)/100;
+  const jewelPct=parseInt(sJewel.value,10)/100;
+
+  const totalOysters=tanks*4000;
+  const liveOysters=Math.round(totalOysters*surv);
+  const grossDomes=liveOysters*3; // 3 núcleos por ostra
+
+  // 20% Grado AAA, 45% Grado A, 35% Descarte/Subproducto
+  const pearlsAAA=Math.round(grossDomes*0.20);
+  const pearlsA=Math.round(grossDomes*0.45);
+  const totalCommercial=pearlsAAA+pearlsA;
+
+  const mountedAAA=Math.round(pearlsAAA*jewelPct);
+  const looseAAA=pearlsAAA-mountedAAA;
+
+  // Ingresos: AAA suelta $550 | AAA montada en Plata .925 $2,200 | Grado A $220 | Subproducto + Callo $65,600 por tanque (ajustado a supervivencia)
+  const revAAA=(looseAAA*550)+(mountedAAA*2200);
+  const revA=pearlsA*220;
+  const revSub=tanks*65600*(surv/0.80);
+  const totalRev=revAAA+revA+revSub;
+
+  // Costos: OPEX base ($424k para 1 tanque, $356k por cada tanque adicional por economía de escala) + $280 por engaste en plata + 8% gastos de venta
+  const opexRAS=tanks===1?424000:424000+((tanks-1)*356000);
+  const silverCost=mountedAAA*280;
+  const mktCost=totalRev*0.08;
+  const totalCost=opexRAS+silverCost+mktCost;
+
+  const ebitda=totalRev-totalCost;
+  const margin=((ebitda/totalRev)*100).toFixed(1);
+
+  document.getElementById('val-tanks').textContent=`${tanks} ${tanks===1?'Tanque':'Tanques'} (${totalOysters.toLocaleString('es-MX')} ostras)`;
+  document.getElementById('val-survival').textContent=`${Math.round(surv*100)}% (${liveOysters.toLocaleString('es-MX')} vivas)`;
+  document.getElementById('val-jewelry').textContent=jewelPct===0?'0% (Solo Gema Suelta)':`${Math.round(jewelPct*100)}% (${mountedAAA.toLocaleString('es-MX')} joyas .925)`;
+
+  document.getElementById('kpi-pearls').textContent=`${totalCommercial.toLocaleString('es-MX')} pzas`;
+  document.getElementById('kpi-pearls-sub').textContent=`${pearlsAAA.toLocaleString('es-MX')} AAA + ${pearlsA.toLocaleString('es-MX')} Grado A`;
+  document.getElementById('kpi-rev').textContent=fmtMXN(totalRev);
+  document.getElementById('kpi-cost').textContent=fmtMXN(totalCost);
+  document.getElementById('kpi-ebitda').textContent=fmtMXN(ebitda);
+  document.getElementById('kpi-margin').textContent=`Margen Operativo: ${margin}%`;
+}
+[sTanks,sSurv,sJewel].forEach(el=>el.addEventListener('input',updateFinancialSim));
+document.getElementById('btn-reset-sim').addEventListener('click',()=>{
+  sTanks.value='1';
+  sSurv.value='80';
+  sJewel.value='0';
+  updateFinancialSim();
+});
+
+// 6. Animaciones de aparición en scroll (.reveal) y barra superior (.progress) originales de MIPEZ
+if('IntersectionObserver' in window&&!reduce.matches){
+  const reveal=[...document.querySelectorAll('.reveal')];
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.remove('pending');
+      observer.unobserve(entry.target);
+    }
+  }),{threshold:.08});
+  document.documentElement.classList.add('motion');
+  reveal.forEach(el=>{
+    if(el.getBoundingClientRect().top>innerHeight){
+      el.classList.add('pending');
+      observer.observe(el);
+    }
+  });
+  reduce.addEventListener('change',()=>{
+    if(reduce.matches){
+      reveal.forEach(el=>el.classList.remove('pending'));
+      observer.disconnect();
+    }
+  });
+}
+
+let queued=false;
+const bar=document.querySelector('.progress');
+function progress(){
+  const total=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';
+  queued=false;
+}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});
+addEventListener('resize',progress);
+progress();
 })();
 </script>
 </body>
