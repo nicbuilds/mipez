@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MIPEZ, Laboratorio del Agua. Diagnóstico, operación y control de cuerpos de agua artificiales en Mérida y Yucatán.">
+<meta name="theme-color" content="#20206f">
+<title>MIPEZ | Ciencia aplicada al cuidado del agua</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#20206f;--blue:#1d72b8;--cyan:#35c0e6;--aqua:#7ee6df;--mint:#dffcf5;--sky:#dff4ff;--ink:#12303b;--muted:#56717a;--line:rgba(29,114,184,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;background:#f6fcfd;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit}a{color:inherit}button{cursor:pointer}img{display:block;max-width:100%}svg{display:block}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.skip{position:fixed;top:-100px;left:16px;z-index:100;background:white;padding:12px}.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.9);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px}.brand img{width:82px;height:82px;object-fit:contain}.nav-links{display:flex;gap:28px;align-items:center}.nav-links a{text-decoration:none;font-size:12px;font-weight:600}.nav-links a:hover{color:var(--blue)}.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted)}.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+
+/* HERO CON IMAGEN DE CULTIVO DE PERLA MABÉ DE FONDO A OPACIDAD REDUCIDA */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:110px 0 100px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff);border-bottom:1px solid var(--line)}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  /* Reemplaza la URL por tu imagen local (ej. url('cultivo-mabe.jpg')) si lo deseas */
+  background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=85');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0.22;
+  z-index:-2;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(249,255,254,0.88) 0%,rgba(237,247,255,0.65) 55%,rgba(237,247,255,0.45) 100%);
+  z-index:-1;
+}
+.hero-grid{display:block;max-width:680px}
+.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef}
+h1{font-size:clamp(42px,4.8vw,65px);line-height:1.07;letter-spacing:-.055em;font-weight:600;margin:27px 0 24px}h1 span{color:var(--blue)}
+.intro{font-size:16px;max-width:480px;color:var(--ink);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:22px;text-decoration:none;padding:14px 20px;border-radius:30px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;border:1px solid transparent}.btn:hover{box-shadow:0 12px 28px #1d72b845}
+.hero .btn{margin-top:16px}
+.hero-note{font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:30px}
+
+.section{padding:80px 0}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:35px}.section-num{font:10px ui-monospace,monospace;color:var(--blue);letter-spacing:.13em}h2{font-size:clamp(29px,3.2vw,43px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin:13px 0 0}.section-top p{font-size:14px;color:var(--muted);max-width:440px;margin:0}.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#fff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}.step-no{font:11px ui-monospace,monospace;color:var(--blue);padding:9px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 white;display:inline-block}.step h3{font-size:18px;font-weight:500;letter-spacing:-.025em;margin:24px 0 10px}.step p{font-size:12px;color:var(--muted);margin:0}.step-foot{font:9px ui-monospace,monospace;letter-spacing:.07em;color:var(--blue);border-top:1px solid var(--line);padding-top:18px;margin-top:24px}.news{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:white;position:relative}.news-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.news .section-num{color:var(--aqua)}.news h2{max-width:340px}.news-copy p{font-size:14px;color:#d6e7ed;margin:0 0 18px}.news-copy .fact{font-size:12px;padding:17px 20px;border-radius:18px;background:#ffffff0c;border:1px solid #ffffff20}.citation{color:var(--aqua);text-decoration:none;font-size:10px;vertical-align:super}.sources{margin-top:32px;border-top:1px solid #ffffff2b}.sources a{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid #ffffff20;text-decoration:none;font-size:11px;color:#e0eff6}.sources a:hover{color:var(--aqua)}.sources b{font:10px ui-monospace,monospace;color:var(--aqua);margin-right:8px}.source-label{font:9px ui-monospace,monospace;color:#aac7d6;letter-spacing:.12em;margin-top:27px}.prepare{padding:48px 0}.prepare-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}.prepare h2{font-size:27px}.prepare p{font-size:12px;color:var(--muted)}details{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px 22px}summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy)}details ul{padding-left:20px;font-size:12px;color:var(--muted)}details li{margin:9px 0}footer{background:#171b58;color:#bfcce5;padding:24px 0}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}.footer-inner img{width:100px;height:100px;object-fit:contain}.footer-inner p{font-size:10px;max-width:490px}.footer-inner .mono{font-size:9px;color:var(--aqua)}.reveal{opacity:1;transform:none}.motion .reveal.pending{opacity:0;transform:translateY(22px)}.motion .reveal{transition:opacity .65s ease,transform .65s ease}.protocol .step:nth-child(2){transition-delay:.1s}.protocol .step:nth-child(3){transition-delay:.2s}
+@media(min-width:1500px){.hero{padding:130px 0}}
+@media(max-width:1000px){.nav-tag{display:none}.news-grid{gap:35px}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:80px}.brand img{width:70px;height:70px}.nav-links{gap:18px}.nav-links a{font-size:10px}.hero{padding:64px 0 72px}h1{font-size:48px;max-width:550px;margin:20px 0}.intro{max-width:460px;font-size:14px}.hero-note{margin-top:20px}.hero .btn{margin-top:8px}.section{padding:52px 0}.section-top,.news-grid,.prepare-inner{grid-template-columns:1fr;gap:22px}.section-top{margin-bottom:26px}.protocol{grid-template-columns:1fr}.step{padding:24px;display:grid;grid-template-columns:45px 1fr;gap:5px 18px}.step-no{grid-column:1;grid-row:1/4;align-self:start;padding:11px}.step h3{margin:0 0 8px}.step p,.step-foot{grid-column:2}.step-foot{margin-top:14px;padding-top:12px}.news h2{max-width:500px}.news-copy p{font-size:13px}.sources{margin-top:16px}.prepare{padding:38px 0}.footer-inner{gap:25px}.footer-inner img{width:85px;height:85px}.footer-inner p{font-size:9px}}
+@media(max-width:400px){.wrap{width:calc(100% - 28px)}h1{font-size:41px}.nav-links{gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.motion .reveal.pending{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Saltar al contenido</a>
+<header><div class="wrap nav"><a class="brand" href="#inicio" aria-label="MIPEZ, inicio"><img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Laboratorio del Agua" width="82" height="82"></a><span class="nav-tag">DIAGNÓSTICO / OPERACIÓN / CONTROL</span><nav class="nav-links" aria-label="Navegación principal"><a href="#inicio">Sistemas</a><a href="#control">Método</a><a href="#merida">Evidencia</a></nav></div><div class="progress" aria-hidden="true"></div></header>
+<main id="inicio">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="reveal">
+      <div class="eyebrow">Ciencia aplicada · Yucatán</div>
+      <h1>El agua se cuida<br>con <span>evidencia.</span></h1>
+      <p class="intro">Diagnóstico, operación y monitoreo de cuerpos de agua artificiales. Transformamos el mantenimiento en un proceso medible.</p>
+      <a class="btn" href="#control">Explorar nuestro método <span aria-hidden="true">↘</span></a>
+      <p class="hero-note mono">MIPEZ / LABORATORIO DEL AGUA</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="control"><div class="wrap"><div class="section-top reveal"><div><span class="section-num">01 / MÉTODO MIPEZ</span><h2>Observar. Intervenir.<br>Verificar.</h2></div><p>Un protocolo adaptado a cada instalación, con parámetros, responsables y registros.</p></div><div class="protocol" id="servicios"><article class="step reveal"><span class="step-no">01</span><h3>Diagnóstico</h3><p>Evaluamos el sistema hidráulico, el uso del agua y los puntos críticos de mantenimiento.</p><div class="step-foot">ENTREGABLE / EVALUACIÓN INICIAL</div></article><article class="step reveal"><span class="step-no">02</span><h3>Operación</h3><p>Organizamos circulación, filtración, limpieza y desinfección según las necesidades del sistema.</p><div class="step-foot">ENTREGABLE / PLAN OPERATIVO</div></article><article class="step reveal"><span class="step-no">03</span><h3>Verificación</h3><p>Registramos parámetros y acciones correctivas. Coordinamos análisis específicos cuando se requieren.</p><div class="step-foot">ENTREGABLE / BITÁCORA Y SEGUIMIENTO</div></article></div></div></section>
+<section class="section news" id="merida"><div class="wrap news-grid"><div class="reveal"><span class="section-num">02 / EVIDENCIA LOCAL</span><h2>Un caso que exige<br>rigor.</h2><p class="source-label">MÉRIDA, YUCATÁN · 14 SEP 2026</p></div><div class="news-copy reveal"><p>El Gobierno de Yucatán confirmó la detección de <i>Naegleria fowleri</i> en un lago artificial, tras un caso mortal asociado al sitio. El comunicado informó del cierre del lago y la investigación de su mantenimiento. <a class="citation" href="#fuente-1" aria-label="Ver fuente 1">[1]</a></p><p class="fact">La infección es muy rara y ocurre cuando agua contaminada entra por la nariz. No se adquiere al beber agua. <a class="citation" href="#fuente-1" aria-label="Ver fuente 1">[1]</a> Los CDC destacan la importancia del mantenimiento y la desinfección adecuados. <a class="citation" href="#fuente-2" aria-label="Ver fuente 2">[2]</a></p><p class="source-label">FUENTES Y MARCO DE REFERENCIA</p><div class="sources"><a id="fuente-1" href="https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=11799" target="_blank" rel="noopener"><span><b>01</b>Gobierno de Yucatán · Comunicado 26-1511</span><span aria-hidden="true">↗</span></a><a id="fuente-2" href="https://www.cdc.gov/naegleria/es/prevention/como-prevenir-la-infeccion-por-naegleria-fowleri-cuando-nade-o-se-meta-al-agua.html" target="_blank" rel="noopener"><span><b>02</b>CDC · Prevención de <i>Naegleria fowleri</i></span><span aria-hidden="true">↗</span></a><a id="fuente-3" href="https://platiica.economia.gob.mx/normalizacion/nom-245-ssa1-2010/" target="_blank" rel="noopener"><span><b>03</b>NOM-245-SSA1-2010 · Calidad del agua en albercas</span><span aria-hidden="true">↗</span></a></div></div></div></section>
+<section class="prepare" id="diagnostico"><div class="wrap prepare-inner reveal"><div><span class="section-num">03 / PRIMER PASO</span><h2>Conocer tu sistema.</h2><p>La evaluación empieza con información de tu instalación.</p></div><details><summary>¿Qué preparar para una evaluación?</summary><ul><li>Tipo de cuerpo de agua, ubicación y uso.</li><li>Volumen aproximado y equipos de circulación y filtración.</li><li>Rutinas de mantenimiento y resultados de análisis disponibles.</li></ul></details></div></section>
+</main>
+<footer><div class="wrap footer-inner"><a href="#inicio" aria-label="MIPEZ, volver al inicio"><img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Laboratorio del Agua" loading="lazy"></a><div><span class="mono">© 2026 MIPEZ · MÉRIDA, YUCATÁN</span><p>La presencia de microorganismos requiere análisis específicos. Los criterios de control y la normativa se determinan según el tipo y uso de la instalación.</p></div></div></footer>
+<script>
+(()=>{
+'use strict';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window&&!reduce.matches){const reveal=[...document.querySelectorAll('.reveal')];const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target);}}),{threshold:.08});document.documentElement.classList.add('motion');reveal.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');observer.observe(el);}});reduce.addEventListener('change',()=>{if(reduce.matches){reveal.forEach(el=>el.classList.remove('pending'));observer.disconnect();}});}
+let queued=false;const bar=document.querySelector('.progress');function progress(){const total=document.documentElement.scrollHeight-innerHeight;bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';queued=false;}addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});addEventListener('resize',progress);progress();
+})();
+</script>
+</body>
+</html>
