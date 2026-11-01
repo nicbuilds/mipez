@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MIPEZ, Laboratorio del Agua. Propuesta de piloto productivo de 200 ostras perleras en la Bahía de La Paz, Baja California Sur.">
+<meta name="theme-color" content="#20206f">
+<title>MIPEZ | Granja sustentable de perlas — La Paz, BCS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#20206f;
+  --blue:#1d72b8;
+  --cyan:#35c0e6;
+  --aqua:#7ee6df;
+  --mint:#dffcf5;
+  --sky:#dff4ff;
+  --ink:#12303b;
+  --muted:#56717a;
+  --line:rgba(29,114,184,.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:125px}
+body{margin:0;color:var(--ink);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f6fcfd;line-height:1.65;font-size:15px}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;cursor:pointer}
+a{color:inherit}
+img{display:block;max-width:100%}
+svg{display:block}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}
+
+.shell,.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+.skip{position:fixed;top:-100px;left:16px;z-index:100;background:#fff;padding:12px;border-radius:12px;box-shadow:0 8px 24px #1d72b822}
+.skip:focus{top:12px}
+
+/* HEADER & NAVEGACIÓN ESTILO MIPEZ */
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.92);backdrop-filter:blur(18px)}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:88px;padding:8px 0}
+.brand-wrap{display:flex;align-items:center;gap:16px;text-decoration:none}
+.brand-wrap img{width:78px;height:78px;object-fit:contain}
+.brand{font-weight:700;letter-spacing:.18em;font-size:18px;color:var(--navy)}
+.brand span{color:var(--blue)}
+.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted);display:block;margin-top:2px}
+.badge{border:1px solid var(--line);background:linear-gradient(145deg,#ffffff,#dff4ff);border-radius:30px;padding:7px 14px;font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--navy);font-weight:600;box-shadow:4px 5px 14px #1d72b812,inset 0 1px 0 #fff}
+.nav-bar{border-top:1px solid var(--line);background:rgba(255,255,255,.65)}
+.nav{display:flex;gap:22px;overflow-x:auto;padding:11px 0;white-space:nowrap;align-items:center}
+.nav a{text-decoration:none;font-size:12px;font-weight:600;color:var(--ink);transition:color .2s}
+.nav a:hover{color:var(--blue)}
+.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+
+/* HERO ESTILO MIPEZ */
+.hero-sec{padding:64px 0 58px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff);border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow,.kicker{display:inline-flex;align-items:center;gap:10px;font:11px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:600}
+.eyebrow:before,.kicker:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef;flex-shrink:0}
+h1{font-size:clamp(40px,5.2vw,64px);line-height:1.06;letter-spacing:-.05em;font-weight:600;margin:22px 0 20px;color:var(--navy)}
+h1 span{color:var(--blue)}
+h2{font-size:clamp(26px,3.1vw,38px);line-height:1.14;letter-spacing:-.04em;font-weight:500;margin:10px 0 10px;color:var(--navy)}
+h3{font-size:17px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px;color:var(--navy)}
+.hero p{font-size:16px;color:var(--muted);max-width:680px;margin:0 0 22px}
+.hero p b{color:var(--navy)}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.pill{border:1px solid #fff;border-radius:30px;padding:8px 15px;font-size:11px;font-weight:600;color:var(--navy);background:linear-gradient(145deg,#ffffffeb,#dff4ffc9);box-shadow:6px 8px 18px #1d72b814,inset 0 2px 0 #fff}
+.hero-emblem{border:1px solid #fff;border-radius:30px;padding:28px;background:linear-gradient(145deg,#ffffffeb,#e6f9f7c9);box-shadow:10px 14px 32px #1d72b814,-5px -5px 16px #ffffffd9,inset 0 2px 0 #fff;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;overflow:hidden}
+.hero-emblem:before{content:'';position:absolute;inset:14% 18%;border:1px dashed #1d72b830;border-radius:50%;pointer-events:none}
+.hero-emblem img{width:136px;height:136px;object-fit:contain;filter:drop-shadow(0 12px 16px #1d72b820);margin-bottom:14px;position:relative;z-index:1}
+.hero-emblem-caption{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+.hero-emblem-sub{font-size:12px;color:var(--muted);margin-top:4px;max-width:280px}
+
+/* CUERPO PRINCIPAL Y SECCIONES */
+main{padding:56px 0 80px}
+section{scroll-margin-top:130px;margin-bottom:64px}
+.head{margin-bottom:26px}
+.head p,.lead{color:var(--muted);max-width:820px;font-size:14px;margin:6px 0 0}
+
+/* GRIDS Y TARJETAS NEUMÓRFICAS MIPEZ */
+.grid{display:grid;gap:20px}
+.four{grid-template-columns:repeat(4,1fr)}
+.three{grid-template-columns:repeat(3,1fr)}
+.two{grid-template-columns:repeat(2,1fr)}
+
+.card{border:1px solid #fff;border-radius:26px;padding:26px;background:linear-gradient(145deg,#ffffff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}
+.metric{font-size:clamp(26px,2.8vw,34px);font-weight:600;letter-spacing:-.04em;line-height:1.15;margin:10px 0 6px;color:var(--navy)}
+.metric small{font-size:13px;color:var(--blue);font-weight:500;letter-spacing:0}
+.caption,.note{font-size:12px;color:var(--muted)}
+.note{margin-top:12px}
+
+.tag{display:inline-block;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--blue);padding:7px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 #fff;font-weight:600;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+
+.callout{border:1px solid #fff;border-left:4px solid var(--blue);background:linear-gradient(120deg,#ffffffed,#e9faf9);padding:18px 22px;border-radius:18px;color:var(--ink);margin-top:20px;box-shadow:0 8px 24px #1d72b80d;font-size:13.5px}
+.callout b{color:var(--navy)}
+
+ul{padding-left:20px;color:var(--muted);font-size:13px;margin:10px 0}
+li{margin:7px 0}
+
+/* TABLAS ESTILO MIPEZ */
+.tablewrap{overflow-x:auto;border:1px solid #fff;border-radius:22px;background:linear-gradient(145deg,#ffffff,#f2faff);box-shadow:6px 8px 24px #1d72b80d,inset 0 1px 0 #fff}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;background:linear-gradient(145deg,#e7f8f7,#dff4ff);color:var(--navy);text-transform:uppercase;font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.09em;font-weight:600}
+td,th{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+
+/* BARRAS FINANCIERAS */
+.bars{display:grid;gap:14px;margin-top:16px}
+.bar{display:grid;grid-template-columns:150px 1fr 92px;gap:12px;align-items:center;font-size:12px;color:var(--ink)}
+.bar b{text-align:right;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--navy)}
+.track{height:11px;border-radius:20px;background:#dff4ff;overflow:hidden;box-shadow:inset 0 1px 3px #1d72b81f}
+.fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));border-radius:20px}
+
+/* PASOS NUMERADOS (.steps / .num) */
+.steps{display:grid;gap:14px;margin-top:10px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.num{flex:0 0 34px;height:34px;border-radius:12px;display:grid;place-items:center;font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--blue);background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 #fff;font-weight:700}
+.step b{color:var(--navy);font-size:13.5px;display:block;margin-bottom:2px}
+
+/* CRONOGRAMA (.timeline / .phase) */
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.phase{background:linear-gradient(145deg,#ffffff,#e8f5fa);border:1px solid #fff;border-top:3px solid var(--blue);border-radius:18px;padding:16px;box-shadow:6px 8px 22px #1d72b80f}
+.phase b{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--blue);letter-spacing:.08em;text-transform:uppercase}
+.phase strong{display:block;font-size:13.5px;margin:7px 0 5px;color:var(--navy);font-weight:600}
+.phase p{font-size:11.5px;color:var(--muted);margin:0}
+
+/* BLOQUES OSCUROS ESTILO .news DE MIPEZ */
+.dark{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:#fff;border-radius:26px;padding:30px;box-shadow:0 14px 34px #171b5829;border:1px solid rgba(255,255,255,.14)}
+.dark .kicker{color:var(--aqua)}
+.dark .kicker:before{background:var(--aqua);box-shadow:0 0 0 5px rgba(126,230,223,.18)}
+.dark h2,.dark h3{color:#fff}
+.dark p{color:#d6e7ed;font-size:13.5px}
+.dark .note{color:#aac7d6}
+
+/* FUENTES DE REFERENCIA */
+.sources a{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font-size:13px;transition:color .2s}
+.sources a:last-child{border-bottom:none}
+.sources a:hover{color:var(--blue)}
+.sources a b{color:var(--navy);font-weight:600}
+
+/* BOTONES ESTILO MIPEZ */
+button{border:1px solid transparent;border-radius:30px;padding:13px 20px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;transition:box-shadow .2s,transform .2s;margin-right:8px;margin-top:8px}
+button:hover{box-shadow:0 12px 28px #1d72b845;transform:translateY(-1px)}
+button.secondary{background:linear-gradient(145deg,#ffffffeb,#dff4ffc9);color:var(--navy);border:1px solid #fff;box-shadow:6px 8px 18px #102d3618}
+
+/* FOOTER OFICIAL MIPEZ */
+footer{background:#171b58;color:#bfcce5;padding:32px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}
+.footer-brand{display:flex;align-items:center;gap:18px;text-decoration:none}
+.footer-brand img{width:100px;height:100px;object-fit:contain;flex-shrink:0}
+footer p{font-size:11px;color:#bfcce5;max-width:780px;margin:6px 0 0}
+footer .mono{font-size:10px;color:var(--aqua);letter-spacing:.12em}
+
+/* ANIMACIONES REVEAL DE MIPEZ */
+.reveal{opacity:1;transform:none}
+.motion .reveal.pending{opacity:0;transform:translateY(22px)}
+.motion .reveal{transition:opacity .65s ease,transform .65s ease}
+
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:28px}
+  .four{grid-template-columns:repeat(2,1fr)}
+  .three{grid-template-columns:repeat(2,1fr)}
+  .timeline{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:680px){
+  .shell,.wrap{width:calc(100% - 32px)}
+  .header-top{flex-wrap:wrap;min-height:76px}
+  .brand-wrap img{width:64px;height:64px}
+  .four,.three,.two{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .bar{grid-template-columns:108px 1fr 78px}
+  .hero-sec{padding:40px 0 44px}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .footer-brand img{width:84px;height:84px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{transition:none!important;animation:none!important}
+  .motion .reveal.pending{opacity:1;transform:none}
+}
+@media print{
+  header,button,.skip{display:none!important}
+  body{background:#fff}
+  .card,.tablewrap,.phase{box-shadow:none;break-inside:avoid;border:1px solid #ccc}
+  .hero-sec,footer,.dark{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .shell{width:100%;max-width:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#resumen">Saltar al contenido</a>
+
+<header id="inicio">
+  <div class="shell header-top">
+    <a class="brand-wrap" href="#inicio" aria-label="MIPEZ, inicio">
+      <img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Laboratorio del Agua" width="78" height="78">
+      <div>
+        <div class="brand">MI<span>PEZ</span></div>
+        <span class="nav-tag">DIAGNÓSTICO / OPERACIÓN / CONTROL</span>
+      </div>
+    </a>
+    <div class="badge">Prefactibilidad · Versión 1.0 · 31 oct 2026</div>
+  </div>
+  <nav class="nav-bar" aria-label="Navegación principal">
+    <div class="shell nav">
+      <a href="#resumen">Resumen</a>
+      <a href="#modelo">Modelo</a>
+      <a href="#sitio">Sitio</a>
+      <a href="#infra">Infraestructura</a>
+      <a href="#finanzas">Finanzas</a>
+      <a href="#escala">Escalamiento</a>
+      <a href="#permisos">Permisos</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#riesgos">Riesgos</a>
+      <a href="#fuentes">Fuentes</a>
+    </div>
+  </nav>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<section class="hero-sec">
+  <div class="shell hero-grid">
+    <div class="hero reveal">
+      <div class="eyebrow">Acuacultura marina · Pacífico mexicano</div>
+      <h1>Granja sustentable<br><span>de perlas</span></h1>
+      <p>Propuesta de piloto productivo de <b>200 ostras perleras</b> en la Bahía de La Paz, Baja California Sur, con ruta de validación técnica, permisos, operación y crecimiento por etapas.</p>
+      <div class="hero-meta">
+        <span class="pill">La Paz, BCS</span>
+        <span class="pill">Especie: <i>Pteria sterna</i></span>
+        <span class="pill">Longline + laboratorio ligero</span>
+      </div>
+    </div>
+    <div class="hero-emblem reveal">
+      <img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Laboratorio del Agua" width="136" height="136">
+      <div class="hero-emblem-caption">MIPEZ / LABORATORIO DEL AGUA</div>
+      <div class="hero-emblem-sub">Ciencia aplicada al diagnóstico, operación y control de sistemas acuáticos y acuacultura marina.</div>
+    </div>
+  </div>
+</section>
+
+<main class="shell">
+  <section id="resumen" class="reveal">
+    <div class="head">
+      <div class="kicker">01 · Síntesis ejecutiva</div>
+      <h2>Validar primero. Escalar con evidencia.</h2>
+      <p>El piloto comprobará supervivencia, respuesta al implante, calidad comercial, costos reales y capacidad operativa antes de comprometer capital en una granja mayor.</p>
+    </div>
+    <div class="grid four">
+      <div class="card">
+        <div class="caption">Población inicial</div>
+        <div class="metric">200 <small>ostras</small></div>
+        <div class="caption">Cuatro lotes experimentales</div>
+      </div>
+      <div class="card">
+        <div class="caption">CAPEX objetivo</div>
+        <div class="metric">$450 mil</div>
+        <div class="caption">MXN · inversión inicial estimada</div>
+      </div>
+      <div class="card">
+        <div class="caption">OPEX anual objetivo</div>
+        <div class="metric">$137 mil</div>
+        <div class="caption">MXN · operación piloto</div>
+      </div>
+      <div class="card">
+        <div class="caption">Precio mayorista supuesto</div>
+        <div class="metric">$450 <small>/ mabé</small></div>
+        <div class="caption">MXN por pieza vendida</div>
+      </div>
+    </div>
+    <div class="callout"><b>Conclusión financiera:</b> con los supuestos actuales, 200 ostras no son una unidad rentable por sí sola. El piloto es una inversión de validación tecnológica y comercial. Su éxito se mide por datos reproducibles que permitan decidir si avanzar a 500, 1,500 y 4,000 organismos.</div>
+  </section>
+
+  <section id="modelo" class="reveal">
+    <div class="head">
+      <div class="kicker">02 · Modelo productivo</div>
+      <h2>Una operación marina modular</h2>
+      <p>El cultivo ocurre principalmente en el mar. La instalación terrestre se limita a recepción, cuarentena, implante, recuperación, cosecha y clasificación.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Especie y sistema propuestos</h3>
+        <p><b><i>Pteria sterna</i></b>, ostra perlera de concha nácar, con antecedentes científicos de cultivo en Bahía de La Paz.</p>
+        <ul>
+          <li>Línea marina suspendida tipo <i>longline</i>.</li>
+          <li>Canastillas o linternas para mantener organismos y facilitar inspección.</li>
+          <li>Laboratorio terrestre pequeño, compartido o rentado cerca del puerto.</li>
+          <li>Embarcación y servicios marítimos contratados durante el piloto.</li>
+        </ul>
+        <span class="tag">Sistema propuesto</span>
+      </div>
+      <div class="card">
+        <h3>Diseño experimental: 200 organismos</h3>
+        <p>Cuatro grupos de 50, con dos réplicas de 25 por grupo.</p>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Grupo</th><th>Tratamiento</th><th>Objetivo</th></tr>
+            <tr><td>A</td><td>Núcleo pequeño</td><td>Respuesta y forma</td></tr>
+            <tr><td>B</td><td>Núcleo mediano</td><td>Calidad y rechazo</td></tr>
+            <tr><td>C</td><td>Núcleo grande</td><td>Valor y supervivencia</td></tr>
+            <tr><td>D</td><td>Control sin implante</td><td>Supervivencia base</td></tr>
+          </table>
+        </div>
+        <p class="note">Tamaño exacto de núcleo y protocolo quirúrgico requieren asesoría especializada, talla del animal y pruebas preliminares. No se presupone implantar tres núcleos por ostra.</p>
+      </div>
+    </div>
+    <div class="grid three" style="margin-top:20px">
+      <div class="card">
+        <h3>1. Abastecimiento</h3>
+        <p class="caption">Adquirir juveniles de proveedor autorizado y documentar origen, talla, condición y traslado. Criadero propio en fase futura.</p>
+      </div>
+      <div class="card">
+        <h3>2. Adaptación e implante</h3>
+        <p class="caption">Cuarentena, aclimatación, evaluación sanitaria y procedimiento por personal entrenado. Registro individual y por lote.</p>
+      </div>
+      <div class="card">
+        <h3>3. Recuperación y cosecha</h3>
+        <p class="caption">Seguimiento de supervivencia, rechazo, crecimiento y calidad. Cosecha, clasificación, fotografía y trazabilidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sitio" class="reveal">
+    <div class="head">
+      <div class="kicker">03 · Evaluación del sitio</div>
+      <h2>Bahía de La Paz: zona de estudio, no coordenada aprobada</h2>
+      <p>Hay antecedentes científicos de cultivo de <i>Pteria sterna</i> en la bahía, pero el polígono debe seleccionarse con mediciones, compatibilidad ambiental y revisión de navegación.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Proceso de selección</h3>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><b>Preseleccionar tres polígonos</b><div class="caption">Revisar ordenamiento, usos, accesos, protección ambiental y conflictos.</div></div></div>
+          <div class="step"><div class="num">2</div><div><b>Dos estaciones por polígono</b><div class="caption">Muestreo de agua, fondo, profundidad y condiciones oceanográficas.</div></div></div>
+          <div class="step"><div class="num">3</div><div><b>Campaña de 8–12 semanas</b><div class="caption">Para ingeniería preliminar; no sustituye caracterización estacional completa.</div></div></div>
+          <div class="step"><div class="num">4</div><div><b>Monitoreo ideal de 12 meses</b><div class="caption">Capturar variabilidad anual antes del diseño definitivo.</div></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Variables que deben medirse</h3>
+        <ul>
+          <li>Temperatura, salinidad y oxígeno disuelto.</li>
+          <li>pH, turbidez, transparencia y clorofila.</li>
+          <li>Corrientes, oleaje, profundidad y exposición a tormentas.</li>
+          <li>Sedimentación, tipo de fondo y calidad del agua.</li>
+          <li>Contaminantes y proximidad a descargas.</li>
+          <li>Pastos marinos, arrecifes, fauna protegida y hábitats sensibles.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><b>Restricción crítica:</b> excluir áreas ecológicamente sensibles y polígonos incompatibles con navegación, pesca, ordenamientos o ANP. Verificar expresamente compatibilidad con el Parque Nacional Zona Marina del Archipiélago de Espíritu Santo y demás instrumentos. No se asigna coordenada ni profundidad hasta contar con batimetría, mediciones y revisión legal.</div>
+  </section>
+
+  <section id="infra" class="reveal">
+    <div class="head">
+      <div class="kicker">04 · Infraestructura y operación</div>
+      <h2>Instalaciones mínimas, ampliables</h2>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Componente marino</h3>
+        <ul>
+          <li>Una línea experimental con anclajes, cabo madre, boyas y flotadores.</li>
+          <li>Canastillas/linternas y elementos de suspensión.</li>
+          <li>Cabos, grilletes, conectores y señalización marítima.</li>
+          <li>Equipo de inspección, limpieza y mantenimiento.</li>
+          <li>Registro de posición, profundidad, inventario y eventos.</li>
+        </ul>
+        <p class="note">Dimensiones, materiales, anclaje y capacidad de carga se calculan después de batimetría, oleaje, corrientes y cargas de diseño.</p>
+      </div>
+      <div class="card">
+        <h3>Laboratorio terrestre ligero</h3>
+        <ul>
+          <li>Tanques de recepción, cuarentena y recuperación.</li>
+          <li>Filtración, aireación, respaldo eléctrico y control de temperatura.</li>
+          <li>Área limpia para preparación e instrumental de implante.</li>
+          <li>Estación de cosecha, clasificación y fotografía.</li>
+          <li>Almacenamiento seguro de insumos, núcleos y registros.</li>
+        </ul>
+        <p class="note">Recomendación: rentar o compartir espacio cerca del puerto en lugar de construir un laboratorio completo desde el inicio.</p>
+      </div>
+    </div>
+    <div class="grid three" style="margin-top:20px">
+      <div class="card">
+        <span class="tag">Personal</span>
+        <h3>Equipo compacto</h3>
+        <p class="caption">Responsable técnico acuícola, apoyo de campo y técnico especializado en implante/cosecha. Servicios puntuales según etapa.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Movilidad</span>
+        <h3>Servicios contratados</h3>
+        <p class="caption">Contratar embarcación, patrón y buceo/inspección cuando proceda. Comprar embarcación solo si volumen y frecuencia lo justifican.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Trazabilidad</span>
+        <h3>Registro individual</h3>
+        <p class="caption">ID, lote, procedencia, talla, fecha de implante, tratamientos, supervivencia, incidencias, cosecha, calidad y venta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="finanzas" class="reveal">
+    <div class="head">
+      <div class="kicker">05 · Modelo financiero</div>
+      <h2>Inversión, operación y resultado del piloto</h2>
+      <p>Montos de planeación en pesos mexicanos. Son metas presupuestales de prefactibilidad, no cotizaciones ni precios verificados.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>CAPEX objetivo · $450,000</h3>
+        <div class="bars">
+          <div class="bar"><span>Equipo marino</span><div class="track"><div class="fill" style="width:100%"></div></div><b>$150,000</b></div>
+          <div class="bar"><span>Laboratorio ligero</span><div class="track"><div class="fill" style="width:80%"></div></div><b>$120,000</b></div>
+          <div class="bar"><span>Equipo técnico</span><div class="track"><div class="fill" style="width:53.3%"></div></div><b>$80,000</b></div>
+          <div class="bar"><span>Estudios y permisos</span><div class="track"><div class="fill" style="width:40%"></div></div><b>$60,000</b></div>
+          <div class="bar"><span>Contingencia</span><div class="track"><div class="fill" style="width:26.7%"></div></div><b>$40,000</b></div>
+        </div>
+        <p class="note">Distribución objetivo ilustrativa; sustituir por cotizaciones, ingeniería y alcance ambiental definitivo.</p>
+      </div>
+      <div class="card">
+        <h3>OPEX anual objetivo · $137,000</h3>
+        <div class="bars">
+          <div class="bar"><span>Juveniles/insumos</span><div class="track"><div class="fill" style="width:100%"></div></div><b>$35,000</b></div>
+          <div class="bar"><span>Operación marina</span><div class="track"><div class="fill" style="width:85.7%"></div></div><b>$30,000</b></div>
+          <div class="bar"><span>Personal/servicios</span><div class="track"><div class="fill" style="width:85.7%"></div></div><b>$30,000</b></div>
+          <div class="bar"><span>Mantenimiento</span><div class="track"><div class="fill" style="width:57.1%"></div></div><b>$20,000</b></div>
+          <div class="bar"><span>Monitoreo/logística</span><div class="track"><div class="fill" style="width:62.9%"></div></div><b>$22,000</b></div>
+        </div>
+        <p class="note">Puede no incluir remuneración completa de fundadores, financiamiento, impuestos, depreciación ni contingencias extraordinarias.</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:20px">
+      <h3>Escenario ilustrativo de ingreso del piloto</h3>
+      <div class="grid four">
+        <div><div class="caption">Ostras iniciales</div><div class="metric">200</div></div>
+        <div><div class="caption">Supervivencia supuesta</div><div class="metric">90%</div></div>
+        <div><div class="caption">Piezas cobradas estimadas</div><div class="metric">194</div><div class="caption">Tras rendimiento comercial y venta efectiva</div></div>
+        <div><div class="caption">Ingreso bruto estimado</div><div class="metric">$87,300</div><div class="caption">194 × $450 MXN</div></div>
+      </div>
+      <div class="tablewrap" style="margin-top:16px">
+        <table>
+          <tr><th>Supuesto</th><th>Valor</th></tr>
+          <tr><td>Supervivencia</td><td>90%</td></tr>
+          <tr><td>Núcleos implantados por sobreviviente</td><td>2</td></tr>
+          <tr><td>Rendimiento comercial</td><td>60%</td></tr>
+          <tr><td>Venta efectiva</td><td>90%</td></tr>
+          <tr><td>Precio mayorista por mabé</td><td>$450 MXN</td></tr>
+          <tr><td>Piezas cobradas estimadas (redondeo)</td><td>194</td></tr>
+          <tr><td>Ingreso bruto estimado</td><td>$87,300 MXN</td></tr>
+          <tr><td>OPEX anual objetivo</td><td>$137,000 MXN</td></tr>
+          <tr><td><b>Resultado operativo ilustrativo</b></td><td><b>−$49,700 MXN</b></td></tr>
+        </table>
+      </div>
+      <p class="note">El cálculo supone producto vendible y cobrado. Tiempo a cosecha, núcleos por animal, rechazos, calidad y demanda deben validarse. No es promesa de rendimiento.</p>
+    </div>
+    <div class="callout"><b>Lectura correcta:</b> el ingreso de una cohorte no debe confundirse con ingreso anual recurrente. Producción escalonada, ciclos biológicos, reposición y calendario de cosechas determinan el flujo de caja real.</div>
+  </section>
+
+  <section id="escala" class="reveal">
+    <div class="head">
+      <div class="kicker">06 · Crecimiento</div>
+      <h2>Escalar por compuertas de desempeño</h2>
+      <p>Cada ampliación se autoriza solo cuando la fase anterior demuestre resultados biológicos, comerciales, regulatorios y operativos suficientes.</p>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Etapa</th><th>Organismos</th><th>OPEX anual indicativo</th><th>Condición para avanzar</th></tr>
+        <tr><td>Piloto</td><td>200</td><td>$137,000</td><td>Supervivencia, calidad, protocolo y mercado validados</td></tr>
+        <tr><td>Expansión I</td><td>500</td><td>$175,000</td><td>Operación repetible y suministro confiable</td></tr>
+        <tr><td>Expansión II</td><td>1,500</td><td>$280,000</td><td>Producción por cohortes y ventas verificadas</td></tr>
+        <tr><td>Escala comercial</td><td>4,000</td><td>$520,000</td><td>Flujo de caja, permisos y capacidad técnica demostrados</td></tr>
+      </table>
+    </div>
+    <div class="grid two" style="margin-top:20px">
+      <div class="card">
+        <h3>Escenario de cohorte a 4,000</h3>
+        <div class="metric">$1.75 M</div>
+        <p class="caption">Ventas brutas ilustrativas: 3,888 piezas cobradas × $450. Frente a OPEX indicativo de $520,000, antes de CAPEX, impuestos, depreciación y costos no incluidos.</p>
+        <p class="note">No equivale a producción anual garantizada ni utilidad neta. Requiere validar supuestos y organizar cohortes escalonadas.</p>
+      </div>
+      <div class="card">
+        <h3>Política de reinversión propuesta</h3>
+        <div class="bars">
+          <div class="bar"><span>Nuevos módulos</span><div class="track"><div class="fill" style="width:100%"></div></div><b>45%</b></div>
+          <div class="bar"><span>Juveniles</span><div class="track"><div class="fill" style="width:55.6%"></div></div><b>25%</b></div>
+          <div class="bar"><span>Mantenimiento</span><div class="track"><div class="fill" style="width:33.3%"></div></div><b>15%</b></div>
+          <div class="bar"><span>Reserva</span><div class="track"><div class="fill" style="width:33.3%"></div></div><b>15%</b></div>
+        </div>
+        <p class="note">Aplicar sobre excedente de caja efectivamente cobrado, después de obligaciones y capital de trabajo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="permisos" class="reveal">
+    <div class="head">
+      <div class="kicker">07 · Ruta regulatoria</div>
+      <h2>Permisos antes de instalar</h2>
+      <p>La autorización acuícola no sustituye la evaluación ambiental ni otras autorizaciones que dependan del polígono, obras, especie y origen de organismos.</p>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <h3>Instrumentos principales</h3>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div><b>NOM-058-SAG/PESC/SEMARNAT-2013</b><div class="caption">Norma para cultivo de ostras perleras en aguas marinas de jurisdicción federal; incluye <i>Pteria sterna</i>. Confirmar texto vigente y obligaciones.</div></div></div>
+          <div class="step"><div class="num">2</div><div><b>Permiso de acuacultura comercial</b><div class="caption">Trámite ante CONAPESCA. El acuerdo publicado el 26 de agosto de 2025 señala resolución de hasta 60 días hábiles con expediente integrado.</div></div></div>
+          <div class="step"><div class="num">3</div><div><b>Evaluación ambiental SEMARNAT</b><div class="caption">Determinar si corresponde MIA, informe preventivo u otra vía; no asumir exención antes de revisar obras y ubicación.</div></div></div>
+          <div class="step"><div class="num">4</div><div><b>Compatibilidades complementarias</b><div class="caption">ANP y ordenamiento, zona federal/bienes nacionales si aplica, navegación, señalización, sanidad, movilización y trazabilidad.</div></div></div>
+        </div>
+      </div>
+      <div class="dark">
+        <h3>Gestión inicial con CONAPESCA</h3>
+        <p>Solicitar orientación por escrito sobre expediente técnico y requisitos para cultivo de <i>Pteria sterna</i> en el polígono propuesto.</p>
+        <p><b>Correo:</b><br>administracion.acuicola@conapesca.gob.mx</p>
+        <p><b>Teléfono:</b><br>800 667 4022 · extensiones 58572 y 58562</p>
+        <p class="note">Confirmar vigencia de los datos al iniciar el trámite.</p>
+      </div>
+    </div>
+    <div class="callout"><b>Orden recomendado:</b> confirmar viabilidad territorial y ambiental; cerrar ingeniería y presupuesto; integrar expediente acuícola y ambiental coordinadamente; instalar solo cuando las autorizaciones estén resueltas.</div>
+  </section>
+
+  <section id="cronograma" class="reveal">
+    <div class="head">
+      <div class="kicker">08 · Implementación</div>
+      <h2>Cronograma preliminar de 24 meses</h2>
+      <p>La duración depende de evaluación ambiental, tiempos administrativos, disponibilidad de juveniles, talla de implante y ciclo biológico.</p>
+    </div>
+    <div class="timeline">
+      <div class="phase"><b>Meses 1–3</b><strong>Selección del sitio</strong><p>Polígonos, muestreo, batimetría y restricciones.</p></div>
+      <div class="phase"><b>Meses 3–6</b><strong>Ingeniería y expediente</strong><p>Diseño, memoria técnica, presupuesto y estrategia ambiental.</p></div>
+      <div class="phase"><b>Meses 5–10</b><strong>Permisos</strong><p>Gestiones acuícolas, ambientales y complementarias.</p></div>
+      <div class="phase"><b>Meses 9–11</b><strong>Instalación</strong><p>Montaje condicionado a permisos y diseño validado.</p></div>
+      <div class="phase"><b>Meses 11–12</b><strong>Recepción y aclimatación</strong><p>Ingreso documentado, cuarentena y línea base.</p></div>
+      <div class="phase"><b>Meses 12–24+</b><strong>Engorda y validación</strong><p>Crecimiento, condición, supervivencia y preparación de implante.</p></div>
+    </div>
+    <div class="callout"><b>Importante:</b> implantación y cosecha no quedan fijadas a un mes hasta validar talla, condición fisiológica, protocolo, temporada y desempeño local. El cultivo puede extenderse más allá de 24 meses.</div>
+  </section>
+
+  <section id="riesgos" class="reveal">
+    <div class="head">
+      <div class="kicker">09 · Riesgos y controles</div>
+      <h2>Lo que puede comprometer el proyecto</h2>
+    </div>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Riesgo</th><th>Impacto</th><th>Control propuesto</th></tr>
+        <tr><td>Calidad de agua o eventos extremos</td><td>Mortandad y pérdida de cosecha</td><td>Monitoreo, selección robusta, alertas y contingencia.</td></tr>
+        <tr><td>Abastecimiento irregular de juveniles</td><td>Retrasos y cohortes incompletas</td><td>Proveedor autorizado, trazabilidad y alternativa de suministro.</td></tr>
+        <tr><td>Rechazo/mortalidad postimplante</td><td>Menor rendimiento comercial</td><td>Personal entrenado, controles, protocolo y registro por lote.</td></tr>
+        <tr><td>Tormentas y fallas de fondeo</td><td>Pérdida de infraestructura</td><td>Ingeniería de anclajes, inspección y dimensionamiento local.</td></tr>
+        <tr><td>Permisos o incompatibilidad territorial</td><td>Retraso o inviabilidad</td><td>Preconsulta y análisis espacial antes de invertir en obra.</td></tr>
+        <tr><td>Precio o demanda inferiores</td><td>Flujo de caja insuficiente</td><td>Validar compradores, muestras, especificaciones y acuerdos.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="decisiones" class="reveal">
+    <div class="head">
+      <div class="kicker">10 · Configuración recomendada</div>
+      <h2>Un piloto de bajo activo fijo</h2>
+    </div>
+    <div class="grid two">
+      <div class="card">
+        <span class="tag">Recomendación base</span>
+        <h3>Operación inicial</h3>
+        <ul>
+          <li>Rentar o compartir laboratorio cerca del puerto.</li>
+          <li>Comprar juveniles a proveedor autorizado.</li>
+          <li>Contratar embarcación y servicios marítimos.</li>
+          <li>Liberar CAPEX por etapas, hasta el objetivo de $450,000.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Hitos para autorizar inversión</h3>
+        <ul>
+          <li>Polígono sin incompatibilidad evidente.</li>
+          <li>Consulta regulatoria documentada.</li>
+          <li>Presupuesto respaldado por cotizaciones.</li>
+          <li>Proveedor y protocolo técnico identificados.</li>
+          <li>Interés comercial comprobable para mabé a $450 mayorista.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuentes" class="reveal">
+    <div class="head">
+      <div class="kicker">11 · Base técnica y documental</div>
+      <h2>Fuentes de referencia</h2>
+      <p>La propuesta debe pasar a proyecto técnico autorizado con revisión de normativa y literatura científica completa.</p>
+    </div>
+    <div class="card sources">
+      <a href="https://www.dof.gob.mx/" target="_blank" rel="noopener"><b>NOM-058-SAG/PESC/SEMARNAT-2013</b> — Diario Oficial de la Federación. Norma para cultivo de ostras perleras en aguas marinas de jurisdicción federal.</a>
+      <a href="https://www.dof.gob.mx/" target="_blank" rel="noopener"><b>Acuerdo CONAPESCA, 26 de agosto de 2025</b> — Formato y requisitos del permiso de acuacultura comercial; revisar publicación y anexos oficiales.</a>
+      <a href="https://pmc.ncbi.nlm.nih.gov/" target="_blank" rel="noopener"><b>Estudio científico 2024 sobre cirugía de implantación en <i>Pteria sterna</i></b> — Referencia experimental de organismos en canastillas suspendidas de líneas largas en Bahía de La Paz.</a>
+      <a href="https://www.sciencedirect.com/" target="_blank" rel="noopener"><b>Saucedo y Monteforte (1997)</b> — Crecimiento in situ de <i>Pteria sterna</i> y <i>Pinctada mazatlanica</i> en Bahía de La Paz.</a>
+      <a href="https://www.gob.mx/conanp" target="_blank" rel="noopener"><b>CONANP</b> — Información oficial de áreas naturales protegidas y programas de manejo.</a>
+      <a href="https://www.gob.mx/conapesca" target="_blank" rel="noopener"><b>CONAPESCA</b> — Autoridad para orientación y trámite acuícola.</a>
+      <a href="https://www.gob.mx/semarnat" target="_blank" rel="noopener"><b>SEMARNAT</b> — Autoridad ambiental para determinar evaluación y autorizaciones aplicables.</a>
+    </div>
+    <p class="note">Antes de presentar expediente, incorporar fichas bibliográficas completas, DOI, versiones vigentes de normas y acuerdos, y respuestas oficiales de autoridades.</p>
+  </section>
+
+  <div class="dark reveal">
+    <div class="kicker">MIPEZ · Siguiente fase</div>
+    <h2>Convertir la prefactibilidad en expediente ejecutable</h2>
+    <p>El siguiente entregable debe incluir polígono georreferenciado, estudio de sitio, memoria de cálculo de fondeo, planos, cotizaciones, flujo de caja por cohorte, protocolo de cultivo y matriz regulatoria específica.</p>
+    <button onclick="window.print()">Imprimir / guardar como PDF</button>
+    <button class="secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">Volver al inicio ↑</button>
+  </div>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <a class="footer-brand" href="#inicio" aria-label="MIPEZ, volver al inicio">
+      <img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Laboratorio del Agua" loading="lazy">
+      <div class="brand" style="color:#fff">MI<span style="color:var(--aqua)">PEZ</span></div>
+    </a>
+    <div>
+      <span class="mono">© 2026 MIPEZ · LABORATORIO DEL AGUA</span>
+      <p>Propuesta preliminar de prefactibilidad · Cultivo sustentable de perlas · La Paz, Baja California Sur · 31 de octubre de 2026.</p>
+      <p>Documento de planeación. No constituye dictamen ambiental, autorización acuícola, ingeniería de detalle, oferta de inversión ni garantía de rendimiento. Las cifras son supuestos preliminares sujetos a cotización y validación biológica, comercial y regulatoria.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+'use strict';
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window&&!reduce.matches){
+  const reveal=[...document.querySelectorAll('.reveal')];
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.remove('pending');
+      observer.unobserve(entry.target);
+    }
+  }),{threshold:.08});
+  document.documentElement.classList.add('motion');
+  reveal.forEach(el=>{
+    if(el.getBoundingClientRect().top>innerHeight){
+      el.classList.add('pending');
+      observer.observe(el);
+    }
+  });
+  reduce.addEventListener('change',()=>{
+    if(reduce.matches){
+      reveal.forEach(el=>el.classList.remove('pending'));
+      observer.disconnect();
+    }
+  });
+}
+let queued=false;
+const bar=document.querySelector('.progress');
+function progress(){
+  const total=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';
+  queued=false;
+}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});
+addEventListener('resize',progress);
+progress();
+})();
+</script>
+</body>
+</html>
