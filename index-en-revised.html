@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MIPEZ, Water Laboratory. Intensive mabé pearl cultivation in Recirculating Aquaculture Systems (RAS) and marine validation in La Paz, BCS.">
+<meta name="theme-color" content="#20206f">
+<title>MIPEZ | Applied Science for Sustainable Mabé Pearl Farming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#20206f;--blue:#1d72b8;--cyan:#35c0e6;--aqua:#7ee6df;--mint:#dffcf5;--sky:#dff4ff;--ink:#12303b;--muted:#56717a;--line:rgba(29,114,184,.16);--gold:#c69c54}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;background:#f6fcfd;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}a{color:inherit}img{display:block;max-width:100%}svg{display:block}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.skip{position:fixed;top:-100px;left:16px;z-index:100;background:white;padding:12px}.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.9);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px}.brand img{width:82px;height:82px;object-fit:contain}.nav-links{display:flex;gap:24px;align-items:center;overflow-x:auto}.nav-links a{text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap}.nav-links a:hover{color:var(--blue)}.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted)}.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;border:1px solid rgba(29,114,184,.3);background:linear-gradient(135deg,#ffffff,#e8f6fc);color:var(--navy);font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.06em;box-shadow:0 3px 10px rgba(29,114,184,.1);transition:all .2s;white-space:nowrap}
+.lang-btn:hover{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-color:transparent;box-shadow:0 5px 14px rgba(29,114,184,.25)}
+
+/* HERO WITH REDUCED OPACITY FULL-BLEED MABÉ PEARL FARMING BACKGROUND */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:110px 0 100px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff);border-bottom:1px solid var(--line)}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=85');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0.22;
+  z-index:-2;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(249,255,254,0.88) 0%,rgba(237,247,255,0.68) 55%,rgba(237,247,255,0.45) 100%);
+  z-index:-1;
+}
+.hero-grid{display:block;max-width:780px}
+.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef}
+h1{font-size:clamp(42px,4.8vw,65px);line-height:1.07;letter-spacing:-.055em;font-weight:600;margin:27px 0 24px;color:var(--navy)}h1 span{color:var(--blue)}
+.intro{font-size:16px;max-width:640px;color:var(--ink);font-weight:500}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.pill{border:1px solid rgba(29,114,184,.25);border-radius:30px;padding:7px 14px;font-size:11px;font-weight:600;color:var(--navy);background:rgba(255,255,255,.85);backdrop-filter:blur(6px)}
+.btn{display:inline-flex;align-items:center;gap:22px;text-decoration:none;padding:14px 22px;border-radius:30px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;border:1px solid transparent}.btn:hover{box-shadow:0 12px 28px #1d72b845}
+.hero .btn{margin-top:24px}
+.hero-note{font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:28px}
+
+/* MIPEZ SECTIONS */
+.section{padding:80px 0;border-bottom:1px solid var(--line)}
+.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:35px}
+.section-num{font:10px ui-monospace,monospace;color:var(--blue);letter-spacing:.13em;text-transform:uppercase}
+h2{font-size:clamp(29px,3.2vw,43px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin:13px 0 0;color:var(--navy)}
+.section-top p{font-size:14px;color:var(--muted);max-width:480px;margin:0}
+
+/* GRIDS & NEUMORPHIC CARDS */
+.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.step,.card{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#fff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}
+.step-no{font:11px ui-monospace,monospace;color:var(--blue);padding:9px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 white;display:inline-block;font-weight:700}
+.step h3,.card h3{font-size:18px;font-weight:600;letter-spacing:-.025em;margin:18px 0 10px;color:var(--navy)}
+.card h3:first-child{margin-top:0}
+.step p,.card p{font-size:12.5px;color:var(--muted);margin:0}
+.step-foot{font:9px ui-monospace,monospace;letter-spacing:.07em;color:var(--blue);border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
+
+.metric{font-size:32px;font-weight:700;letter-spacing:-.04em;line-height:1.15;margin:10px 0 6px;color:var(--navy)}
+.metric small{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0}
+.caption{font-size:11.5px;color:var(--muted)}
+.tag{display:inline-block;background:var(--mint);color:var(--blue);border:1px solid rgba(29,114,184,.2);border-radius:30px;padding:5px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:14px}
+.callout{border-left:4px solid var(--blue);background:linear-gradient(120deg,#ffffffed,#e9faf9);padding:18px 22px;border-radius:0 18px 18px 0;color:var(--ink);font-size:13px;margin-top:22px;box-shadow:0 8px 24px #1d72b80b}
+
+/* TABLES & BARS */
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:white;margin-top:16px;box-shadow:0 6px 18px #1d72b808}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;background:#eef8fc;color:var(--navy);text-transform:uppercase;font:10px ui-monospace,monospace;letter-spacing:.08em}
+td,th{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.bars{display:grid;gap:13px;margin-top:16px}
+.bar{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;font-size:12px}
+.track{height:11px;border-radius:20px;background:#e3f2f8;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));border-radius:20px}
+ul.clean{padding-left:18px;color:var(--muted);font-size:12.5px;margin:10px 0 0}
+ul.clean li{margin:6px 0}
+
+/* INTERACTIVE RAS & TOWER DIAGRAM */
+.interactive-box{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#ffffff,#e9f7fb);box-shadow:8px 10px 28px #1d72b812;margin-top:24px}
+.tab-group{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.tab-btn{padding:10px 18px;border-radius:24px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:12px;font-weight:600;transition:all .2s}
+.tab-btn[aria-selected="true"]{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-color:transparent;box-shadow:0 6px 16px #1d72b82a}
+.detail{padding:18px 22px;border:1px solid #fff;border-radius:22px;background:linear-gradient(120deg,#ffffffed,#e9faf9);box-shadow:0 8px 24px #1d72b80b;min-height:110px;margin-top:16px}
+.detail-heading{display:flex;gap:12px;align-items:center}
+.detail-heading span{color:var(--blue);font:10px ui-monospace,monospace;font-weight:700}
+.detail h3{font-size:15px;margin:0;color:var(--navy)}
+.detail p{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+/* TIMELINE */
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:20px}
+.phase{background:white;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 4px 14px #1d72b808}
+.phase b{font:10px ui-monospace,monospace;color:var(--blue);text-transform:uppercase}
+.phase strong{display:block;font-size:13px;margin:6px 0;color:var(--navy)}
+.phase p{font-size:11.5px;color:var(--muted);margin:0}
+
+/* DARK .NEWS SECTION */
+.news{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:white;position:relative}
+.news-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}
+.news .section-num{color:var(--aqua)}
+.news h2{color:white;max-width:380px}
+.news-copy p{font-size:14px;color:#d6e7ed;margin:0 0 18px}
+.news-copy .fact{font-size:12.5px;padding:18px 22px;border-radius:18px;background:#ffffff0c;border:1px solid #ffffff20;color:#e6f4f8}
+.citation{color:var(--aqua);text-decoration:none;font-size:10px;vertical-align:super}
+.sources{margin-top:24px;border-top:1px solid #ffffff2b}
+.sources a{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #ffffff20;text-decoration:none;font-size:11.5px;color:#e0eff6}
+.sources a:hover{color:var(--aqua)}
+.sources b{font:10px ui-monospace,monospace;color:var(--aqua);margin-right:8px}
+.source-label{font:9px ui-monospace,monospace;color:#aac7d6;letter-spacing:.12em;margin-top:24px;text-transform:uppercase}
+
+/* PREPARE & FOOTER */
+.prepare{padding:56px 0}
+.prepare-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.prepare h2{font-size:27px}
+.prepare p{font-size:13px;color:var(--muted)}
+details{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy)}
+details ul{padding-left:20px;font-size:12px;color:var(--muted)}
+details li{margin:9px 0}
+footer{background:#171b58;color:#bfcce5;padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}
+.footer-inner img{width:100px;height:100px;object-fit:contain}
+.footer-inner p{font-size:10.5px;max-width:620px;margin:6px 0 0}
+.footer-inner .mono{font-size:9px;color:var(--aqua)}
+
+.reveal{opacity:1;transform:none}
+.motion .reveal.pending{opacity:0;transform:translateY(22px)}
+.motion .reveal{transition:opacity .65s ease,transform .65s ease}
+
+@media(max-width:1000px){.nav-tag{display:none}.news-grid{gap:35px}.grid-4{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:80px}.brand img{width:70px;height:70px}.nav-links{gap:14px}.nav-links a{font-size:10px}.hero{padding:64px 0 72px}h1{font-size:44px;margin:20px 0}.intro{font-size:14px}.section{padding:52px 0}.section-top,.news-grid,.prepare-inner,.grid-2,.protocol{grid-template-columns:1fr;gap:20px}.grid-4,.timeline{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 78px}.footer-inner{flex-direction:column;align-items:flex-start;gap:20px}.footer-inner img{width:85px;height:85px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.motion .reveal.pending{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="MIPEZ, home">
+      <img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Water Laboratory" width="82" height="82">
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#resumen">Summary</a>
+      <a href="#modelo">Model</a>
+      <a href="#ingenieria">RAS Engineering</a>
+      <a href="#finanzas">5-Year Financials</a>
+      <a href="costs-en.html">Detailed budget</a>
+      <a href="#permisos">Regulation</a>
+      
+      
+      <a class="lang-btn" href="index.html" hreflang="es" lang="es" aria-label="Cambiar a la versión en Español">🌐 ES · Español</a>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="inicio">
+  <!-- HERO WITH FULL-BLEED MABÉ PEARL FARMING BACKGROUND AT REDUCED OPACITY -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Applied Science · Marine Aquaculture &amp; RAS</div>
+        <h1>Sustainable farming<br>of <span>Mabé Pearls.</span></h1>
+        <p class="intro">Diagnostics, operation, and monitoring of engineered water bodies and intensive mabé pearl cultivation systems (<i>Pteria sterna</i>). From biological validation to a staged 50,000-oyster commercial target.</p>
+        <div class="hero-meta">
+          <span class="pill">La Paz, BCS · Mérida, Yuc.</span>
+          <span class="pill">Species: <i>Pteria sterna</i></span>
+          <span class="pill">Suspended marine culture · longline</span>
+        </div>
+        <a class="btn" href="#resumen">Explore project &amp; method <span aria-hidden="true">↘</span></a>
+        <p class="hero-note mono">MIPEZ / WATER LABORATORY · PRE-FEASIBILITY &amp; OPERATIONS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 / EXECUTIVE SUMMARY & VALIDATION PILOT -->
+  <section class="section" id="resumen">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">01 / EXECUTIVE SUMMARY</span>
+          <h2>Validate survival, product quality and pilot costs.<br>Scale only after results are verified.</h2>
+        </div>
+        <p>The program validates survival, implantation response, commercial quality and carrying capacity before scaling by cohorts toward a target standing inventory of 50,000 oysters.</p>
+      </div>
+
+      <div class="grid-4 reveal">
+        <div class="card">
+          <div class="caption mono">TARGET POPULATION</div>
+          <div class="metric">50,000 <small>oysters</small></div>
+          <div class="caption">Target commercial inventory in four cohorts</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">TARGET CAPEX</div>
+          <div class="metric">$297,297</div>
+          <div class="caption">USD · estimated infrastructure and pre-operation</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">BASE WHOLESALE PRICE</div>
+          <div class="metric">$24</div>
+          <div class="caption">USD per saleable commercial mabé</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">BASE WHOLESALE PRICE</div>
+          <div class="metric">$24 <small>/ mabé</small></div>
+          <div class="caption">USD per sold commercial half-pearl</div>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <b>Financial conclusion:</b> the 50,000-oyster scenario may generate an estimated MXN $818,750/year before tax and financing after illustrative depreciation, if harvest, saleable yield, price and cost assumptions hold. The target population will be reached in stages, only after carrying capacity is validated.
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / PRODUCTION MODEL & EXPERIMENTAL DESIGN -->
+  <section class="section" id="modelo">
+<div class="wrap">
+<div class="section-top reveal"><div><span class="section-num">02 / PRODUCTION MODEL</span><h2>Two stations, one integrated culture workflow.</h2></div>
+<p>The production program combines a land-based biological handling station with a marine grow-out and monitoring station. Each facility has a distinct role and they are connected through scheduled transfers and batch traceability records.</p></div>
+<div class="grid-2 reveal">
+<article class="card"><h3>Land-based station · handling laboratory</h3><p>A shore-side facility near the port for operations requiring hygiene, controlled conditions, precision equipment and individual handling.</p><ul class="clean">
+<li>Receiving, document checks, health inspection and quarantine.</li><li>Acclimation and temporary holding in seawater tanks.</li><li>Biometrics, selection, preparation and implantation by trained staff.</li><li>Initial post-operative observation and immediate recovery.</li><li>Harvest receiving, mabé extraction, cleaning, grading and traceability.</li><li>Sample analysis and temporary stock holding when needed.</li></ul><span class="tag">Biological control and processing</span></article>
+<article class="card"><h3>Marine station · farm and field base</h3><p>An operating area within the authorized marine site, supported by a work platform, vessel or floating structure; it is not a surgical theatre or implantation laboratory.</p><ul class="clean">
+<li>Longlines, moorings, buoys and culture baskets or lantern nets.</li><li>Batch transport, deployment and retrieval during scheduled visits.</li><li>Grow-out, post-implant recovery and nacre deposition at sea.</li><li>Monitoring of temperature, salinity, dissolved oxygen, turbidity and ocean conditions.</li><li>Biofouling removal and inspection of nets, moorings and mortality.</li><li>Batch-level growth, survival and condition sampling.</li></ul><span class="tag">In-situ culture, maintenance and monitoring</span></article>
+</div>
+<div class="callout reveal" style="margin-top:20px"><b>Working species:</b> <i>Pteria sterna</i>, subject to confirmation of lawful availability, origin, taxonomic identification, and validation with suppliers and authorities. The land station does not replace the sea as the grow-out environment; the marine station does not replace the laboratory for surgery, health control and processing.</div>
+</div></section>
+
+  <!-- 03 / RAS ENGINEERING, OPTION A (GYRE PUMPS) & DRAIN WITH BYPASS -->
+  <section class="section" id="ingenieria">
+  <div class="wrap">
+    <div class="section-top reveal">
+      <div><span class="section-num">03 / MARINE CULTURE SYSTEM</span><h2>Suspended longline cultivation for pearl oysters.</h2></div>
+      <p>The pilot uses marine longline culture with baskets or lantern nets. Land-based facilities are limited to receiving, quarantine, preparation and implantation; an intensive RAS is not proposed as the primary grow-out system.</p>
+    </div>
+    <div class="grid-2 reveal">
+      <article class="card"><h3>1. Culture line and mooring</h3><ul class="clean">
+        <li>Mainline and dropper ropes sized after bathymetry and current surveys.</li>
+        <li>Floats, blocks or anchors selected for seabed type, wave exposure and design loads.</li>
+        <li>Baskets or lantern nets spaced for water exchange, cleaning and inspection.</li>
+        <li>Marking and placement compatible with navigation and authorized uses.</li>
+      </ul></article>
+      <article class="card"><h3>2. Oyster handling</h3><ul class="clean">
+        <li>Receive juveniles with supplier, batch, size and health-condition records.</li>
+        <li>Gradually acclimate stock to site conditions and record initial mortality.</li>
+        <li>Clean biofouling routinely and inspect nets, connections and flotation.</li>
+        <li>Sample each batch for growth, survival, condition and stress events.</li>
+      </ul></article>
+      <article class="card"><h3>3. Land-based support station</h3><ul class="clean">
+        <li>Hygienic area for receiving, grading, biometrics and implantation.</li>
+        <li>Temporary seawater holding tanks with aeration and basic mechanical filtration.</li>
+        <li>Backup pumping and power for handling contingencies.</li>
+        <li>Routine grow-out remains at sea; avoiding an intensive RAS reduces complexity and operating costs.</li>
+      </ul></article>
+      <article class="card"><h3>4. Validate before expansion</h3><ul class="clean">
+        <li>Confirm species and lawful stock origin with the relevant authorities and supplier.</li>
+        <li>Monitor temperature, salinity, dissolved oxygen, turbidity and chlorophyll through a representative cycle.</li>
+        <li>Estimate carrying capacity, maintenance frequency and actual site survival.</li>
+        <li>Expand only with documented results and current permits.</li>
+      </ul></article>
+    </div>
+    <div class="callout reveal"><b>Design basis:</b> final line, mooring, basket count and land-station sizing remain subject to oceanographic assessment, pilot testing and permits. Commercial stocking density and pearl yield are not presented as guaranteed figures.</div>
+  </div>
+</section>
+
+<section class="section" id="flujo">
+<div class="wrap">
+<div class="section-top reveal"><div><span class="section-num">04 / INTER-STATION OPERATING WORKFLOW</span><h2>From the land laboratory to sea and back.</h2></div>
+<p>Stock transfers are not continuous; they occur at defined milestones in the production cycle. The land station handles controlled procedures, while the marine station supports acclimation, grow-out and extended recovery.</p></div>
+<style>
+#flujo .flow-lanes{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+#flujo .flow-lane{border:1px solid var(--line,#d8dce2);border-radius:18px;padding:18px;background:rgba(255,255,255,.55)}
+#flujo .flow-lane h3{margin:0 0 14px}
+#flujo .flow-step{border:1px solid var(--line,#d8dce2);border-radius:12px;padding:13px;margin:10px 0;background:rgba(255,255,255,.72)}
+#flujo .flow-step b{display:block;margin-bottom:5px}
+#flujo .flow-step small{display:block;opacity:.78;line-height:1.45}
+#flujo .handoff{margin:12px 0;padding:11px 14px;border-radius:12px;text-align:center;font-weight:700;background:rgba(99,99,150,.12);border:1px dashed #8585a8}
+#flujo .flow-foot{margin-top:16px}
+@media(max-width:760px){#flujo .flow-lanes{grid-template-columns:1fr}}
+</style>
+<div class="flow-lanes reveal">
+<div class="flow-lane"><h3>Land station · laboratory and control</h3>
+<div class="flow-step"><b>1. Receiving and quarantine</b><small>Origin documents, visual and health inspection, batch identification and preventive isolation.</small></div>
+<div class="flow-step"><b>2. Acclimation and preparation</b><small>Controlled seawater, stabilization, biometrics and selection of suitable stock.</small></div>
+<div class="flow-step"><b>3. Implantation and initial observation</b><small>Procedure by trained staff, individual records and immediate recovery in support tanks.</small></div>
+<div class="handoff">TRANSFER 1 · conditioned stock moves to the marine site ↓</div>
+<div class="flow-step"><b>6. Harvest receiving and processing</b><small>Return of harvest-ready batches; opening, mabé extraction, cleaning, grading, recording and storage.</small></div>
+<div class="flow-step"><b>7. Analysis and feedback</b><small>Sample results and field data update protocols, stock selection and the next cycle schedule.</small></div>
+</div>
+<div class="flow-lane"><h3>Marine station · farm and field operations</h3>
+<div class="flow-step"><b>4. Marine deployment and recovery</b><small>Placement in suspended baskets or lantern nets; close observation of the batch after implantation.</small></div>
+<div class="flow-step"><b>5. Grow-out and husbandry</b><small>Nacre deposition, biofouling removal, mooring and net inspections, environmental monitoring and periodic sampling.</small></div>
+<div class="handoff">TRANSFER 2 · harvest-ready batch returns to land ↑</div>
+<div class="flow-step"><b>Ongoing field support</b><small>Visit logs, mortality, survival, growth, water quality, weather and infrastructure condition.</small></div>
+<div class="flow-step"><b>Harvest decision</b><small>The marine station uses sampling and predefined criteria to determine when a batch is ready to return to the laboratory.</small></div>
+</div>
+</div>
+<div class="card flow-foot reveal"><h3>Transfer and control points</h3><div class="tablewrap"><table>
+<tr><th>Transfer</th><th>What moves</th><th>Required control</th></tr>
+<tr><td>Land → sea</td><td>Acclimated or newly implanted stock, depending on stage.</td><td>Batch ID, count, condition, time, temperature, oxygen and transport log.</td></tr>
+<tr><td>Sea → land</td><td>Batch returning for inspection, procedure or harvest.</td><td>Batch ID, count, mortality, reason for transfer and arrival condition.</td></tr>
+<tr><td>Sea ↔ land</td><td>Water and organism data/samples.</td><td>Chain of custody, date, station, depth, method and analytical result.</td></tr>
+</table></div></div>
+<div class="callout reveal" style="margin-top:16px"><b>Why both stations are needed:</b> the sea provides the grow-out environment and natural water exchange; land provides biosecurity, controlled handling, implantation surgery and harvest processing. Logistics and traceability connect them into one production unit.</div>
+</div></section>
+
+  <!-- 05 / MARINE SITE EVALUATION & REGULATORY PATHWAY -->
+  <section class="section" id="permisos">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">04 / SITE ASSESSMENT &amp; REGULATION</span>
+          <h2>La Paz Bay &amp; aquaculture<br>aquaculture permitting</h2>
+        </div>
+        <p>Technical selection of marine polygons, oceanographic monitoring, and strict compliance with CONAPESCA, SEMARNAT, and CONANP prior to installation.</p>
+      </div>
+
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3>Site selection &amp; critical variables</h3>
+          <ul class="clean">
+            <li><b>1. Pre-select three polygons:</b> review marine spatial planning, uses, access, navigation, and exclusion of sensitive areas (Espíritu Santo Archipelago National Park).</li>
+            <li><b>2. Two stations per polygon:</b> bathymetry, substrate type, currents, wave exposure, and storm protection.</li>
+            <li><b>3. 8–12 week campaign + 12-month monitoring:</b> temperature, salinity, dissolved oxygen, pH, turbidity, chlorophyll-a, and absence of pollutant discharges.</li>
+          </ul>
+          <span class="tag">NOM-058-SAG/PESC/SEMARNAT-2013</span>
+        </div>
+
+        <div class="card">
+          <h3>Regulatory pathway &amp; permits</h3>
+          <ul class="clean">
+            <li><b>Commercial Aquaculture Permit (CONAPESCA):</b> up to 60 business days resolution with complete technical dossier (DOF Agreement Aug 26, 2025). Contact: <code>administracion.acuicola@conapesca.gob.mx</code> · Tel. 800 667 4022 (ext. 58572 / 58562).</li>
+            <li><b>Environmental Impact Assessment (SEMARNAT):</b> Environmental Impact Statement (MIA) or preventive report depending on works and location.</li>
+            <li><b>Complementary clearances:</b> federal maritime zone concession, maritime signaling, and aquatic health transport permits.</li>
+          </ul>
+          <span class="tag">Legal Compliance</span>
+        </div>
+      </div>
+
+      <!-- 24-MONTH TIMELINE -->
+      <div class="timeline reveal">
+        <div class="phase"><b>Months 1–3</b><strong>Site Selection</strong><p>Polygons, sampling, bathymetry, and constraints.</p></div>
+        <div class="phase"><b>Months 3–6</b><strong>Engineering &amp; Dossier</strong><p>Design, technical memory, budget, and environmental strategy.</p></div>
+        <div class="phase"><b>Months 5–10</b><strong>Permitting</strong><p>Aquaculture, environmental, and maritime clearances.</p></div>
+        <div class="phase"><b>Months 9–11</b><strong>Installation</strong><p>Deployment contingent on approved permits and design.</p></div>
+        <div class="phase"><b>Months 11–12</b><strong>Reception &amp; Acclimation</strong><p>Documented intake, quarantine, and baseline tracking.</p></div>
+        <div class="phase"><b>Months 12–48+</b><strong>Grow-out &amp; Validation</strong><p>Growth, implantation, nacre deposition and first harvests from year 4.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / COMMERCIAL FINANCIAL MODEL: 50,000 OYSTERS -->
+<section class="section" id="finanzas"><div class="wrap">
+<div class="section-top reveal"><div><span class="section-num">06 / COMMERCIAL FINANCIAL MODEL</span><h2>Scale designed around a viable operating unit.</h2></div>
+<p>Planning scenario for a 50,000-oyster standing inventory, with staggered harvests after an assumed four-year grow-out cycle. This is not an approved carrying capacity or guaranteed forecast: site, survival, yield and market must be validated.</p></div>
+<div class="grid-4 reveal">
+<article class="card"><div class="caption mono">TARGET INVENTORY</div><div class="metric">50,000 <small>oysters</small></div><div class="caption">Standing stock in four cohorts</div></article>
+<article class="card"><div class="caption mono">WHOLESALE PRICE</div><div class="metric">$450 <small>/ mabé</small></div><div class="caption">MXN per saleable piece</div></article>
+<article class="card"><div class="caption mono">STABILIZED SALES</div><div class="metric">9,375 <small>mabés/year</small></div><div class="caption">12,500 harvested oysters × 75% saleable</div></article>
+<article class="card"><div class="caption mono">ANNUAL GROSS REVENUE</div><div class="metric">$4.22 M</div><div class="caption">MXN · before tax and financing</div></article>
+</div>
+<div class="grid-2 reveal" style="margin-top:20px">
+<article class="card"><h3>Stabilized annual economics</h3><div class="tablewrap"><table>
+<tr><th>Item</th><th>MXN/year</th></tr>
+<tr><td>Revenue: 9,375 mabés × $450</td><td>$4,218,750</td></tr>
+<tr><td>Fixed costs</td><td>$1,200,000</td></tr>
+<tr><td>Variable costs, including replacement stock</td><td>$1,650,000</td></tr>
+<tr><td><b>Total OPEX</b></td><td><b>$2,850,000</b></td></tr>
+<tr><td><b>Operating result before depreciation, tax and financing</b></td><td><b>$1,368,750</b></td></tr>
+<tr><td>Illustrative depreciation: MXN $5.5 M CAPEX / 10 years</td><td>$550,000</td></tr>
+<tr><td><b>Result before tax and financing</b></td><td><b>$818,750</b></td></tr>
+</table></div><p class="caption">Approximate operating margin: 32.4% before depreciation; 19.4% after illustrative depreciation. Excludes income tax, interest, fees, extraordinary losses and price variation.</p></article>
+<article class="card"><h3>Break-even and scale gates</h3><div class="tablewrap"><table>
+<tr><th>Metric</th><th>Result</th></tr>
+<tr><td>Operating break-even</td><td>6,334 mabés/year</td></tr>
+<tr><td>Break-even including depreciation</td><td>7,556 mabés/year</td></tr>
+<tr><td>Theoretical inventory to cover OPEX + depreciation</td><td>≈40,300 oysters</td></tr>
+<tr><td>Target inventory with buffer</td><td>50,000 oysters</td></tr>
+</table></div><p class="caption">Staggered harvest requires four cohorts of about 12,500 organisms; after stabilization, the harvested cohort is replaced annually.</p></article>
+</div>
+<div class="callout reveal"><b>Recommended decision:</b> replace the 200-organism commercial pilot with a staged validation program designed toward 50,000 oysters, without stocking the full population on day one. Start with a small technical batch to verify survival, implantation and yield; release investment by milestones until the target is reached. MXN $450 remains a sales assumption, not a purchase contract.</div>
+<div class="card reveal" style="margin-top:20px"><h3>Proposed deployment stages</h3><div class="tablewrap"><table>
+<tr><th>Stage</th><th>Cumulative inventory</th><th>Gate to proceed</th></tr>
+<tr><td>Biological validation</td><td>500–1,000</td><td>Legal source, survival, implantation, health and yield documented.</td></tr>
+<tr><td>Operational demonstration</td><td>5,000</td><td>One operating cycle and actual logistics/costs measured.</td></tr>
+<tr><td>Intermediate scale</td><td>15,000–25,000</td><td>Buyers, site capacity and financing confirmed.</td></tr>
+<tr><td>Commercial target</td><td>50,000</td><td>Permits, carrying capacity, cohorts, market and working capital approved.</td></tr>
+</table></div><p class="caption">These are financial-engineering targets, not approved densities or carrying capacities. Deployment must stop or be resized if environmental assessment or site carrying capacity requires it.</p></div>
+</div></section><footer>
+  <div class="wrap footer-inner">
+    <a href="#inicio" aria-label="MIPEZ, back to top">
+      <img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Water Laboratory" loading="lazy">
+    </a>
+    <div>
+      <span class="mono">© 2026 · MÉRIDA, YUCATÁN · LA PAZ, BAJA CALIFORNIA SUR</span>
+      <p>Detecting microorganisms requires specific laboratory analyses. Control criteria, aquaculture pre-feasibility, and applicable regulations are determined by facility type and use. Financial figures are preliminary planning assumptions subject to formal quotes and biological, commercial, and regulatory validation.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+'use strict';
+const engData={
+  torres:[
+    'ARCH. 01 /',
+    '1×1×1 m Cubic Module with 5 Levels & Coroplast Deflectors',
+    'Built from 1" Schedule 40 PVC with 5 pull-out Egg Crate trays (95×95 cm). Each tray holds 10 rows of 20 oysters angled at 45° (comb-style layout = 200 oysters per level × 5 levels = 1,000 oysters per module). Between each level, a Coroplast sheet angled at 10°–15° deflects feces and pseudofeces into the central aisle without fouling the oysters below.'
+  ],
+  opcionA:[
+    'ARCH. 02 /',
+    'Option A: 4 Cross-Flow Gyre Pumps in Pulse Mode (Selected)',
+    'Mounted vertically at 50 cm depth on the front posts of each tower, oriented clockwise to generate a continuous carousel flow with zero dead spots. Pulse Mode (4 s at 75%-80% and 2 s at 30%) mimics natural wave action, clears detritus from shell valves, and stimulates mantle opening at only ~300W combined power draw.'
+  ],
+  comparativa:[
+    'ARCH. 03 /',
+    'Technical Comparison: Option A (Gyre) vs. Option B (Spray Bars) vs. Option C (Air-Lift)',
+    'Option A (Gyre Pumps) outperforms Option B (PVC Spray Bars with alternating valve) by eliminating pipe friction head loss and nozzle clogging, and outperforms Option C (6" Air-Lift tubes with diffuser) by eliminating compressor noise, salt creep from heavy bubbling, and uneven vertical turbulence.'
+  ],
+  sump:[
+    'ARCH. 04 /',
+    '4" Central Bottom Drain, Hydrocyclone & Feeding Bypass',
+    'Carousel rotation concentrates settled solids into the 4" central bottom drain toward the Hydrocyclone (Swirl Separator) to purge heavy sludge before the Sump (Protein Skimmer + K1 MBBR Biofilter + UV-C + DCP-20000 Return). During microalgae dosing, the Feeding Bypass is activated (closing Valves 1 & 3 and opening Valve 2), creating a short loop that prevents the Skimmer and UV from destroying live phytoplankton.'
+  ]
+};
+const tabs=[...document.querySelectorAll('.tab-btn')];
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+  const d=engData[btn.dataset.eng];
+  tabs.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
+  document.getElementById('eng-num').textContent=d[0];
+  document.getElementById('eng-title').textContent=d[1];
+  document.getElementById('eng-copy').textContent=d[2];
+}));
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window&&!reduce.matches){
+  const reveal=[...document.querySelectorAll('.reveal')];
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target);}
+  }),{threshold:.08});
+  document.documentElement.classList.add('motion');
+  reveal.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');observer.observe(el);}});
+  reduce.addEventListener('change',()=>{if(reduce.matches){reveal.forEach(el=>el.classList.remove('pending'));observer.disconnect();}});
+}
+let queued=false;
+const bar=document.querySelector('.progress');
+function progress(){
+  const total=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';
+  queued=false;
+}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});
+addEventListener('resize',progress);
+progress();
+})();
+</script>
+</body>
+</html>
