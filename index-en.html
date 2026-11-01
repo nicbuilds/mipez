@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MIPEZ, Water Laboratory. Intensive mabé pearl cultivation in Recirculating Aquaculture Systems (RAS) and marine validation in La Paz, BCS.">
+<meta name="theme-color" content="#20206f">
+<title>MIPEZ | Applied Science for Sustainable Pearl Farming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#20206f;--blue:#1d72b8;--cyan:#35c0e6;--aqua:#7ee6df;--mint:#dffcf5;--sky:#dff4ff;--ink:#12303b;--muted:#56717a;--line:rgba(29,114,184,.16);--gold:#c69c54}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;color:var(--ink);font-family:Poppins,system-ui,sans-serif;background:#f6fcfd;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}a{color:inherit}img{display:block;max-width:100%}svg{display:block}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--blue);outline-offset:5px}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.skip{position:fixed;top:-100px;left:16px;z-index:100;background:white;padding:12px}.skip:focus{top:12px}
+header{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(248,255,255,.9);backdrop-filter:blur(18px)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:94px}.brand img{width:82px;height:82px;object-fit:contain}.nav-links{display:flex;gap:24px;align-items:center;overflow-x:auto}.nav-links a{text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap}.nav-links a:hover{color:var(--blue)}.nav-tag,.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.nav-tag{font-size:10px;letter-spacing:.14em;color:var(--muted)}.progress{position:absolute;bottom:-1px;left:0;width:100%;height:2px;background:var(--cyan);transform:scaleX(0);transform-origin:left}
+.lang-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:20px;border:1px solid rgba(29,114,184,.3);background:linear-gradient(135deg,#ffffff,#e8f6fc);color:var(--navy);font-size:11px;font-weight:700;text-decoration:none;letter-spacing:.06em;box-shadow:0 3px 10px rgba(29,114,184,.1);transition:all .2s;white-space:nowrap}
+.lang-btn:hover{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-color:transparent;box-shadow:0 5px 14px rgba(29,114,184,.25)}
+
+/* HERO WITH REDUCED OPACITY FULL-BLEED MABÉ PEARL FARMING BACKGROUND */
+.hero{position:relative;overflow:hidden;isolation:isolate;padding:110px 0 100px;background:radial-gradient(ellipse at 78% 28%,#d6f7f5 0,transparent 52%),linear-gradient(130deg,#f9fffe,#edf7ff);border-bottom:1px solid var(--line)}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=85');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  opacity:0.22;
+  z-index:-2;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(249,255,254,0.88) 0%,rgba(237,247,255,0.68) 55%,rgba(237,247,255,0.45) 100%);
+  z-index:-1;
+}
+.hero-grid{display:block;max-width:780px}
+.eyebrow{display:flex;align-items:center;gap:10px;font:11px ui-monospace,monospace;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}.eyebrow:before{content:'';width:7px;height:7px;background:var(--blue);border-radius:50%;box-shadow:0 0 0 5px #d8efef}
+h1{font-size:clamp(42px,4.8vw,65px);line-height:1.07;letter-spacing:-.055em;font-weight:600;margin:27px 0 24px;color:var(--navy)}h1 span{color:var(--blue)}
+.intro{font-size:16px;max-width:640px;color:var(--ink);font-weight:500}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.pill{border:1px solid rgba(29,114,184,.25);border-radius:30px;padding:7px 14px;font-size:11px;font-weight:600;color:var(--navy);background:rgba(255,255,255,.85);backdrop-filter:blur(6px)}
+.btn{display:inline-flex;align-items:center;gap:22px;text-decoration:none;padding:14px 22px;border-radius:30px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-size:12px;font-weight:600;box-shadow:0 8px 22px #1d72b826,inset 0 1px 0 #ffffff4d;border:1px solid transparent}.btn:hover{box-shadow:0 12px 28px #1d72b845}
+.hero .btn{margin-top:24px}
+.hero-note{font-size:10px;letter-spacing:.08em;color:var(--muted);margin-top:28px}
+
+/* MIPEZ SECTIONS */
+.section{padding:80px 0;border-bottom:1px solid var(--line)}
+.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:35px}
+.section-num{font:10px ui-monospace,monospace;color:var(--blue);letter-spacing:.13em;text-transform:uppercase}
+h2{font-size:clamp(29px,3.2vw,43px);font-weight:500;letter-spacing:-.045em;line-height:1.15;margin:13px 0 0;color:var(--navy)}
+.section-top p{font-size:14px;color:var(--muted);max-width:480px;margin:0}
+
+/* GRIDS & NEUMORPHIC CARDS */
+.protocol{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.step,.card{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#fff,#e8f5fa);box-shadow:8px 10px 28px #1d72b810,inset 0 2px 1px #fff;position:relative;overflow:hidden}
+.step-no{font:11px ui-monospace,monospace;color:var(--blue);padding:9px 12px;border-radius:12px;background:linear-gradient(145deg,#e6faf7,#cceaf8);box-shadow:3px 4px 9px #1d72b812,inset 0 1px 0 white;display:inline-block;font-weight:700}
+.step h3,.card h3{font-size:18px;font-weight:600;letter-spacing:-.025em;margin:18px 0 10px;color:var(--navy)}
+.card h3:first-child{margin-top:0}
+.step p,.card p{font-size:12.5px;color:var(--muted);margin:0}
+.step-foot{font:9px ui-monospace,monospace;letter-spacing:.07em;color:var(--blue);border-top:1px solid var(--line);padding-top:18px;margin-top:24px}
+
+.metric{font-size:32px;font-weight:700;letter-spacing:-.04em;line-height:1.15;margin:10px 0 6px;color:var(--navy)}
+.metric small{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0}
+.caption{font-size:11.5px;color:var(--muted)}
+.tag{display:inline-block;background:var(--mint);color:var(--blue);border:1px solid rgba(29,114,184,.2);border-radius:30px;padding:5px 11px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-top:14px}
+.callout{border-left:4px solid var(--blue);background:linear-gradient(120deg,#ffffffed,#e9faf9);padding:18px 22px;border-radius:0 18px 18px 0;color:var(--ink);font-size:13px;margin-top:22px;box-shadow:0 8px 24px #1d72b80b}
+
+/* TABLES & BARS */
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:18px;background:white;margin-top:16px;box-shadow:0 6px 18px #1d72b808}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{text-align:left;background:#eef8fc;color:var(--navy);text-transform:uppercase;font:10px ui-monospace,monospace;letter-spacing:.08em}
+td,th{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.bars{display:grid;gap:13px;margin-top:16px}
+.bar{display:grid;grid-template-columns:150px 1fr 90px;gap:10px;align-items:center;font-size:12px}
+.track{height:11px;border-radius:20px;background:#e3f2f8;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));border-radius:20px}
+ul.clean{padding-left:18px;color:var(--muted);font-size:12.5px;margin:10px 0 0}
+ul.clean li{margin:6px 0}
+
+/* INTERACTIVE RAS & TOWER DIAGRAM */
+.interactive-box{border:1px solid #fff;border-radius:26px;padding:28px;background:linear-gradient(145deg,#ffffff,#e9f7fb);box-shadow:8px 10px 28px #1d72b812;margin-top:24px}
+.tab-group{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.tab-btn{padding:10px 18px;border-radius:24px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:12px;font-weight:600;transition:all .2s}
+.tab-btn[aria-selected="true"]{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-color:transparent;box-shadow:0 6px 16px #1d72b82a}
+.detail{padding:18px 22px;border:1px solid #fff;border-radius:22px;background:linear-gradient(120deg,#ffffffed,#e9faf9);box-shadow:0 8px 24px #1d72b80b;min-height:110px;margin-top:16px}
+.detail-heading{display:flex;gap:12px;align-items:center}
+.detail-heading span{color:var(--blue);font:10px ui-monospace,monospace;font-weight:700}
+.detail h3{font-size:15px;margin:0;color:var(--navy)}
+.detail p{font-size:12.5px;color:var(--muted);margin:7px 0 0}
+
+/* TIMELINE */
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-top:20px}
+.phase{background:white;border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:0 0 16px 16px;padding:16px;box-shadow:0 4px 14px #1d72b808}
+.phase b{font:10px ui-monospace,monospace;color:var(--blue);text-transform:uppercase}
+.phase strong{display:block;font-size:13px;margin:6px 0;color:var(--navy)}
+.phase p{font-size:11.5px;color:var(--muted);margin:0}
+
+/* DARK .NEWS SECTION */
+.news{background:linear-gradient(125deg,#171b58,#123d67 70%,#12546d);color:white;position:relative}
+.news-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px}
+.news .section-num{color:var(--aqua)}
+.news h2{color:white;max-width:380px}
+.news-copy p{font-size:14px;color:#d6e7ed;margin:0 0 18px}
+.news-copy .fact{font-size:12.5px;padding:18px 22px;border-radius:18px;background:#ffffff0c;border:1px solid #ffffff20;color:#e6f4f8}
+.citation{color:var(--aqua);text-decoration:none;font-size:10px;vertical-align:super}
+.sources{margin-top:24px;border-top:1px solid #ffffff2b}
+.sources a{display:flex;gap:15px;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #ffffff20;text-decoration:none;font-size:11.5px;color:#e0eff6}
+.sources a:hover{color:var(--aqua)}
+.sources b{font:10px ui-monospace,monospace;color:var(--aqua);margin-right:8px}
+.source-label{font:9px ui-monospace,monospace;color:#aac7d6;letter-spacing:.12em;margin-top:24px;text-transform:uppercase}
+
+/* PREPARE & FOOTER */
+.prepare{padding:56px 0}
+.prepare-inner{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.prepare h2{font-size:27px}
+.prepare p{font-size:13px;color:var(--muted)}
+details{border-radius:20px;background:#fff;border:1px solid var(--line);padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-size:13px;font-weight:600;color:var(--navy)}
+details ul{padding-left:20px;font-size:12px;color:var(--muted)}
+details li{margin:9px 0}
+footer{background:#171b58;color:#bfcce5;padding:28px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}
+.footer-inner img{width:100px;height:100px;object-fit:contain}
+.footer-inner p{font-size:10.5px;max-width:620px;margin:6px 0 0}
+.footer-inner .mono{font-size:9px;color:var(--aqua)}
+
+.reveal{opacity:1;transform:none}
+.motion .reveal.pending{opacity:0;transform:translateY(22px)}
+.motion .reveal{transition:opacity .65s ease,transform .65s ease}
+
+@media(max-width:1000px){.nav-tag{display:none}.news-grid{gap:35px}.grid-4{grid-template-columns:repeat(2,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.nav{min-height:80px}.brand img{width:70px;height:70px}.nav-links{gap:14px}.nav-links a{font-size:10px}.hero{padding:64px 0 72px}h1{font-size:44px;margin:20px 0}.intro{font-size:14px}.section{padding:52px 0}.section-top,.news-grid,.prepare-inner,.grid-2,.protocol{grid-template-columns:1fr;gap:20px}.grid-4,.timeline{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 78px}.footer-inner{flex-direction:column;align-items:flex-start;gap:20px}.footer-inner img{width:85px;height:85px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.motion .reveal.pending{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Skip to content</a>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#inicio" aria-label="MIPEZ, home">
+      <img src="MIPEZ_Laboratorio_del_Agua_V1_1x1_transparente.png" alt="MIPEZ — Water Laboratory" width="82" height="82">
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#resumen">Summary</a>
+      <a href="#modelo">Model</a>
+      <a href="#ingenieria">RAS Engineering</a>
+      <a href="#finanzas">5-Year Financials</a>
+      <a href="#permisos">Regulation</a>
+      <a href="#control">MIPEZ Method</a>
+      <a href="#merida">Evidence</a>
+      <a class="lang-btn" href="index.html" hreflang="es" lang="es" aria-label="Cambiar a la versión en Español">🌐 ES · Español</a>
+    </nav>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="inicio">
+  <!-- HERO WITH FULL-BLEED MABÉ PEARL FARMING BACKGROUND AT REDUCED OPACITY -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <div class="eyebrow">Applied Science · Marine Aquaculture &amp; RAS</div>
+        <h1>Sustainable farming<br>of <span>Mabé Pearls.</span></h1>
+        <p class="intro">Diagnostics, operation, and monitoring of engineered water bodies and intensive mabé pearl cultivation systems (<i>Pteria sterna</i>). From the marine validation pilot in La Paz Bay (200 oysters) to modular 4,000-organism scaling.</p>
+        <div class="hero-meta">
+          <span class="pill">La Paz, BCS · Mérida, Yuc.</span>
+          <span class="pill">Species: <i>Pteria sterna</i></span>
+          <span class="pill">Longline + 3×3×1 m RAS Modules</span>
+        </div>
+        <a class="btn" href="#resumen">Explore project &amp; method <span aria-hidden="true">↘</span></a>
+        <p class="hero-note mono">MIPEZ / WATER LABORATORY · PRE-FEASIBILITY &amp; OPERATIONS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 / EXECUTIVE SUMMARY & VALIDATION PILOT -->
+  <section class="section" id="resumen">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">01 / EXECUTIVE SUMMARY</span>
+          <h2>Validate first.<br>Scale with evidence.</h2>
+        </div>
+        <p>The 200-pearl-oyster productive pilot in La Paz Bay will verify survival rates, implant response, commercial grade yield, actual costs, and operational capacity before committing capital to intensive 4,000-organism modules.</p>
+      </div>
+
+      <div class="grid-4 reveal">
+        <div class="card">
+          <div class="caption mono">PILOT POPULATION</div>
+          <div class="metric">200 <small>oysters</small></div>
+          <div class="caption">Four experimental sea batches + light lab</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">MARINE PILOT CAPEX</div>
+          <div class="metric">$450k</div>
+          <div class="caption">MXN · pre-feasibility budget target</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">RAS MODULE CAPEX (3×3 m)</div>
+          <div class="metric">$113.9k</div>
+          <div class="caption">MXN · 4 cubic towers (4,000-oyster capacity)</div>
+        </div>
+        <div class="card">
+          <div class="caption mono">BASE WHOLESALE PRICE</div>
+          <div class="metric">$450 <small>/ mabé</small></div>
+          <div class="caption">MXN per sold commercial half-pearl</div>
+        </div>
+      </div>
+
+      <div class="callout reveal">
+        <b>Financial conclusion:</b> under current assumptions, 200 oysters are not a standalone profitable unit (illustrative operating result of −$49,700 MXN). The pilot is a technological and commercial validation investment whose success unlocks stage-gated scaling to <b>500, 1,500, and 4,000 organisms</b> per module.
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / PRODUCTION MODEL & EXPERIMENTAL DESIGN -->
+  <section class="section" id="modelo">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">02 / PRODUCTION MODEL</span>
+          <h2>A modular marine<br>and land-based operation.</h2>
+        </div>
+        <p>Integration of suspended <i>longline</i> culture with land-based quarantine, implantation, and controlled Recirculating Aquaculture Systems (RAS) to maximize nacre deposition.</p>
+      </div>
+
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3>Proposed species and system</h3>
+          <p><b><i>Pteria sterna</i></b> (rainbow-lip pearl oyster) and <b><i>Pinctada imbricata</i></b>, backed by scientific records of rapid nacre coating (8 to 12 months).</p>
+          <ul class="clean">
+            <li><b>Marine validation phase:</b> suspended <i>longline</i> system with lantern/pocket nets and a rented or shared light land-based laboratory near the port.</li>
+            <li><b>Intensive land-based phase (RAS):</b> 1 mm HDPE geomembrane square tank (3×3×1 m, ~7,500 L operating volume) housing 4 cubic 1×1×1 m towers.</li>
+            <li><b>Biological yield ("Effective 2.0 Rule"):</b> 2 to 3 hemispherical nuclei adhered per shell yield an average of 1.8 to 2.2 marketable mabé pearls per stocked oyster per year.</li>
+          </ul>
+          <span class="tag">Applied Biology</span>
+        </div>
+
+        <div class="card">
+          <h3>Initial experimental design: 200 organisms</h3>
+          <p>Four groups of 50 oysters, with two replicates of 25 per group to calibrate nucleus size and rejection rates:</p>
+          <div class="tablewrap">
+            <table>
+              <tr><th>Group</th><th>Treatment</th><th>Objective</th></tr>
+              <tr><td><b>Group A</b></td><td>Small nucleus (8–10 mm)</td><td>Mantle response and symmetry</td></tr>
+              <tr><td><b>Group B</b></td><td>Medium nucleus (10–12 mm)</td><td>Commercial quality and rejection rate</td></tr>
+              <tr><td><b>Group C</b></td><td>Large nucleus (13–15 mm)</td><td>Unit value and post-implant survival</td></tr>
+              <tr><td><b>Group D</b></td><td>Unimplanted control</td><td>Baseline survival benchmark</td></tr>
+            </table>
+          </div>
+          <p class="caption" style="margin-top:10px">The surgical protocol uses controlled relaxation, medical-grade cyanoacrylate adhesive, and individual batch traceability records.</p>
+        </div>
+      </div>
+
+      <div class="protocol reveal" style="margin-top:20px">
+        <article class="step">
+          <span class="step-no">01</span>
+          <h3>Sourcing</h3>
+          <p>Acquisition of juveniles/young adults (7–8 cm) from certified hatcheries with health certificates, documenting origin, shell height, and physiological condition.</p>
+          <div class="step-foot">PHASE 1 / RECEPTION &amp; QUARANTINE</div>
+        </article>
+        <article class="step">
+          <span class="step-no">02</span>
+          <h3>Adaptation &amp; Implant</h3>
+          <p>Thermal and osmotic acclimation, mild anesthesia, and adhesion of hemispherical domes onto the inner shell valves by trained technicians.</p>
+          <div class="step-foot">PHASE 2 / CONTROLLED IMPLANTATION</div>
+        </article>
+        <article class="step">
+          <span class="step-no">03</span>
+          <h3>Recovery &amp; Harvest</h3>
+          <p>10-month grow-out monitoring nacre thickness (>1.0 mm), diamond-saw cutting, epoxy resin filling, mother-of-pearl backing, and AAA/A grading.</p>
+          <div class="step-foot">PHASE 3 / LAPIDARY &amp; TRACEABILITY</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / RAS ENGINEERING, OPTION A (GYRE PUMPS) & DRAIN WITH BYPASS -->
+  <section class="section" id="ingenieria">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">03 / RAS HYDRODYNAMIC ENGINEERING</span>
+          <h2>3×3 m Tank, Cubic Towers<br>&amp; Gyre Flow (Option A).</h2>
+        </div>
+        <p>High-density architecture housing 4,000 oysters (1,000 per 1×1×1 m module), ensuring laminar cross-flow of 3 to 8 cm/s across all 5 levels and continuous pseudofeces removal.</p>
+      </div>
+
+      <!-- INTERACTIVE TECHNICAL ARCHITECTURE SELECTOR -->
+      <div class="interactive-box reveal">
+        <div class="tab-group" role="tablist" aria-label="RAS engineering components">
+          <button class="tab-btn" type="button" role="tab" aria-selected="true" data-eng="torres">1. 1×1×1 m Modules (1,000 oysters ea.)</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-eng="opcionA">2. Option A: Gyre Pumps in Pulse Mode</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-eng="comparativa">3. Option A, B &amp; C Comparison</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-eng="sump">4. Bottom Drain, Hydrocyclone &amp; Bypass</button>
+        </div>
+
+        <div class="detail" id="eng-detail" aria-live="polite">
+          <div class="detail-heading">
+            <span id="eng-num">ARCH. 01 /</span>
+            <h3 id="eng-title">1×1×1 m Cubic Module with 5 Levels &amp; Coroplast Deflectors</h3>
+          </div>
+          <p id="eng-copy">Built from 1" Schedule 40 PVC with 5 pull-out Egg Crate trays (95×95 cm). Each tray holds 10 rows of 20 oysters angled at 45° (comb-style layout = 200 oysters per level × 5 levels = 1,000 oysters per module). Between each level, a Coroplast sheet angled at 10°–15° deflects feces and pseudofeces into the central aisle without fouling the oysters below.</p>
+        </div>
+
+        <div class="grid-2" style="margin-top:20px">
+          <div class="card">
+            <h3>Step-by-Step Implementation of Option A (Gyre Pumps)</h3>
+            <ul class="clean">
+              <li><b>Step 1 · Sizing:</b> 4 sine-wave cross-flow generators (Jebao SCP-180 / MCP-180 rated at 18,000–24,000 L/h, 75W) + UPS battery backup.</li>
+              <li><b>Step 2 · Vertical Mounting:</b> Vertical attachment with heavy-duty dual cable ties on the front 1" PVC post at exactly 50 cm depth.</li>
+              <li><b>Step 3 · Carousel Effect:</b> Clockwise orientation of all 4 modules in the corners of the 3×3 m tank with directional cages angled 5°–10° inward.</li>
+              <li><b>Step 4 · Electrical Protection:</b> Synchronized controllers (Master/Slave) housed inside an IP66 waterproof enclosure.</li>
+              <li><b>Step 5 · Wave/Pulse Programming:</b> 30% baseline power and 75%–80% pulse bursts (4 s pulse / 2 s rest) to stimulate gill pumping and clear detritus.</li>
+              <li><b>Step 6 · Tracer Calibration:</b> Tray-crossing time of 12 to 25 seconds across the 1-meter rack (target velocity of 3 to 8 cm/s).</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>3×3 m RAS Tank Cost Breakdown (Option A)</h3>
+            <div class="bars">
+              <div class="bar"><span>RAS Train + Chiller</span><div class="track"><div class="fill" style="width:100%"></div></div><b>$68,200</b></div>
+              <div class="bar"><span>3×3 Tank + 4 Towers</span><div class="track"><div class="fill" style="width:42.4%"></div></div><b>$28,900</b></div>
+              <div class="bar"><span>Option A Flow (4 Gyre)</span><div class="track"><div class="fill" style="width:24.6%"></div></div><b>$16,800</b></div>
+            </div>
+            <div class="tablewrap" style="margin-top:16px">
+              <table>
+                <tr><th>Technical Line Item (4,000-Oyster Capacity)</th><th>Cost (MXN)</th></tr>
+                <tr><td>4× Gyre Pumps SCP-180 + IP66 Enclosure &amp; UPS Backup</td><td>$16,800</td></tr>
+                <tr><td>1 mm HDPE Geomembrane Tank (3×3×1.2 m) + 4 PVC/Egg Crate Towers</td><td>$28,900</td></tr>
+                <tr><td>1,000 L Sump, Hydrocyclone, 2× DCP-20000 Return, Skimmer, K1 MBBR, UV-C &amp; Chiller</td><td>$68,200</td></tr>
+                <tr><td><b>TOTAL TURNKEY INFRASTRUCTURE</b></td><td><b>$113,900</b></td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / MARINE SITE EVALUATION & REGULATORY PATHWAY -->
+  <section class="section" id="permisos">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">04 / SITE ASSESSMENT &amp; REGULATION</span>
+          <h2>La Paz Bay &amp; aquaculture<br>regulatory framework.</h2>
+        </div>
+        <p>Technical selection of marine polygons, oceanographic monitoring, and strict compliance with CONAPESCA, SEMARNAT, and CONANP prior to installation.</p>
+      </div>
+
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3>Site selection &amp; critical variables</h3>
+          <ul class="clean">
+            <li><b>1. Pre-select three polygons:</b> review marine spatial planning, uses, access, navigation, and exclusion of sensitive areas (Espíritu Santo Archipelago National Park).</li>
+            <li><b>2. Two stations per polygon:</b> bathymetry, substrate type, currents, wave exposure, and storm protection.</li>
+            <li><b>3. 8–12 week campaign + 12-month monitoring:</b> temperature, salinity, dissolved oxygen, pH, turbidity, chlorophyll-a, and absence of pollutant discharges.</li>
+          </ul>
+          <span class="tag">NOM-058-SAG/PESC/SEMARNAT-2013</span>
+        </div>
+
+        <div class="card">
+          <h3>Regulatory pathway &amp; permits</h3>
+          <ul class="clean">
+            <li><b>Commercial Aquaculture Permit (CONAPESCA):</b> up to 60 business days resolution with complete technical dossier (DOF Agreement Aug 26, 2025). Contact: <code>administracion.acuicola@conapesca.gob.mx</code> · Tel. 800 667 4022 (ext. 58572 / 58562).</li>
+            <li><b>Environmental Impact Assessment (SEMARNAT):</b> Environmental Impact Statement (MIA) or preventive report depending on works and location.</li>
+            <li><b>Complementary clearances:</b> federal maritime zone concession, maritime signaling, and aquatic health transport permits.</li>
+          </ul>
+          <span class="tag">Legal Compliance</span>
+        </div>
+      </div>
+
+      <!-- 24-MONTH TIMELINE -->
+      <div class="timeline reveal">
+        <div class="phase"><b>Months 1–3</b><strong>Site Selection</strong><p>Polygons, sampling, bathymetry, and constraints.</p></div>
+        <div class="phase"><b>Months 3–6</b><strong>Engineering &amp; Dossier</strong><p>Design, technical memory, budget, and environmental strategy.</p></div>
+        <div class="phase"><b>Months 5–10</b><strong>Permitting</strong><p>Aquaculture, environmental, and maritime clearances.</p></div>
+        <div class="phase"><b>Months 9–11</b><strong>Installation</strong><p>Deployment contingent on approved permits and design.</p></div>
+        <div class="phase"><b>Months 11–12</b><strong>Reception &amp; Acclimation</strong><p>Documented intake, quarantine, and baseline tracking.</p></div>
+        <div class="phase"><b>Months 12–24+</b><strong>Grow-out &amp; Validation</strong><p>Growth, implantation, nacre coating, and harvest.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / FINANCIALS: FROM PILOT (200 OYSTERS) TO 5-YEAR PROJECTION (1 TO 4 TANKS / 16,000 OYSTERS) -->
+  <section class="section" id="finanzas">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">05 / FINANCIAL MODEL &amp; 5-YEAR SCALING</span>
+          <h2>From pilot validation to<br>commercial consolidation.</h2>
+        </div>
+        <p>Transparent comparison between the marine validation budget (200 oysters), stage-gate expansion milestones, and the 5-year financial projection using intensive 4,000-oyster RAS modules.</p>
+      </div>
+
+      <!-- PILOT BUDGET & STAGE-GATE SCALING -->
+      <div class="grid-2 reveal">
+        <div class="card">
+          <h3>Marine Pilot Budget (200 Oysters · La Paz)</h3>
+          <p>Technological validation budget target (CAPEX $450,000 / OPEX $137,000 MXN):</p>
+          <div class="bars">
+            <div class="bar"><span>Marine gear</span><div class="track"><div class="fill" style="width:100%"></div></div><b>$150,000</b></div>
+            <div class="bar"><span>Light laboratory</span><div class="track"><div class="fill" style="width:80%"></div></div><b>$120,000</b></div>
+            <div class="bar"><span>Technical gear</span><div class="track"><div class="fill" style="width:53.3%"></div></div><b>$80,000</b></div>
+            <div class="bar"><span>Studies &amp; permits</span><div class="track"><div class="fill" style="width:40%"></div></div><b>$60,000</b></div>
+            <div class="bar"><span>Contingency</span><div class="track"><div class="fill" style="width:26.7%"></div></div><b>$40,000</b></div>
+          </div>
+          <p class="caption" style="margin-top:12px">Estimated pilot gross revenue: <b>$87,300 MXN</b> (194 sold mabé pearls × $450 MXN). Commercial cash-surplus reinvestment policy: 45% new modules, 25% juveniles, 15% maintenance, 15% reserve.</p>
+        </div>
+
+        <div class="card">
+          <h3>Production Scaling Stage-Gates</h3>
+          <p>Each expansion is authorized only upon validating the previous stage:</p>
+          <div class="tablewrap">
+            <table>
+              <tr><th>Stage</th><th>Organisms</th><th>Indicative OPEX</th><th>Advancement Condition</th></tr>
+              <tr><td><b>Pilot</b></td><td>200</td><td>$137,000</td><td>Survival, protocol, and market validated</td></tr>
+              <tr><td><b>Expansion I</b></td><td>500</td><td>$175,000</td><td>Repeatable operation and reliable spat supply</td></tr>
+              <tr><td><b>Expansion II</b></td><td>1,500</td><td>$280,000</td><td>Cohort production and verified sales</td></tr>
+              <tr><td><b>Commercial Scale</b></td><td>4,000 (1 RAS Tank)</td><td>$424,000 – $520,000</td><td>Cash flow, permits, and technical capacity proven</td></tr>
+            </table>
+          </div>
+          <p class="caption" style="margin-top:10px">Annual operating cost (OPEX) for 1 RAS Tank of 4,000 oysters ($424,000 MXN): Biological stock ($100k), Implant/lapidary supplies ($42k), Electricity ($30k), Microalgae/Minerals ($57.6k), Labor ($180k), and Maintenance ($14.4k).</p>
+        </div>
+      </div>
+
+      <!-- 5-YEAR FINANCIAL PROJECTION TABLE (1 TO 4 RAS TANKS) -->
+      <div class="card reveal" style="margin-top:22px">
+        <h3>5-Year Financial Projection — Modular RAS Scaling (1 to 4 Tanks · 4,000 to 16,000 Oysters)</h3>
+        <p>Conservative assumptions per tank (4,000 oysters): 80% survival (3,200 live oysters), 3 nuclei/oyster (9,600 raw domes): 20% Grade AAA ($550 MXN), 45% Grade A ($220 MXN), and 35% cull/byproduct + adductor meat ($65,600 MXN). Year 1 includes a 25% learning-curve discount:</p>
+        <div class="tablewrap">
+          <table>
+            <tr>
+              <th>Financial Indicator (MXN)</th>
+              <th>Year 1 (1 Tank - Learning Curve)</th>
+              <th>Year 2 (2 Tanks)</th>
+              <th>Year 3 (3 Tanks)</th>
+              <th>Year 4 (4 Tanks)</th>
+              <th>Year 5 (4 Consolidated Tanks)</th>
+            </tr>
+            <tr>
+              <td><b>Implanted Oysters</b></td>
+              <td>4,000</td>
+              <td>8,000</td>
+              <td>12,000</td>
+              <td>16,000</td>
+              <td>16,000</td>
+            </tr>
+            <tr>
+              <td><b>Commercial Pearls (AAA &amp; A)</b></td>
+              <td>4,680 pcs</td>
+              <td>12,480 pcs</td>
+              <td>18,720 pcs</td>
+              <td>24,960 pcs</td>
+              <td>24,960 pcs</td>
+            </tr>
+            <tr>
+              <td><b>Gross Sales Revenue</b></td>
+              <td><b>$1,554,000</b></td>
+              <td><b>$4,144,000</b></td>
+              <td><b>$6,216,000</b></td>
+              <td><b>$8,288,000</b></td>
+              <td><b>$8,288,000</b></td>
+            </tr>
+            <tr>
+              <td>(-) CAPEX (Tanks, Workshop &amp; Permits)</td>
+              <td>-$190,000</td>
+              <td>-$114,000</td>
+              <td>-$114,000</td>
+              <td>-$114,000</td>
+              <td>$0</td>
+            </tr>
+            <tr>
+              <td>(-) OPEX (Oysters, Power, Feed, Labor)</td>
+              <td>-$424,000</td>
+              <td>-$780,000</td>
+              <td>-$1,120,000</td>
+              <td>-$1,450,000</td>
+              <td>-$1,450,000</td>
+            </tr>
+            <tr>
+              <td>(-) Sales, Packaging &amp; Marketing (8%)</td>
+              <td>-$124,320</td>
+              <td>-$331,520</td>
+              <td>-$497,280</td>
+              <td>-$663,040</td>
+              <td>-$663,040</td>
+            </tr>
+            <tr>
+              <td><b>Operating Cash Flow Before Tax (EBITDA)</b></td>
+              <td><b>$815,680</b></td>
+              <td><b>$2,918,480</b></td>
+              <td><b>$4,484,720</b></td>
+              <td><b>$6,060,960</b></td>
+              <td><b>$6,174,960</b></td>
+            </tr>
+            <tr>
+              <td><b>Operating Margin / Cumulative Cash Flow</b></td>
+              <td>52.5% · $815.6k</td>
+              <td>70.4% · $3.73M</td>
+              <td>72.1% · $8.21M</td>
+              <td>73.1% · $14.27M</td>
+              <td><b>74.5% · $20.45M</b></td>
+            </tr>
+          </table>
+        </div>
+        <div class="callout" style="margin-top:16px">
+          <b>KPIs &amp; .925 Sterling Silver Jewelry Multiplier:</b> Break-even achieved at just 1,120 Grade AAA pearls (Payback in Month 13; IRR > 135%). Setting 30% of Grade AAA pearls into proprietary .925 Sterling Silver jewelry (+$280 MXN mounting cost) raises retail price to $1,800–$3,200 MXN per piece, doubling net profit without adding tanks.
+        </div>
+      </div>
+
+      <!-- CRITICAL RISKS & CONTROLS MATRIX -->
+      <div class="card reveal" style="margin-top:22px">
+        <h3>Critical Risks &amp; Operational Controls Matrix</h3>
+        <div class="tablewrap">
+          <table>
+            <tr><th>Identified Risk</th><th>Impact</th><th>Proposed MIPEZ Control</th></tr>
+            <tr><td><b>Water quality or thermal spikes</b></td><td>Mortality and crop loss</td><td>Continuous monitoring, 26 °C titanium chiller, UPS battery backup, and K1 MBBR biofilter.</td></tr>
+            <tr><td><b>Irregular juvenile supply</b></td><td>Delays and incomplete cohorts</td><td>Contracts with certified hatcheries, batch traceability, and backup suppliers.</td></tr>
+            <tr><td><b>Post-implant rejection or mortality</b></td><td>Lower commercial yield</td><td>Trained technicians, standardized anesthesia protocol, and individual batch logging.</td></tr>
+            <tr><td><b>Storms and marine mooring failure</b></td><td>Loss of experimental longline</td><td>Engineered anchors post-bathymetry and safeguarding critical stock in land-based RAS tanks.</td></tr>
+            <tr><td><b>Permitting or spatial incompatibility</b></td><td>Delay or legal infeasibility</td><td>Written pre-consultation with CONAPESCA and SEMARNAT prior to deploying construction CAPEX.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 / MIPEZ METHOD (ORIGINAL MIPEZ.ONLINE CONTENT) -->
+  <section class="section" id="control">
+    <div class="wrap">
+      <div class="section-top reveal">
+        <div>
+          <span class="section-num">06 / MIPEZ METHOD</span>
+          <h2>Observe. Intervene.<br>Verify.</h2>
+        </div>
+        <p>A protocol tailored to each facility, with defined parameters, accountability, and logs.</p>
+      </div>
+      <div class="protocol" id="servicios">
+        <article class="step reveal">
+          <span class="step-no">01</span>
+          <h3>Diagnostics</h3>
+          <p>We evaluate the hydraulic system, water usage, and critical maintenance control points.</p>
+          <div class="step-foot">DELIVERABLE / INITIAL ASSESSMENT</div>
+        </article>
+        <article class="step reveal">
+          <span class="step-no">02</span>
+          <h3>Operation</h3>
+          <p>We organize circulation, filtration, cleaning, and disinfection according to system requirements.</p>
+          <div class="step-foot">DELIVERABLE / OPERATING PLAN</div>
+        </article>
+        <article class="step reveal">
+          <span class="step-no">03</span>
+          <h3>Verification</h3>
+          <p>We log parameters and corrective actions, coordinating specialized laboratory analyses when required.</p>
+          <div class="step-foot">DELIVERABLE / LOGBOOK &amp; FOLLOW-UP</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / LOCAL & DOCUMENTARY EVIDENCE -->
+  <section class="section news" id="merida">
+    <div class="wrap news-grid">
+      <div class="reveal">
+        <span class="section-num">07 / LOCAL &amp; DOCUMENTARY EVIDENCE</span>
+        <h2>A case demanding<br>rigor.</h2>
+        <p class="source-label">MÉRIDA, YUCATÁN · SEP 14, 2026 / LA PAZ, BCS · OCT 31, 2026</p>
+      </div>
+      <div class="news-copy reveal">
+        <p>The Government of Yucatán confirmed the detection of <i>Naegleria fowleri</i> in an artificial lake following a fatal case associated with the site. The official release reported the closure of the lake and an investigation into its maintenance. <a class="citation" href="#fuente-1" aria-label="See source 1">[1]</a></p>
+        <p class="fact">Infection is extremely rare and occurs when contaminated water enters through the nose. It is not contracted by drinking water. <a class="citation" href="#fuente-1" aria-label="See source 1">[1]</a> The CDC emphasizes proper maintenance and disinfection—principles that govern both recreational water safety and biosecurity in Recirculating Aquaculture Systems (RAS). <a class="citation" href="#fuente-2" aria-label="See source 2">[2]</a></p>
+        <p class="source-label">SOURCES &amp; TECHNICAL-REGULATORY FRAMEWORK</p>
+        <div class="sources">
+          <a id="fuente-1" href="https://www.yucatan.gob.mx/saladeprensa/ver_nota.php?id=11799" target="_blank" rel="noopener"><span><b>01</b>Government of Yucatán · Press Release 26-1511</span><span aria-hidden="true">↗</span></a>
+          <a id="fuente-2" href="https://www.cdc.gov/naegleria/es/prevention/como-prevenir-la-infeccion-por-naegleria-fowleri-cuando-nade-o-se-meta-al-agua.html" target="_blank" rel="noopener"><span><b>02</b>CDC · <i>Naegleria fowleri</i> Prevention</span><span aria-hidden="true">↗</span></a>
+          <a id="fuente-3" href="https://platiica.economia.gob.mx/normalizacion/nom-245-ssa1-2010/" target="_blank" rel="noopener"><span><b>03</b>NOM-245-SSA1-2010 · Swimming Pool Water Quality</span><span aria-hidden="true">↗</span></a>
+          <a id="fuente-4" href="https://www.dof.gob.mx/" target="_blank" rel="noopener"><span><b>04</b>NOM-058-SAG/PESC/SEMARNAT-2013 · Pearl Oyster Farming (<i>Pteria sterna</i>)</span><span aria-hidden="true">↗</span></a>
+          <a id="fuente-5" href="https://www.gob.mx/conapesca" target="_blank" rel="noopener"><span><b>05</b>CONAPESCA · DOF Agreement Aug 26, 2025 · Commercial Aquaculture Permit</span><span aria-hidden="true">↗</span></a>
+          <a id="fuente-6" href="https://www.sciencedirect.com/" target="_blank" rel="noopener"><span><b>06</b>Saucedo &amp; Monteforte (1997) / 2024 Study · Growth &amp; Implantation of <i>Pteria sterna</i> in La Paz Bay</span><span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 / FIRST STEP & RECOMMENDED CONFIGURATION -->
+  <section class="prepare" id="diagnostico">
+    <div class="wrap prepare-inner reveal">
+      <div>
+        <span class="section-num">08 / FIRST STEP &amp; EXECUTION</span>
+        <h2>Understand and activate your system.</h2>
+        <p>Whether diagnosing an engineered water body or launching the executable dossier for the mabé pearl farm, we begin with verifiable evidence.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>What to prepare for a water body assessment?</summary>
+          <ul>
+            <li>Type of water body, location, and intended use.</li>
+            <li>Approximate volume and existing circulation and filtration equipment.</li>
+            <li>Current maintenance routines and available water quality test results.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>Milestones to authorize mabé pearl farming investment</summary>
+          <ul>
+            <li>Pre-selected marine polygon free of environmental or navigation conflicts.</li>
+            <li>Documented regulatory consultation with CONAPESCA and SEMARNAT.</li>
+            <li>RAS module ($113.9k MXN) or marine pilot ($450k MXN) budget backed by formal quotes.</li>
+            <li>Certified <i>Pteria sterna</i> juvenile supplier and technical implantation protocol.</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="#inicio" aria-label="MIPEZ, back to top">
+      <img src="MIPEZ_Laboratorio_del_Agua_V2_1x1_transparente.png" width="100" height="100" alt="MIPEZ — Water Laboratory" loading="lazy">
+    </a>
+    <div>
+      <span class="mono">© 2026 · MÉRIDA, YUCATÁN · LA PAZ, BAJA CALIFORNIA SUR</span>
+      <p>Detecting microorganisms requires specific laboratory analyses. Control criteria, aquaculture pre-feasibility, and applicable regulations are determined by facility type and use. Financial figures are preliminary planning assumptions subject to formal quotes and biological, commercial, and regulatory validation.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(()=>{
+'use strict';
+const engData={
+  torres:[
+    'ARCH. 01 /',
+    '1×1×1 m Cubic Module with 5 Levels & Coroplast Deflectors',
+    'Built from 1" Schedule 40 PVC with 5 pull-out Egg Crate trays (95×95 cm). Each tray holds 10 rows of 20 oysters angled at 45° (comb-style layout = 200 oysters per level × 5 levels = 1,000 oysters per module). Between each level, a Coroplast sheet angled at 10°–15° deflects feces and pseudofeces into the central aisle without fouling the oysters below.'
+  ],
+  opcionA:[
+    'ARCH. 02 /',
+    'Option A: 4 Cross-Flow Gyre Pumps in Pulse Mode (Selected)',
+    'Mounted vertically at 50 cm depth on the front posts of each tower, oriented clockwise to generate a continuous carousel flow with zero dead spots. Pulse Mode (4 s at 75%-80% and 2 s at 30%) mimics natural wave action, clears detritus from shell valves, and stimulates mantle opening at only ~300W combined power draw.'
+  ],
+  comparativa:[
+    'ARCH. 03 /',
+    'Technical Comparison: Option A (Gyre) vs. Option B (Spray Bars) vs. Option C (Air-Lift)',
+    'Option A (Gyre Pumps) outperforms Option B (PVC Spray Bars with alternating valve) by eliminating pipe friction head loss and nozzle clogging, and outperforms Option C (6" Air-Lift tubes with diffuser) by eliminating compressor noise, salt creep from heavy bubbling, and uneven vertical turbulence.'
+  ],
+  sump:[
+    'ARCH. 04 /',
+    '4" Central Bottom Drain, Hydrocyclone & Feeding Bypass',
+    'Carousel rotation concentrates settled solids into the 4" central bottom drain toward the Hydrocyclone (Swirl Separator) to purge heavy sludge before the Sump (Protein Skimmer + K1 MBBR Biofilter + UV-C + DCP-20000 Return). During microalgae dosing, the Feeding Bypass is activated (closing Valves 1 & 3 and opening Valve 2), creating a short loop that prevents the Skimmer and UV from destroying live phytoplankton.'
+  ]
+};
+const tabs=[...document.querySelectorAll('.tab-btn')];
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+  const d=engData[btn.dataset.eng];
+  tabs.forEach(b=>b.setAttribute('aria-selected',String(b===btn)));
+  document.getElementById('eng-num').textContent=d[0];
+  document.getElementById('eng-title').textContent=d[1];
+  document.getElementById('eng-copy').textContent=d[2];
+}));
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+if('IntersectionObserver' in window&&!reduce.matches){
+  const reveal=[...document.querySelectorAll('.reveal')];
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target);}
+  }),{threshold:.08});
+  document.documentElement.classList.add('motion');
+  reveal.forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');observer.observe(el);}});
+  reduce.addEventListener('change',()=>{if(reduce.matches){reveal.forEach(el=>el.classList.remove('pending'));observer.disconnect();}});
+}
+let queued=false;
+const bar=document.querySelector('.progress');
+function progress(){
+  const total=document.documentElement.scrollHeight-innerHeight;
+  bar.style.transform='scaleX('+(total>0?Math.max(0,Math.min(1,scrollY/total)):0)+')';
+  queued=false;
+}
+addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(progress);}},{passive:true});
+addEventListener('resize',progress);
+progress();
+})();
+</script>
+</body>
+</html>
